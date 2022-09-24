@@ -1,8 +1,14 @@
 import Weather from './Weather';
 import { useDate } from './Date/index';
+import { useTimer } from './Timer/index';
+import { useNavigate } from 'react-router-dom';
+import Button from '../../components/Button';
 
 export default function Home() {
   const { date, time } = useDate()
+  const { refreshTimer } = useTimer()
+  const navigate = useNavigate()
+
   return (
     <>
     <nav>
@@ -36,6 +42,30 @@ export default function Home() {
       <h3>that enable our client's growth</h3>
       <p>que permitam o crescimento dos nossos clientes</p>
     </div>
+
+    <footer>
+      <p>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</p>
+      <p>|</p>
+
+      <div>
+        <>
+          <p>Application refresh in</p>
+          {refreshTimer}
+          {refreshTimer == 0 ? navigate('/') : null}
+        </>
+      </div>
+
+      <Button
+        buttonTitle='Continuar Navegando'
+        destination='https://compass.uol/pt/home' 
+      />
+
+      <Button 
+        buttonTitle='Logout'
+        destination='/'
+      />
+
+    </footer>
     </>
   )
 }

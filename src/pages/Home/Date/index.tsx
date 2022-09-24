@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export const useDate = () => {
   const locale = 'pt';
-  const [ today, setDate ] = React.useState(new Date());
+  const [ today, setDate ] = useState(new Date());
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
       setDate(new Date());
     }, 1 * 1000);
@@ -12,12 +12,11 @@ export const useDate = () => {
       clearInterval(timer);
     }
   }, [])
-  const hour = today.getHours();
-  const minutes = today.getMinutes();
+  
   const time = today.toLocaleTimeString()
 
-  const day = today.toLocaleDateString(locale, { weekday: 'long'})
-  const date = `${day}, ${today.getDate()} ${today.toLocaleDateString(locale, { month: 'long'})}\n\n`
+  const weekDay = today.toLocaleDateString(locale, { weekday: 'long'})
+  const date = `${weekDay}, ${today.getDate()} de ${today.toLocaleDateString(locale, { month: 'long'})} de ${today.getFullYear()}`
 
 
   return {

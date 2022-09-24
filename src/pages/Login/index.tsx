@@ -1,6 +1,6 @@
-import Button from "../../components/Button";
-import InputUser from "./InputUser";
-import InputPassword from "./InputPassword";
+import Button from '../../components/Button';
+import InputUser from "./Input/InputUser";
+import InputPassword from "./Input/InputPassword";
 import { useState } from 'react';
 
 export default function Login() {
@@ -24,7 +24,11 @@ export default function Login() {
         password={password}
         setPassword={setPassword}
       />
-      <Button />
+      
+      <Button 
+        buttonTitle='Continuar'
+        destination={"/home"}
+      />
     </>
   )
 }
