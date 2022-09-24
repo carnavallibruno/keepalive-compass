@@ -1,14 +1,29 @@
 import Button from "../../components/Button";
-import Form from "./Form";
-import Input from "./Input";
+import InputUser from "./InputUser";
+import InputPassword from "./InputPassword";
+import { useState } from 'react';
 
 export default function Login() {
+  const [ user, setUser ] = useState("");
+  const [ password, setPassword ] = useState("");
   return (
     <>
       <h2>Olá</h2>
       <p>Para continuar navegando de forma segura, efetue o login na rede</p>
       <h4>Login</h4>
-      <Form />
+      <InputUser
+        type="text"
+        placeholder="Usuário"
+        user={user}
+        setUser={setUser}
+      />
+      
+      <InputPassword
+        type="password"
+        placeholder="Senha"
+        password={password}
+        setPassword={setPassword}
+      />
       <Button />
     </>
   )
