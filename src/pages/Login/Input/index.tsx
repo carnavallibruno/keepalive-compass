@@ -1,27 +1,33 @@
-interface InputPasswordProps {
+import { AiOutlineUser, AiOutlineLock } from "react-icons/ai";
+
+interface InputProps {
   type: string,
   placeholder: string,
-  password: string,
+  user?: string,
+  setUser?: React.Dispatch<React.SetStateAction<any>>
+  password?: string,
   setPassword?: React.Dispatch<React.SetStateAction<any>>
 }
 
-export default function Input({ type, placeholder, password, setPassword }: InputPasswordProps ) {
+
+export default function Input({ type, placeholder, user, setUser, password, setPassword }: InputProps ) {
   return (
-    <h2>nada</h2>
-    // <InputStyle>
-    // <>
-    //   <div>
-    //     <input
-    //       type={type}
-    //       placeholder={placeholder}
-    //       onChange={(data) => {
-    //           setPassword?.(data.target.value);
-    //         }
-    //       }
-    //       />
-    //       { password ? <AiOutlineLock /> : "" }
-    //   </div>
-    // </>
-    // </InputStyle>
+      <>
+        <input
+          type={type}
+          placeholder={placeholder}
+          onChange={(data) => {
+            switch(type) {
+              case "text":
+                setUser?.(data.target.value);
+
+              case "pasword":
+                setPassword?.(data.target.value);
+            }
+            }
+          }
+        />
+        { type == "text" ? <AiOutlineUser /> : <AiOutlineLock /> }
+      </>
   )
 }

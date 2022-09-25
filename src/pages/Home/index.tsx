@@ -8,6 +8,7 @@ export default function Home() {
   const { date, time } = useDate()
   const { refreshTimer } = useTimer()
   const navigate = useNavigate()
+  
 
   return (
     <>
