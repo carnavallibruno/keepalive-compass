@@ -2,49 +2,52 @@ import Weather from './Weather';
 import { useDate } from './Date/index';
 import { useTimer } from './Timer/index';
 import { useNavigate } from 'react-router-dom';
-import Button from '../../components/Button';
+import ButtonContinue from '../../components/ButtonContinue';
 import Logo from '../../assets/LogoCompasso-1.svg'
-import { LogoImage } from './style';
+import BallLogo from '../../assets/bola-LogoCompasso.svg'
+import { LogoImage, ContainerHome, HomeNavbar, DateTimeContainer, Time, Date, City, Temperature, UolImage, Main, MissionContainer, MissionNormal, MissionRed, MissionRedSmall } from './styles';
 
 export default function Home() {
   const { date, time } = useDate()
   const { refreshTimer } = useTimer()
   const navigate = useNavigate()
 
-
   return (
-    <div>
-      <nav>
+    <ContainerHome>
+      <HomeNavbar>
         <LogoImage src={Logo} />
-        <div>
-          <div>
+        <DateTimeContainer>
+          <Time>
             {time}
-          </div>
+          </Time>
 
-          <div>
+          <Date>
             {date}
-          </div>
-        </div>
+          </Date>
+        </DateTimeContainer>
 
         <div>
-          <Weather />
+          <City>Passo Fundo - RS</City>
+          <Temperature>22º</Temperature>
         </div>
-      </nav>
+      </HomeNavbar>
 
-      <div>
-        <img src="" alt="Logo UOL" />
-      </div>
+      <Main>
+        <div>
+          <UolImage src={BallLogo} />
+        </div>
 
-      <div>
-        <h3>Our mission is</h3>
-        <p>Nossa missão é</p>
-        <h3>to transform the world</h3>
-        <p>transformar o mundo</p>
-        <h3>building digital experiences</h3>
-        <p>construindo experiências digitais</p>
-        <h3>that enable our client's growth</h3>
-        <p>que permitam o crescimento dos nossos clientes</p>
-      </div>
+        <MissionContainer>
+          <MissionRedSmall>Our mission is</MissionRedSmall>
+          <MissionNormal>Nossa missão é</MissionNormal>
+          <MissionRed>to transform the world</MissionRed>
+          <MissionNormal>transformar o mundo</MissionNormal>
+          <MissionRed>building digital experiences</MissionRed>
+          <MissionNormal>construindo experiências digitais</MissionNormal>
+          <MissionRed>that enable our client's growth</MissionRed>
+          <MissionNormal>que permitam o crescimento dos nossos clientes</MissionNormal>
+        </MissionContainer>
+      </Main>
 
       <footer>
         <p>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</p>
@@ -58,17 +61,17 @@ export default function Home() {
           </>
         </div>
 
-        <Button
+        <ButtonContinue
           buttonTitle='Continuar Navegando'
           destination='https://compass.uol/pt/home'
         />
 
-        <Button
+        <ButtonContinue
           buttonTitle='Logout'
           destination='/'
         />
 
       </footer>
-      </div>
-    )
+    </ContainerHome>
+  )
 }

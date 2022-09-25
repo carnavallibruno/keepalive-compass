@@ -6,7 +6,7 @@ interface ButtonProps {
   destination: string;
 }
 
-export default function Button({ destination, buttonTitle }: ButtonProps) {
+export default function ButtonContinue({ destination, buttonTitle }: ButtonProps) {
   const navigate = useNavigate()
   return (
     <StyledButton 
@@ -15,13 +15,3 @@ export default function Button({ destination, buttonTitle }: ButtonProps) {
     : navigate(`${destination}`) }>{buttonTitle}</StyledButton>
   )
 }
-
-// const EstiloBotao = styled.button`
-//   color: blue;
-// `;
-
-// const Botao = styled(EstiloBotao)
-
-// <EstiloBotao>
-//   <Botao />
-// </EstiloBotao>

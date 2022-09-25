@@ -7,6 +7,8 @@ export const Container = styled.div`
   width: 100vw;
   height: 100%;
 
+  margin: 0 auto;
+
   font-family: 'Mark Pro';
   font-weight: 400;
 `
@@ -14,21 +16,22 @@ export const Container = styled.div`
 export const FormSection = styled.section`
   color: #E0E0E0;
   background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%);
-  
   width: 50vw;
   height: 100vh;
-
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `
 
 export const FormContainer = styled.form`
-  margin-top: 18.24vh;
+  height: 63.42vh;
 `
 
 export const Titulo = styled.h1`
+  height: 7.03vh;
+
   font-size: 3.75rem;
   font-weight: 400;
 
@@ -38,8 +41,8 @@ export const Titulo = styled.h1`
 export const Description = styled.p`
   font-size: 1rem;
 
-  width: 301px;
-  height: 52px;
+  width: 18.813rem;
+  height: 4.81vh;
 
   line-height: 20px;
 
@@ -47,6 +50,8 @@ export const Description = styled.p`
 `
 
 export const Label = styled.label`
+  height: 3.51vh;
+  
   font-size: 1.875rem;
 `
 

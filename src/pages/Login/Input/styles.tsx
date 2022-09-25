@@ -17,6 +17,9 @@ export const StyledInput = styled.input`
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
   border-radius: 50px;
+  ::placeholder {
+    color: #E0E0E0;
+  }
 `
 
 export const InputContainer = styled.div`
