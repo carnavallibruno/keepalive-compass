@@ -1,4 +1,5 @@
 import { AiOutlineUser, AiOutlineLock } from "react-icons/ai";
+import { StyledInput, InputContainer } from './styles';
 
 interface InputProps {
   type: string,
@@ -10,24 +11,34 @@ interface InputProps {
 }
 
 
-export default function Input({ type, placeholder, user, setUser, password, setPassword }: InputProps ) {
+const Input = ({ type, placeholder, user, setUser, password, setPassword }: InputProps) => {
   return (
-      <>
-        <input
-          type={type}
-          placeholder={placeholder}
-          onChange={(data) => {
-            switch(type) {
-              case "text":
-                setUser?.(data.target.value);
+    <InputContainer>
+      <StyledInput
+        type={type}
+        placeholder={placeholder}
+        onChange={(data) => {
+          switch (type) {
+            case "text":
+              setUser?.(data.target.value);
 
-              case "pasword":
-                setPassword?.(data.target.value);
-            }
-            }
+            case "password":
+              setPassword?.(data.target.value);
           }
+        }
+        }
+      />
+      {type == "text"
+        ? <AiOutlineUser
+          size={24}
+          color='#E0E0E0'
         />
-        { type == "text" ? <AiOutlineUser /> : <AiOutlineLock /> }
-      </>
+        : <AiOutlineLock
+          size={24}
+          color='#E0E0E0'
+        />}
+    </InputContainer>
   )
 }
+
+export default Input;

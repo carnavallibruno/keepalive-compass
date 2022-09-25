@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react'
 
 export const useTimer = () => {
-  let [refreshTimer, setRefreshTimer] = useState(5);
+  let [refreshTimer, setRefreshTimer] = useState(60);
 
   useEffect(() => {
     const timer = setInterval(() => {
