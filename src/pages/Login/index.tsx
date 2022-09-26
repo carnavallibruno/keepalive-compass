@@ -2,15 +2,46 @@ import Input from "./Input";
 import { useState } from 'react';
 import { Description, Titulo, Container, FormSection, FormContainer, ImageSection, Label, CompassImage } from './styles'
 import compassImg from '../../assets/Logo-Compasso-Branco.svg'
-import ButtonContinue from '../../components/ButtonContinue';
+import { Navigate, useNavigate } from 'react-router-dom';
+import ButtonContinue from './../../components/ButtonContinue';
+import { ErrorMessage } from "./ErrorMessage";
 
 export default function Login() {
+  const navigate = useNavigate()
   const [user, setUser] = useState("");
+
   const [password, setPassword] = useState("");
+  const [visible, setVisible] = useState(false);
+
+  function userValidate(user: string) {
+    const userRegex = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+    const userRegexCheck = userRegex.test(user);
+
+    if (userRegexCheck) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function passwordValidate(password: string) {
+    if (password == '') {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   return (
     <Container>
       <FormSection>
-        <FormContainer>
+        <FormContainer onSubmit={(event) => {
+          event.preventDefault();
+          (!passwordValidate(password))
+            ? setVisible(true)
+            : navigate('/home')
+        }}>
+
           <Titulo>Olá,</Titulo>
 
           <Description>Para continuar navegando de forma segura, efetue o login na rede.</Description>
@@ -27,13 +58,14 @@ export default function Login() {
           <Input
             type="password"
             placeholder="Senha"
-            user={password}
-            setUser={setPassword}
+            password={password}
+            setPassword={setPassword}
           />
+
+          {visible && <ErrorMessage>Ops, usuário ou senha inválidos. Tente novamente!</ErrorMessage>}
 
           <ButtonContinue
             buttonTitle='Continuar'
-            destination={"/home"}
           />
 
         </FormContainer>
@@ -46,5 +78,6 @@ export default function Login() {
       </ImageSection>
 
     </Container>
+
   )
 }

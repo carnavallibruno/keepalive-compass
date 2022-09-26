@@ -5,11 +5,10 @@ interface InputProps {
   type: string,
   placeholder: string,
   user?: string,
-  setUser?: React.Dispatch<React.SetStateAction<any>>
+  setUser?: React.Dispatch<React.SetStateAction<any>>,
   password?: string,
   setPassword?: React.Dispatch<React.SetStateAction<any>>
 }
-
 
 const Input = ({ type, placeholder, user, setUser, password, setPassword }: InputProps) => {
   return (
@@ -28,15 +27,19 @@ const Input = ({ type, placeholder, user, setUser, password, setPassword }: Inpu
         }
         }
       />
-      {type == "text"
-        ? <AiOutlineUser
-          size={24}
-          color='#E0E0E0'
+      {
+        type == "text"
+          ? <AiOutlineUser
+            size={24}
+            color='#E0E0E0'
+            style={{border: '1px solid red'}}
+          />
+          : <AiOutlineLock
+            size={24}
+            color='#E0E0E0'
         />
-        : <AiOutlineLock
-          size={24}
-          color='#E0E0E0'
-        />}
+      }
+        
     </InputContainer>
   )
 }

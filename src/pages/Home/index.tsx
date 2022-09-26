@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import ButtonHome from '../../components/ButtonHome';
 import Logo from '../../assets/LogoCompasso-1.svg'
 import BallLogo from '../../assets/bola-LogoCompasso.svg'
-import { LogoImage,ContainerHome, HomeNavbar, DateTimeContainer, Time, Date, City, Temperature, UolImage, Main, MissionContainer, MissionNormal, MissionRed, MissionRedSmall, FooterHome, FooterSentence, VerticalBar, RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer, HomeButtonsContainer } from './styles';
+import Cloud from '../../assets/weather-cloud.svg'
+import { LogoImage, ContainerHome, HomeNavbar, DateTimeContainer, Time, Date, City, Temperature, UolImage, Main, MissionContainer, MissionNormal, MissionRed, MissionRedSmall, FooterHome, FooterSentence, VerticalBar, RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer, HomeButtonsContainer, ImageContainer, WeatherContainer, WeatherTemperature, CloudIcon } from './styles';
 
 export default function Home() {
   const { date, time } = useDate()
@@ -26,16 +27,22 @@ export default function Home() {
           </Date>
         </DateTimeContainer>
 
-        <div>
+        <WeatherContainer>
+
           <City>Passo Fundo - RS</City>
-          <Temperature>22º</Temperature>
-        </div>
+
+          <WeatherTemperature>
+            <CloudIcon src={Cloud}></CloudIcon>
+            <Temperature>22º</Temperature>
+          </WeatherTemperature>
+
+        </WeatherContainer>
       </HomeNavbar>
 
       <Main>
-        <div>
+        <ImageContainer>
           <UolImage src={BallLogo} />
-        </div>
+        </ImageContainer>
 
         <MissionContainer>
           <MissionRedSmall>Our mission is</MissionRedSmall>
@@ -62,7 +69,7 @@ export default function Home() {
               <RefreshTimer>{refreshTimer}</RefreshTimer>
               <p>seconds</p>
             </RefreshTimerContainer>
-            
+
             {refreshTimer == 0 ? navigate('/') : null}
           </>
         </RefreshContainer>
@@ -78,7 +85,7 @@ export default function Home() {
             destination='/'
           />
         </HomeButtonsContainer>
-        
+
       </FooterHome>
     </ContainerHome>
   )

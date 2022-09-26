@@ -13,6 +13,7 @@ export const StyledHomeButton = styled.button`
   color: #FFFFFF;
 
   &:hover {
+    cursor: pointer;
     transition: 0.5s;
     color: #C13216;
     background: #FFFFFF;

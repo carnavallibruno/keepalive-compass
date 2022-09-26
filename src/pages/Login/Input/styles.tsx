@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const StyledInput = styled.input`
   font-family: 'Mark Pro';
   font-weight: 400;
-
   background: transparent;
+  border: 1px solid red;
 
   width: 19.73vw;
   height: 3.75rem;
@@ -24,7 +24,11 @@ export const StyledInput = styled.input`
 `
 
 export const InputContainer = styled.div`
-  display: "flex";
-  justify-content:"space-between";
-  align-items: "center";
+  border: 1px solid red;
+  
+`
+
+export const IconContainer = styled.div`
+  border: 1px solid red;
+  width: 20px;
 `

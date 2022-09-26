@@ -16,11 +16,15 @@ export const ContainerHome = styled.div`
 export const HomeNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
+  height: 15.64vh;
 `
 
 export const LogoImage = styled.img`
   width: 7.8125vw;
   height: 3.9583vh;
+
+  margin-left: 2.08vw;
+  margin-top: 2.31vh;
 `
 
 export const DateTimeContainer = styled.div`
@@ -43,6 +47,13 @@ export const Date = styled.p`
   font-size: 14px;
   line-height: 18px;
 `
+export const WeatherContainer = styled.div`
+  margin-top: 2.31vh;
+  margin-right: 2.08vw;
+
+  display: flex;
+  flex-direction: column;
+`
 
 export const City = styled.p`
   color: #222222;
@@ -51,8 +62,20 @@ export const City = styled.p`
   line-height: 18px;
 `
 
+export const WeatherTemperature = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const CloudIcon = styled.img`
+  width: 1.77vw;
+`
+
 export const Temperature = styled.p`
   color: #222222;
+
+  height: 5.64vh;
 
   font-size: 48px;
   font-weight: 700;
@@ -62,6 +85,18 @@ export const Temperature = styled.p`
 export const Main = styled.main`
   display: flex;
   justify-content: space-between;
+  height: 75.18vh;
+`
+
+export const UolImage = styled.img`
+  margin-top: 5.83vh;
+  margin-left: -12.13vw;
+
+  width: 42.96vw;
+`
+
+export const ImageContainer = styled.div`
+  
 `
 
 export const MissionContainer = styled.div`
@@ -93,25 +128,17 @@ export const MissionNormal = styled.p`
   margin-bottom: -1.5%;
 `
 
-export const UolImage = styled.img`
-  margin-top: 5.83vh;
-  margin-left: -12.13vw;
 
-  width: 42.96vw;
-  height: 76.38vh;
-`
 
 export const FooterHome = styled.footer`
   color: #FFFFFF;
-
+  
   height: 9.25vh;
 
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
-
-  margin-top: 
 `
 
 export const FooterSentence = styled.p`
