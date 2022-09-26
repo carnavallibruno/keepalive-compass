@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const StyledInput = styled.input`
-
   font-family: 'Mark Pro';
+  font-weight: 400;
+
   background: transparent;
 
   width: 19.73vw;

@@ -11,9 +11,6 @@ export const ContainerHome = styled.div`
 
   width: 100%;
   height: 100%;
-
-  font-family: 'Mark Pro';
-  font-weight: 400;
 `
 
 export const HomeNavbar = styled.nav`
@@ -65,7 +62,6 @@ export const Temperature = styled.p`
 export const Main = styled.main`
   display: flex;
   justify-content: space-between;
-  border: 1px solid red ;
 `
 
 export const MissionContainer = styled.div`
@@ -76,7 +72,6 @@ export const MissionContainer = styled.div`
 
 export const MissionRedSmall = styled.p`
   color: #C12D18;
-
   font-weight: 700;
   font-size: 36px;
   line-height: 46px;
@@ -84,7 +79,6 @@ export const MissionRedSmall = styled.p`
 
 export const MissionRed = styled.p`
   color: #C12D18;
-
   font-weight: 700;
   font-size: 64px;
   line-height: 81px;
@@ -105,4 +99,65 @@ export const UolImage = styled.img`
 
   width: 42.96vw;
   height: 76.38vh;
+`
+
+export const FooterHome = styled.footer`
+  color: #FFFFFF;
+
+  height: 9.25vh;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
+
+  margin-top: 
+`
+
+export const FooterSentence = styled.p`
+  width: 28.17vw;
+
+  font-size: 0.75rem;
+  line-height: 0.951rem;
+  text-align: right;
+  margin-right: 1.82vw;
+`
+
+export const VerticalBar = styled.p`
+  border: 1px solid #FFFFFF;
+  height: 5.64vh;
+  margin-right: 6.4vw;
+`
+
+export const RefreshContainer = styled.div`
+  width: 12.44vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-right: 19.21vw;
+`
+
+export const RefreshPhrase = styled.p`
+  width: 5.67vw;
+
+  font-size: 0.875rem;
+  line-height: 18px;
+
+  text-align: right;
+`
+
+export const RefreshTimerContainer = styled.div`
+  width: 5.05vw;
+  text-align: center;
+`
+
+export const RefreshTimer = styled.p`
+  font-weight: 700;
+  font-size: 3rem;
+`
+
+export const HomeButtonsContainer = styled.div`
+  display: flex;
 `

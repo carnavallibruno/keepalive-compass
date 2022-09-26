@@ -8,9 +8,6 @@ export const Container = styled.div`
   height: 100%;
 
   margin: 0 auto;
-
-  font-family: 'Mark Pro';
-  font-weight: 400;
 `
 
 export const FormSection = styled.section`

@@ -1,17 +1,17 @@
 import { useNavigate } from 'react-router-dom';
-import { StyledContinueButton } from './style';
+import { StyledHomeButton } from './styles';
 
 interface ButtonProps {
   buttonTitle: string;
   destination: string;
 }
 
-export default function ButtonContinue({ destination, buttonTitle }: ButtonProps) {
+export default function ButtonHome({ destination, buttonTitle }: ButtonProps) {
   const navigate = useNavigate()
   return (
-    <StyledContinueButton 
+    <StyledHomeButton 
     onClick={() => destination.includes('https://')
     ? window.open('https://compass.uol/pt/home', '_blank') 
-    : navigate(`${destination}`) }>{buttonTitle}</StyledContinueButton>
+    : navigate(`${destination}`) }>{buttonTitle}</StyledHomeButton>
   )
 }

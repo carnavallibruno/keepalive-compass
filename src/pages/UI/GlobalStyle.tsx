@@ -20,6 +20,8 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	font-family: 'Mark Pro';
+	font-weight: 400;
 }
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {

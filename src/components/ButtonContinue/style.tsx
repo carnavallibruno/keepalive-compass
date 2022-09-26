@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const StyledButton = styled.button`
+export const StyledContinueButton = styled.button`
+  font-family: 'Mark Pro';
+  font-weight: 400;
+  
   color: #FFFFFF;
 
   width: 21vw;

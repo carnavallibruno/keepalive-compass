@@ -2,7 +2,7 @@ import Input from "./Input";
 import { useState } from 'react';
 import { Description, Titulo, Container, FormSection, FormContainer, ImageSection, Label, CompassImage } from './styles'
 import compassImg from '../../assets/Logo-Compasso-Branco.svg'
-import ButtonContinue from './../../components/ButtonContinue';
+import ButtonContinue from '../../components/ButtonContinue';
 
 export default function Login() {
   const [user, setUser] = useState("");
@@ -17,7 +17,6 @@ export default function Login() {
 
           <Label>Login</Label>
 
-          
           <Input
             type="text"
             placeholder="Usuário"

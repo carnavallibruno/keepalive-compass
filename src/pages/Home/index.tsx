@@ -2,10 +2,10 @@ import Weather from './Weather';
 import { useDate } from './Date/index';
 import { useTimer } from './Timer/index';
 import { useNavigate } from 'react-router-dom';
-import ButtonContinue from '../../components/ButtonContinue';
+import ButtonHome from '../../components/ButtonHome';
 import Logo from '../../assets/LogoCompasso-1.svg'
 import BallLogo from '../../assets/bola-LogoCompasso.svg'
-import { LogoImage, ContainerHome, HomeNavbar, DateTimeContainer, Time, Date, City, Temperature, UolImage, Main, MissionContainer, MissionNormal, MissionRed, MissionRedSmall } from './styles';
+import { LogoImage,ContainerHome, HomeNavbar, DateTimeContainer, Time, Date, City, Temperature, UolImage, Main, MissionContainer, MissionNormal, MissionRed, MissionRedSmall, FooterHome, FooterSentence, VerticalBar, RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer, HomeButtonsContainer } from './styles';
 
 export default function Home() {
   const { date, time } = useDate()
@@ -49,29 +49,37 @@ export default function Home() {
         </MissionContainer>
       </Main>
 
-      <footer>
-        <p>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</p>
-        <p>|</p>
+      <FooterHome>
+        <FooterSentence>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</FooterSentence>
 
-        <div>
+        <VerticalBar></VerticalBar>
+
+        <RefreshContainer>
           <>
-            <p>Application refresh in</p>
-            {refreshTimer}
+            <RefreshPhrase>Application refresh in</RefreshPhrase>
+
+            <RefreshTimerContainer>
+              <RefreshTimer>{refreshTimer}</RefreshTimer>
+              <p>seconds</p>
+            </RefreshTimerContainer>
+            
             {refreshTimer == 0 ? navigate('/') : null}
           </>
-        </div>
+        </RefreshContainer>
 
-        <ButtonContinue
-          buttonTitle='Continuar Navegando'
-          destination='https://compass.uol/pt/home'
-        />
+        <HomeButtonsContainer>
+          <ButtonHome
+            buttonTitle='Continuar Navegando'
+            destination='https://compass.uol/pt/home'
+          />
 
-        <ButtonContinue
-          buttonTitle='Logout'
-          destination='/'
-        />
-
-      </footer>
+          <ButtonHome
+            buttonTitle='Logout'
+            destination='/'
+          />
+        </HomeButtonsContainer>
+        
+      </FooterHome>
     </ContainerHome>
   )
 }
