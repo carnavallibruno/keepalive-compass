@@ -38,6 +38,9 @@ export const FormContainer = styled.form`
   @media screen and (max-width: 321px) {
     width: 75vw;
   }
+  @media screen and (max-width: 1025px) {
+    height: 80vh;
+  }
 `
 
 export const Titulo = styled.h1`
@@ -65,9 +68,18 @@ export const Description = styled.p`
 
   @media screen and (max-width: 1025px) {
     text-align: left;
+    font-size: 2rem;
+    width: 35.813rem;
+    line-height: 30px;
+  }
+  @media screen and (max-width: 426px) {
+    font-size: 2.5rem;
   }
   @media screen and (max-width: 321px) {
     width: 75vw;
+  }
+  @media screen and (max-width: 281px) {
+    height: 15rem;
   }
 `
 

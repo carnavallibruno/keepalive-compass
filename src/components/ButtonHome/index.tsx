@@ -9,7 +9,7 @@ interface ButtonProps {
 export default function ButtonHome({ destination, buttonTitle }: ButtonProps) {
   const navigate = useNavigate()
   return (
-    <StyledHomeButton 
+    <StyledHomeButton
     onClick={() => destination.includes('https://')
     ? window.open('https://compass.uol/pt/home', '_blank')
     : navigate(`${destination}`) }>{buttonTitle}</StyledHomeButton>

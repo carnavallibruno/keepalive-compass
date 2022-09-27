@@ -22,6 +22,7 @@ const Input = ({ type, placeholder, user, setUser, password, setPassword, visibl
           type={type}
           placeholder={placeholder}
           onFocus={() => setFocused(true)}
+          visible={visible}
           onBlur={(event) =>
             event.target.value.length > 0 ? setFocused(true) : setFocused(false)
           }

@@ -18,6 +18,15 @@ export const HomeNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   height: 12.95vh;
+  @media screen and (max-width: 426px) {
+    width: 100vw;
+    height: 20vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 `
 
 export const LogoImage = styled.img`
@@ -26,6 +35,20 @@ export const LogoImage = styled.img`
 
   margin-left: 2.08vw;
   margin-top: 2.31vh;
+  @media screen and (max-width: 1025px) {
+    width: 12.5vw;
+  }
+  @media screen and (max-width: 769px) {
+    width: 13vw;
+    margin-top: 5vh;
+  }
+  @media screen and (max-width: 426px) {
+    width: 30vw;
+    margin-top: 2.31vh;
+    margin-left: 0vw;
+    height: 5vh;
+
+  }
 `
 
 export const DateTimeContainer = styled.div`
@@ -46,7 +69,7 @@ export const Time = styled.h1`
 export const Date = styled.p`
   color: #222222;
 
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 18px;
 `
 export const WeatherContainer = styled.div`
@@ -55,13 +78,19 @@ export const WeatherContainer = styled.div`
 
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 426px) {
+    display: none;
+  }
 `
 
 export const City = styled.p`
   color: #222222;
 
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 18px;
+  @media screen and (max-width: 769px) {
+    font-size: 1.2rem;
+  }
 `
 
 export const WeatherTemperature = styled.div`
@@ -72,6 +101,9 @@ export const WeatherTemperature = styled.div`
 
 export const CloudIcon = styled.img`
   width: 1.77vw;
+  @media screen and (max-width: 1025px) {
+    width: 4vw;
+  }
 `
 
 export const Temperature = styled.p`
@@ -79,7 +111,7 @@ export const Temperature = styled.p`
 
   height: 5.64vh;
 
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 61px;
 `
@@ -100,35 +132,53 @@ export const UolImage = styled.img`
   bottom: -4vw;
   left: -12vw;
   z-index: 0;
+  @media screen and (max-width: 1561px) {
+    display: none;
+  }
 `
 
 export const MissionContainer = styled.div`
   margin-top: 15.37vh;
   margin-right: 6.97vw;
   text-align: right;
+  z-index: 1;
+  @media screen and (max-width: 426px) {
+    margin-top: 7.5vh;
+  }
 `
 
 export const MissionRedSmall = styled.p`
   color: #C12D18;
   font-weight: 700;
-  font-size: 36px;
+  font-size: 2.25rem;
   line-height: 46px;
+  margin-bottom: -0.5%;
 `
 
 export const MissionRed = styled.p`
   color: #C12D18;
   font-weight: 700;
-  font-size: 64px;
+  font-size: 4rem;
   line-height: 81px;
+  
   margin-top: 1.25%;
-  margin-bottom: -0.75%;
+  margin-bottom: -1%;
+  @media screen and (max-width: 426px) {
+    font-size: 3.6rem;
+  }
+  @media screen and (max-width: 376px) {
+    font-size: 3rem;
+  }
 `
 
 export const MissionNormal = styled.p`
   color: #222222;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 30px;
   margin-bottom: -1.5%;
+  @media screen and (max-width: 769px) {
+    font-size: 1.75rem;
+  }
 `
 
 

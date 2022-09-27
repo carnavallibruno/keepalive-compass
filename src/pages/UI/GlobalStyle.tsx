@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
-  html, body, div, span, applet, object, iframe,
+html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -23,6 +23,19 @@ time, mark, audio, video {
 	font-family: 'Mark Pro';
 	font-weight: 400;
 }
+
+:root {
+	@media screen and (max-width: 1025px) {
+		font-size: 15px;
+	}
+	@media screen and (max-width: 769px) {
+		font-size: 11px;
+	}
+	@media screen and (max-width: 426px) {
+		font-size: 7px;
+	}
+}
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;

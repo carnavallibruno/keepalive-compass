@@ -4,7 +4,11 @@ interface IconProps {
   focused: boolean;
 }
 
-export const StyledInput = styled.input`
+interface InputProps {
+  visible: boolean;
+}
+
+export const StyledInput = styled.input<InputProps>`
   font-family: 'Mark Pro';
   font-weight: 400;
   background: transparent;
@@ -31,7 +35,11 @@ export const StyledInput = styled.input`
 
   @media screen and (max-width: 426px) {
     width: 65vw;
+    font-size: 1.25rem;
 }
+${(props) => 
+  props.visible ? "border: 1px solid #E9B425;" : "border: 1px solid #FFFFFF"
+} 
 `
 
 export const InputAll = styled.div`
