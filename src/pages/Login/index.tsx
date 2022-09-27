@@ -1,6 +1,6 @@
 import Input from "./Input";
 import { useState } from 'react';
-import { Description, Titulo, Container, FormSection, FormContainer, ImageSection, Label, CompassImage } from './styles'
+import { Description, Titulo, Container, FormSection, FormContainer, ImageSection, Label, CompassImage, CompassImageMediaQuery } from './styles'
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { Navigate, useNavigate } from 'react-router-dom';
 import ButtonContinue from './../../components/ButtonContinue';
@@ -36,11 +36,16 @@ export default function Login() {
   return (
     <Container>
       <FormSection>
+        <CompassImageMediaQuery
+          src={compassImg}
+          onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
+        />
+
         <FormContainer onSubmit={(event) => {
           event.preventDefault();
           (!passwordValidate(password))
-          ? setVisible(true)
-          : navigate('/home')
+            ? setVisible(true)
+            : navigate('/home')
         }}>
 
           <Titulo>Olá,</Titulo>
@@ -77,7 +82,7 @@ export default function Login() {
       <ImageSection>
         <CompassImage
           src={compassImg}
-          onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{cursor: 'pointer'}}
+          onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
         />
       </ImageSection>
 

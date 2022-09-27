@@ -27,12 +27,15 @@ time, mark, audio, video {
 :root {
 	@media screen and (max-width: 1025px) {
 		font-size: 15px;
+		transition: 1s;
 	}
 	@media screen and (max-width: 769px) {
 		font-size: 11px;
+		transition: 1s;
 	}
 	@media screen and (max-width: 426px) {
 		font-size: 7px;
+		transition: 1s;
 	}
 }
 

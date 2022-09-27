@@ -106,3 +106,16 @@ export const CompassImage = styled.img`
   width: 15.93vw;
   margin-top: 2.188rem;
 `
+
+export const CompassImageMediaQuery = styled.img`
+  display: none;
+  @media screen and (max-width: 1025px) {
+    display: block;
+    width: 17.5rem;
+    margin-bottom: 7.5%;
+  }
+  @media screen and (max-width: 426px) {
+    width: 25rem;
+    margin-bottom: 15%;
+  }
+`

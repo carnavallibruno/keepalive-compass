@@ -57,6 +57,9 @@ export const DateTimeContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 2%;
+  @media screen and (max-width: 426px) {
+    margin-top: 5%;
+  }
 `
 
 export const Time = styled.h1`
@@ -64,6 +67,15 @@ export const Time = styled.h1`
   margin-bottom: -6.5%;
   font-weight: 700;
   font-size: 9rem;
+  @media screen and (max-width: 1025px) {
+    font-size: 6rem;
+  }
+  @media screen and (max-width: 769px) {
+    font-size: 9rem;
+  }
+  @media screen and (max-width: 426px) {
+    font-size: 9rem;
+  }
 `
 
 export const Date = styled.p`
@@ -71,7 +83,17 @@ export const Date = styled.p`
 
   font-size: 0.875rem;
   line-height: 18px;
+  @media screen and (max-width: 769px) {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+  }
+  @media screen and (max-width: 426px) {
+    font-size: 1.85rem;
+    margin-top: 2rem;
+  }
 `
+
+
 export const WeatherContainer = styled.div`
   margin-top: 2.31vh;
   margin-right: 2.08vw;
@@ -120,6 +142,12 @@ export const Main = styled.main`
   display: flex;
   justify-content: space-between;
   height: 77.8vh;
+  @media screen and (max-width: 426px) {
+    height: 67vh;
+  }
+  @media screen and (max-width: 281px) {
+    height: 13%;
+  }
 `
 
 export const ImageContainer = styled.div`
@@ -193,7 +221,14 @@ export const FooterHome = styled.footer`
   align-items: center;
   background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
   z-index: 1;
-
+  @media screen and (max-width: 426px) {
+    height: 13vh;
+  }
+  @media screen and (max-width: 281px) {
+    height: 25vh;
+    justify-content: space-around;
+    flex-direction: column;
+  }
 `
 
 export const FooterSentence = styled.p`
@@ -203,12 +238,21 @@ export const FooterSentence = styled.p`
   line-height: 0.951rem;
   text-align: right;
   margin-right: 1.82vw;
+  @media screen and (max-width: 1025px) {
+    width: 45vw;
+  }
+  @media screen and (max-width: 769px) {
+    display: none;
+  }
 `
 
 export const VerticalBar = styled.p`
   border: 1px solid #FFFFFF;
   height: 5.64vh;
   margin-right: 6.4vw;
+  @media screen and (max-width: 769px) {
+    display: none;
+  }
 `
 
 export const RefreshContainer = styled.div`
@@ -219,27 +263,81 @@ export const RefreshContainer = styled.div`
   align-items: center;
 
   margin-right: 19.21vw;
+  @media screen and (max-width: 1025px) {
+    width: 20vw;
+    margin-right: 10vw;
+  }
+  @media screen and (max-width: 426px) {
+    width: 30vw;
+    margin-right: 0vw;
+  }
+  @media screen and (max-width: 376px) {
+    margin-left: 5vw;
+  }
+  @media screen and (max-width: 321px) {
+    margin-left: 3vw;
+  }
+  @media screen and (max-width: 281px) {
+    width: 60vw;
+    margin-left: 0;
+  }
 `
 
 export const RefreshPhrase = styled.p`
   width: 5.67vw;
-
   font-size: 0.875rem;
   line-height: 18px;
-
   text-align: right;
+
+  @media screen and (max-width: 1025px) {
+    transition: 1s;
+    width: 10vw;
+  }
+  @media screen and (max-width: 769px) {
+    font-size: 1.1rem;
+  }
+  @media screen and (max-width: 426px) {
+    font-size: 2rem;
+    width: 20vw;
+  }
+  @media screen and (max-width: 321px) {
+    font-size: 2rem;
+    width: 25vw;
+  }
+  @media screen and (max-width: 281px) {
+    font-size: 1.75rem;
+  }
 `
 
 export const RefreshTimerContainer = styled.div`
   width: 5.05vw;
   text-align: center;
+  @media screen and (max-width: 1025px) {
+    width: 7vw;
+  }
+  @media screen and (max-width: 426px) {
+    font-size: 2rem;
+  }
+  @media screen and (max-width: 321px) {
+    margin-left: 2vw;
+  }
+  @media screen and (max-width: 281px) {
+    font-size: 1.5rem;
+    margin-left: 0;
+    width: 17.5vw;
+  }
 `
 
 export const RefreshTimer = styled.p`
   font-weight: 700;
   font-size: 3rem;
+  @media screen and (max-width: 426px) {
+    font-size: 4rem;
+  }
+  
 `
 
 export const HomeButtonsContainer = styled.div`
   display: flex;
+  height: 100%;
 `

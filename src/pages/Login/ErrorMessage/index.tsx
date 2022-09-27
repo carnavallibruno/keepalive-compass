@@ -25,6 +25,7 @@ export const ErrorMessage = styled.p`
   }
 
   @media screen and (max-width: 426px) {
-    width: 65vw;
+    width: 62.5vw;
+    font-size: 1.75rem;
   }
 `

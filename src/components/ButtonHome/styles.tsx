@@ -7,7 +7,7 @@ export const StyledHomeButton = styled.button`
   background: transparent;
 
   width: 6.82vw;
-  height: 9.16vh;
+  height: 100%;
   border: none;
 
   color: #FFFFFF;
@@ -17,5 +17,21 @@ export const StyledHomeButton = styled.button`
     transition: 0.5s;
     color: #C13216;
     background: #FFFFFF;
+  }
+  @media screen and (max-width: 1025px) {
+    width: 10vw;
+  }
+  @media screen and (max-width: 769px) {
+    width: 12.5vw;
+  }
+  @media screen and (max-width: 426px) {
+    width: 22.5vw;
+  }
+  @media screen and (max-width: 321px) {
+    width: 25vw;
+  }
+  @media screen and (max-width: 281px) {
+    font-size: 1.5rem;
+    width: 50vw;
   }
 `
