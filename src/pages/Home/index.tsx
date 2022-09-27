@@ -1,4 +1,3 @@
-import Weather from './Weather';
 import { useDate } from './Date/index';
 import { useTimer } from './Timer/index';
 import { useNavigate } from 'react-router-dom';
@@ -7,11 +6,19 @@ import Logo from '../../assets/LogoCompasso-1.svg'
 import BallLogo from '../../assets/bola-LogoCompasso.svg'
 import Cloud from '../../assets/weather-cloud.svg'
 import { LogoImage, ContainerHome, HomeNavbar, DateTimeContainer, Time, Date, City, Temperature, UolImage, Main, MissionContainer, MissionNormal, MissionRed, MissionRedSmall, FooterHome, FooterSentence, VerticalBar, RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer, HomeButtonsContainer, ImageContainer, WeatherContainer, WeatherTemperature, CloudIcon } from './styles';
+import { useState, useEffect } from 'react';
+import { Tempo } from './Weather';
 
 export default function Home() {
   const { date, time } = useDate()
   const { refreshTimer } = useTimer()
   const navigate = useNavigate()
+  const [ weather, setWeather] = useState({city: '', country: '', temperature: 0});
+  useEffect(() => {
+    Tempo().then((res) => {
+      setWeather({city: res.name, country: res.sys.country, temperature: res.main.temp})
+    })
+  }, [])
 
   return (
     <ContainerHome>
@@ -31,12 +38,11 @@ export default function Home() {
         </DateTimeContainer>
 
         <WeatherContainer>
-
-          <City>Passo Fundo - RS</City>
+          <City>{weather.city} - {weather.country}</City>
 
           <WeatherTemperature>
             <CloudIcon src={Cloud}></CloudIcon>
-            <Temperature>22º</Temperature>
+            <Temperature>{weather.temperature.toFixed(0)}º</Temperature>
           </WeatherTemperature>
 
         </WeatherContainer>

@@ -119,10 +119,11 @@ export const WeatherTemperature = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 `
 
 export const CloudIcon = styled.img`
-  width: 1.77vw;
+
   @media screen and (max-width: 1025px) {
     width: 4vw;
   }
@@ -130,8 +131,7 @@ export const CloudIcon = styled.img`
 
 export const Temperature = styled.p`
   color: #222222;
-
-  height: 5.64vh;
+  height: 5vh;
 
   font-size: 3rem;
   font-weight: 700;
