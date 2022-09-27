@@ -1,5 +1,7 @@
-import { AiOutlineUser, AiOutlineLock } from "react-icons/ai";
-import { StyledInput, InputContainer } from './styles';
+import { AiOutlineUser } from "react-icons/ai";
+import { HiOutlineLockClosed } from 'react-icons/hi'
+import { StyledInput, InputContainer, InputAll, IconContainer } from './styles';
+import { useState } from 'react';
 
 interface InputProps {
   type: string,
@@ -7,40 +9,43 @@ interface InputProps {
   user?: string,
   setUser?: React.Dispatch<React.SetStateAction<any>>,
   password?: string,
-  setPassword?: React.Dispatch<React.SetStateAction<any>>
+  setPassword?: React.Dispatch<React.SetStateAction<any>>,
+  visible: boolean,
 }
 
-const Input = ({ type, placeholder, user, setUser, password, setPassword }: InputProps) => {
+const Input = ({ type, placeholder, user, setUser, password, setPassword, visible }: InputProps) => {
+  const [focused, setFocused] = useState(false);
   return (
-    <InputContainer>
-      <StyledInput
-        type={type}
-        placeholder={placeholder}
-        onChange={(data) => {
-          switch (type) {
-            case "text":
-              setUser?.(data.target.value);
-
-            case "password":
-              setPassword?.(data.target.value);
+    <InputAll>
+      <InputContainer>
+        <StyledInput
+          type={type}
+          placeholder={placeholder}
+          onFocus={() => setFocused(true)}
+          onBlur={(event) => 
+            event.target.value.length > 0 ? setFocused(true) : setFocused(false)
           }
-        }
-        }
-      />
-      {
-        type == "text"
-          ? <AiOutlineUser
-            size={24}
-            color='#E0E0E0'
-            style={{border: '1px solid red'}}
-          />
-          : <AiOutlineLock
-            size={24}
-            color='#E0E0E0'
+          onChange={(data) => {
+            switch (type) {
+              case "text":
+                setUser?.(data.target.value);
+
+              case "password":
+                setPassword?.(data.target.value);
+            }
+          }
+          }
         />
-      }
-        
-    </InputContainer>
+        <IconContainer focused={focused}>
+          { type === 'text' ? (
+              <AiOutlineUser size={24}/>
+            ) : (
+              <HiOutlineLockClosed size={24} />
+            )
+          }
+        </IconContainer>
+      </InputContainer>
+    </InputAll>
   )
 }
 

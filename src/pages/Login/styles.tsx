@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import laptopImg from '../../assets/laptop.svg';
+import laptop from '../../assets/laptop.png'; // ? Calls for error but for some reason the project still imports the image and uses it
 
 export const Container = styled.div`
   display: flex;
@@ -20,6 +20,9 @@ export const FormSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 1024px) {
+    width: 100vw;
+  }
 `
 
 export const FormContainer = styled.form`
@@ -55,9 +58,13 @@ export const Label = styled.label`
 export const ImageSection = styled.section`
   text-align: center;
   width: 50vw;
-  background-image: url(${laptopImg});
+  background-image: url(${laptop});
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
 `
 
 export const CompassImage = styled.img`

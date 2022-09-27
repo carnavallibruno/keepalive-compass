@@ -11,7 +11,9 @@ export default function ButtonHome({ destination, buttonTitle }: ButtonProps) {
   return (
     <StyledHomeButton 
     onClick={() => destination.includes('https://')
-    ? window.open('https://compass.uol/pt/home', '_blank') 
+    ? window.open('https://compass.uol/pt/home', '_blank')
     : navigate(`${destination}`) }>{buttonTitle}</StyledHomeButton>
   )
 }
+
+// window.open('https://compass.uol/pt/home', 'Compass', "height=1200,width=1200")
