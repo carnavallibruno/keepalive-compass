@@ -3,12 +3,13 @@ import styled from "styled-components";
 export const ContainerHome = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   
   background: linear-gradient(105.96deg, #FFFFFF 0%, #F0F0F0 97.86%);
   box-shadow: 4px 4px 70px rgba(0, 0, 0, 0.25);
 
   margin: 0 auto;
-
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
 `
@@ -16,7 +17,7 @@ export const ContainerHome = styled.div`
 export const HomeNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
-  height: 15.64vh;
+  height: 12.95vh;
 `
 
 export const LogoImage = styled.img`
@@ -32,6 +33,7 @@ export const DateTimeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 2%;
 `
 
 export const Time = styled.h1`
@@ -85,18 +87,19 @@ export const Temperature = styled.p`
 export const Main = styled.main`
   display: flex;
   justify-content: space-between;
-  height: 75.18vh;
-`
-
-export const UolImage = styled.img`
-  margin-top: 5.83vh;
-  margin-left: -12.13vw;
-
-  width: 42.96vw;
+  height: 77.8vh;
 `
 
 export const ImageContainer = styled.div`
-  
+  position: relative;
+`
+
+export const UolImage = styled.img`
+  width: 42.96vw;
+  position: absolute;
+  bottom: -4vw;
+  left: -12vw;
+  z-index: 0;
 `
 
 export const MissionContainer = styled.div`
@@ -139,6 +142,8 @@ export const FooterHome = styled.footer`
   justify-content: flex-end;
   align-items: center;
   background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
+  z-index: 1;
+
 `
 
 export const FooterSentence = styled.p`

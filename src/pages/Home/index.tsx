@@ -16,7 +16,10 @@ export default function Home() {
   return (
     <ContainerHome>
       <HomeNavbar>
-        <LogoImage src={Logo} />
+        <LogoImage 
+          src={Logo}
+          onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{cursor: 'pointer'}}
+        />
         <DateTimeContainer>
           <Time>
             {time}
@@ -66,7 +69,7 @@ export default function Home() {
             <RefreshPhrase>Application refresh in</RefreshPhrase>
 
             <RefreshTimerContainer>
-              <RefreshTimer>{refreshTimer}</RefreshTimer>
+              <RefreshTimer>{refreshTimer < 10 ? `0${refreshTimer}` : refreshTimer}</RefreshTimer>
               <p>seconds</p>
             </RefreshTimerContainer>
 

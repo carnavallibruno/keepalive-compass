@@ -8,7 +8,7 @@ export const StyledContinueButton = styled.button`
 
   color: #FFFFFF;
 
-  width: 21vw;
+  width: 93.5%;
   height: 4.188rem;
 
   font-size: 1.125rem;
@@ -25,4 +25,12 @@ export const StyledContinueButton = styled.button`
     background: linear-gradient(90deg, #C13216 100%, #FF2D04 0%);
     transition: 5s;
   }
+
+  @media screen and (max-width: 1025px) {
+    width: 51vw;
+  }
+
+  @media screen and (max-width: 426px) {
+    width: 68vw;
+}
 `

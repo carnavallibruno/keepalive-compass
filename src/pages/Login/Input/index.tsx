@@ -22,7 +22,7 @@ const Input = ({ type, placeholder, user, setUser, password, setPassword, visibl
           type={type}
           placeholder={placeholder}
           onFocus={() => setFocused(true)}
-          onBlur={(event) => 
+          onBlur={(event) =>
             event.target.value.length > 0 ? setFocused(true) : setFocused(false)
           }
           onChange={(data) => {
@@ -37,11 +37,11 @@ const Input = ({ type, placeholder, user, setUser, password, setPassword, visibl
           }
         />
         <IconContainer focused={focused}>
-          { type === 'text' ? (
-              <AiOutlineUser size={24}/>
-            ) : (
-              <HiOutlineLockClosed size={24} />
-            )
+          {type === 'text' ? (
+            <AiOutlineUser size={24} />
+          ) : (
+            <HiOutlineLockClosed size={24} />
+          )
           }
         </IconContainer>
       </InputContainer>

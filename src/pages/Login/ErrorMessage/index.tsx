@@ -14,4 +14,16 @@ export const ErrorMessage = styled.p`
 
   font-weight: 700;
   line-height: 1.85vh;
+
+  @media screen and (max-width: 1025px) {
+    width: 25vw;
+  }
+
+  @media screen and (max-width: 769px) {
+    width: 33vw;
+  }
+
+  @media screen and (max-width: 426px) {
+    width: 65vw;
+  }
 `

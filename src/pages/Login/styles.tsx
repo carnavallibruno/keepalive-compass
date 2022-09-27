@@ -8,6 +8,9 @@ export const Container = styled.div`
   height: 100%;
 
   margin: 0 auto;
+  @media screen and (max-width: 281px) {
+    height: 100vh;
+  }
 `
 
 export const FormSection = styled.section`
@@ -20,13 +23,21 @@ export const FormSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media screen and (max-width: 1024px) {
+
+  @media screen and (max-width: 1025px) {
     width: 100vw;
   }
 `
 
 export const FormContainer = styled.form`
   height: 63.42vh;
+
+  @media screen and (max-width: 1025px) {
+    text-align: left;
+  }
+  @media screen and (max-width: 321px) {
+    width: 75vw;
+  }
 `
 
 export const Titulo = styled.h1`
@@ -36,6 +47,10 @@ export const Titulo = styled.h1`
   font-weight: 400;
 
   margin-bottom: 1.063rem;
+  
+  @media screen and (max-width: 1025px) {
+    text-align: left;
+  }
 `
 
 export const Description = styled.p`
@@ -47,12 +62,20 @@ export const Description = styled.p`
   line-height: 20px;
 
   margin-bottom: 12.5vh;
+
+  @media screen and (max-width: 1025px) {
+    text-align: left;
+  }
+  @media screen and (max-width: 321px) {
+    width: 75vw;
+  }
 `
 
 export const Label = styled.label`
   height: 3.51vh;
-  
   font-size: 1.875rem;
+
+  
 `
 
 export const ImageSection = styled.section`
@@ -62,7 +85,7 @@ export const ImageSection = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1025px) {
     display: none;
   }
 `

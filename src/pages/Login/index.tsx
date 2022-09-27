@@ -77,6 +77,7 @@ export default function Login() {
       <ImageSection>
         <CompassImage
           src={compassImg}
+          onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{cursor: 'pointer'}}
         />
       </ImageSection>
 

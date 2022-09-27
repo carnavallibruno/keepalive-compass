@@ -14,10 +14,10 @@ export const StyledInput = styled.input`
 
   font-size: 1rem;
 
-  padding-left: 1.04vw;
+  padding-left: 5.27%;
   
   color: #FFFFFF;
-  
+
   outline: none;
   border: 1px solid #FFFFFF;
   border-radius: 50px;
@@ -25,9 +25,13 @@ export const StyledInput = styled.input`
   ::placeholder {
     color: #E0E0E0;
   }
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1025px) {
     width: 50vw;
   }
+
+  @media screen and (max-width: 426px) {
+    width: 65vw;
+}
 `
 
 export const InputAll = styled.div`
@@ -43,5 +47,5 @@ export const IconContainer = styled.div<IconProps>`
   transition: 0.5s transform;
 
   ${(props) =>
-    props.focused ? "transform: translate(-2.4vw)" : "transform: translate( 1.04vw, 0)"}
+    props.focused ? "transform: translate(-180%)" : "transform: translate( 1.04vw, 0)"}
 `
