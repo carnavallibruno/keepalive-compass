@@ -1,6 +1,6 @@
 import Input from "./Input";
 import { useState } from 'react';
-import { Description, Titulo, Container, FormSection, FormContainer, ImageSection, Label, CompassImage, CompassImageMediaQuery } from './styles'
+import { Description, Titulo, Container, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, Header, Form } from './styles'
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { Navigate, useNavigate } from 'react-router-dom';
 import ButtonContinue from './../../components/ButtonContinue';
@@ -15,9 +15,9 @@ export default function Login() {
   openWeather.getCurrentWeatherByCityName({
     cityName: 'Florianopolis'
   })
-  .then((weather) => console.log('Weather object is', weather));
+    .then((weather) => console.log('Weather object is', weather));
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [user, setUser] = useState("");
 
   const [password, setPassword] = useState("");
@@ -46,11 +46,6 @@ export default function Login() {
   return (
     <Container>
       <FormSection>
-        <CompassImageMediaQuery
-          src={compassImg}
-          onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
-        />
-
         <FormContainer onSubmit={(event) => {
           event.preventDefault();
           (!passwordValidate(password))
@@ -58,35 +53,41 @@ export default function Login() {
             : navigate('/home')
         }}>
 
-          <Titulo>Olá,</Titulo>
+          <Header>
+            <Titulo>Olá,</Titulo>
+            <Description>Para continuar navegando de forma segura, efetue o login na rede.</Description>
+          </Header>
 
-          <Description>Para continuar navegando de forma segura, efetue o login na rede.</Description>
+          <Form>
+            <LoginContainer>
+              <Label>Login</Label>
+              
+              <Input
+                type="text"
+                placeholder="Usuário"
+                user={user}
+                setUser={setUser}
+                visible={visible}
+                isPassword={false}
+              />
 
-          <Label>Login</Label>
-          <Input
-            type="text"
-            placeholder="Usuário"
-            user={user}
-            setUser={setUser}
-            visible={visible}
-            isPassword={false}
-          />
+              <Input
+                type="password"
+                placeholder="Senha"
+                password={password}
+                setPassword={setPassword}
+                visible={visible}
+                isPassword={true}
+              />
+            </LoginContainer>
 
-          <Input
-            type="password"
-            placeholder="Senha"
-            password={password}
-            setPassword={setPassword}
-            visible={visible}
-            isPassword={true}
-          />
+            {visible && <ErrorMessage>Ops, usuário ou senha inválidos. Tente novamente!</ErrorMessage>}
 
-          {visible && <ErrorMessage>Ops, usuário ou senha inválidos. Tente novamente!</ErrorMessage>}
-
-          <ButtonContinue
-            buttonTitle='Continuar'
-            visible={visible}
-          />
+            <ButtonContinue
+              buttonTitle='Continuar'
+              visible={visible}
+            />
+          </Form>
 
         </FormContainer>
       </FormSection>
@@ -99,7 +100,6 @@ export default function Login() {
       </ImageSection>
 
     </Container>
-
   )
-  
+
 }

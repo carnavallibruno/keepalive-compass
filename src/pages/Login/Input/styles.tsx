@@ -31,27 +31,6 @@ export const StyledInput = styled.input<InputProps>`
   ::placeholder {
     font-size: 1rem;
     color: #E0E0E0;
-    @media screen and (max-width: 1025px) {
-      font-size: 1.25rem;
-    }
-  }
-
-  @media screen and (max-width: 1025px) {
-    width: 50vw;
-  }
-
-  @media screen and (max-width: 426px) {
-    width: 65vw;
-    font-size: 1.25rem;
-    padding-right: 15%;
-  }
-  
-  @media screen and (max-width: 321px) {
-    padding-right: 17.5%;
-  }
-
-  @media screen and (max-width: 281px) {
-    padding-right: 20%;
   }
 
   ${(props) => 

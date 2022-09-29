@@ -8,9 +8,6 @@ export const Container = styled.div`
   height: 100%;
 
   margin: 0 auto;
-  @media screen and (max-width: 281px) {
-    height: 100vh;
-  }
 `
 
 export const FormSection = styled.section`
@@ -23,24 +20,14 @@ export const FormSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`
 
-  @media screen and (max-width: 1025px) {
-    width: 100vw;
-  }
+export const Header = styled.div`
+  
 `
 
 export const FormContainer = styled.form`
   height: 63.42vh;
-
-  @media screen and (max-width: 1025px) {
-    text-align: left;
-  }
-  @media screen and (max-width: 321px) {
-    width: 75vw;
-  }
-  @media screen and (max-width: 1025px) {
-    height: 80vh;
-  }
 `
 
 export const Titulo = styled.h1`
@@ -50,10 +37,6 @@ export const Titulo = styled.h1`
   font-weight: 400;
 
   margin-bottom: 1.063rem;
-  
-  @media screen and (max-width: 1025px) {
-    text-align: left;
-  }
 `
 
 export const Description = styled.p`
@@ -65,29 +48,19 @@ export const Description = styled.p`
   line-height: 20px;
 
   margin-bottom: 12.5vh;
+`
 
-  @media screen and (max-width: 1025px) {
-    text-align: left;
-    font-size: 2rem;
-    width: 35.813rem;
-    line-height: 30px;
-  }
-  @media screen and (max-width: 426px) {
-    font-size: 2.5rem;
-  }
-  @media screen and (max-width: 321px) {
-    width: 75vw;
-  }
-  @media screen and (max-width: 281px) {
-    height: 15rem;
-  }
+export const Form = styled.div`
+
+`
+
+export const LoginContainer = styled.div`
+
 `
 
 export const Label = styled.label`
   height: 3.51vh;
   font-size: 1.875rem;
-
-  
 `
 
 export const ImageSection = styled.section`
@@ -96,26 +69,9 @@ export const ImageSection = styled.section`
   background-image: url(${laptop});
   background-repeat: no-repeat;
   background-size: cover;
-
-  @media screen and (max-width: 1025px) {
-    display: none;
-  }
 `
 
 export const CompassImage = styled.img`
   width: 15.93vw;
   margin-top: 2.188rem;
-`
-
-export const CompassImageMediaQuery = styled.img`
-  display: none;
-  @media screen and (max-width: 1025px) {
-    display: block;
-    width: 17.5rem;
-    margin-bottom: 7.5%;
-  }
-  @media screen and (max-width: 426px) {
-    width: 25rem;
-    margin-bottom: 15%;
-  }
 `
