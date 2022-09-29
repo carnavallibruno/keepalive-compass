@@ -4,6 +4,7 @@ import { StyledHomeButton } from './styles';
 interface ButtonProps {
   buttonTitle: string;
   destination: string;
+  children?: React.ReactNode;
 }
 
 export default function ButtonHome({ destination, buttonTitle }: ButtonProps) {

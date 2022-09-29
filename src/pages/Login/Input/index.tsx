@@ -4,13 +4,14 @@ import { StyledInput, InputContainer, InputAll, IconContainer } from './styles';
 import { useState } from 'react';
 
 interface InputProps {
-  type: string,
-  placeholder: string,
-  user?: string,
-  setUser?: React.Dispatch<React.SetStateAction<any>>,
-  password?: string,
-  setPassword?: React.Dispatch<React.SetStateAction<any>>,
-  visible: boolean,
+  type: string;
+  placeholder: string;
+  user?: string;
+  setUser?: React.Dispatch<React.SetStateAction<any>>;
+  password?: string;
+  setPassword?: React.Dispatch<React.SetStateAction<any>>;
+  visible: boolean;
+  isPassword: boolean;
 }
 
 const Input = ({ type, placeholder, user, setUser, password, setPassword, visible }: InputProps) => {
@@ -31,6 +32,7 @@ const Input = ({ type, placeholder, user, setUser, password, setPassword, visibl
           onBlur={(event) =>
             event.target.value.length > 0 ? setFocused(true) : setFocused(false)
           }
+
           onChange={(data) => {
             switch (type) {
               case "text":

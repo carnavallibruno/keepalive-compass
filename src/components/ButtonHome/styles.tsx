@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const StyledHomeButton = styled.button`
+interface ButtonProps {
+  children?: React.ReactNode;
+}
+
+export const StyledHomeButton = styled.button<ButtonProps>`
   font-family: 'Mark Pro';
   font-weight: 400;
 
@@ -10,14 +14,9 @@ export const StyledHomeButton = styled.button`
   height: 100%;
   border: none;
 
+  cursor: pointer;
   color: #FFFFFF;
 
-  &:hover {
-    cursor: pointer;
-    transition: 0.5s;
-    color: #C13216;
-    background: #FFFFFF;
-  }
   @media screen and (max-width: 1025px) {
     width: 10vw;
   }
@@ -33,5 +32,9 @@ export const StyledHomeButton = styled.button`
   @media screen and (max-width: 281px) {
     font-size: 1.5rem;
     width: 50vw;
+  }
+
+  ${(props) => 
+    props.children == 'Continuar Navegando' ? "color: #C13216; background: #FFFFFF;" : ''
   }
 `

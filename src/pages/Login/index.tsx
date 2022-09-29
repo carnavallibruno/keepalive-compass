@@ -69,6 +69,7 @@ export default function Login() {
             user={user}
             setUser={setUser}
             visible={visible}
+            isPassword={false}
           />
 
           <Input
@@ -77,6 +78,7 @@ export default function Login() {
             password={password}
             setPassword={setPassword}
             visible={visible}
+            isPassword={true}
           />
 
           {visible && <ErrorMessage>Ops, usuário ou senha inválidos. Tente novamente!</ErrorMessage>}

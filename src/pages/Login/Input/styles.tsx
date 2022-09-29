@@ -59,7 +59,7 @@ export const StyledInput = styled.input<InputProps>`
   }
 
   /* ${(props) =>
-    props.isPassword ? "font-size: 2rem" : "font-size: 1rem"
+    props.isPassword === true ? "font-size: 2rem;" : "font-size: 1rem;"
   } */
 `
 
