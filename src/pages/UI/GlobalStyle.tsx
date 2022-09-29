@@ -24,27 +24,13 @@ time, mark, audio, video {
 	font-weight: 400;
 }
 
-:root {
-	@media screen and (max-width: 1025px) {
-		font-size: 15px;
-		transition: 1s;
-	}
-	@media screen and (max-width: 769px) {
-		font-size: 11px;
-		transition: 1s;
-	}
-	@media screen and (max-width: 426px) {
-		font-size: 7px;
-		transition: 1s;
-	}
-}
-
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
 	line-height: 1;
+	max-height: 100vh;
 }
 ol, ul {
 	list-style: none;

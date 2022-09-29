@@ -10,7 +10,7 @@ export const StyledHomeButton = styled.button<ButtonProps>`
 
   background: transparent;
 
-  width: 6.82vw;
+  width: 50%;
   height: 100%;
   border: none;
 
