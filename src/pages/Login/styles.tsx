@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
 
   width: 100vw;
-  height: 100%;
+  height: 100vh;
 
   margin: 0 auto;
 `
@@ -13,8 +13,8 @@ export const Container = styled.div`
 export const FormSection = styled.section`
   color: #E0E0E0;
   background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%);
-  width: 50vw;
-  height: 100vh;
+  width: 50%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -22,56 +22,70 @@ export const FormSection = styled.section`
   justify-content: center;
 `
 
-export const Header = styled.div`
-  
-`
-
 export const FormContainer = styled.form`
-  height: 63.42vh;
+  height: 63.61%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
-export const Titulo = styled.h1`
-  height: 7.03vh;
+export const Header = styled.div`
+  height: 21.1%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+`
+
+export const Title = styled.h1`
+  height: 52.41%;
 
   font-size: 3.75rem;
   font-weight: 400;
 
-  margin-bottom: 1.063rem;
+  /* margin-bottom: 1.063rem; */
 `
 
 export const Description = styled.p`
   font-size: 1rem;
-
   width: 18.813rem;
-  height: 4.81vh;
+  height: 35.86%;
 
   line-height: 20px;
-
-  margin-bottom: 12.5vh;
+  /* margin-bottom: 12.5vh; */
 `
 
 export const Form = styled.div`
+  height: 58.8%;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 export const LoginContainer = styled.div`
+  height: 55.19%;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `
 
 export const Label = styled.label`
-  height: 3.51vh;
+  height: 17.04%;
   font-size: 1.875rem;
 `
 
 export const ImageSection = styled.section`
   text-align: center;
-  width: 50vw;
+  width: 50%;
   background-image: url(${laptop});
   background-repeat: no-repeat;
   background-size: cover;
 `
 
 export const CompassImage = styled.img`
-  width: 15.93vw;
+  width: 31.86%;
   margin-top: 2.188rem;
 `

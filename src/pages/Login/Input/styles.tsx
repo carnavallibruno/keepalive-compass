@@ -9,6 +9,15 @@ interface InputProps {
   isPassword: boolean;
 }
 
+export const InputAll = styled.div`
+  /* margin-top: 2rem; */
+`
+
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 export const StyledInput = styled.input<InputProps>`
   font-family: 'Mark Pro';
   font-weight: 400;
@@ -42,14 +51,7 @@ export const StyledInput = styled.input<InputProps>`
   } */
 `
 
-export const InputAll = styled.div`
-  margin-top: 2rem;
-`
 
-export const InputContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
 
 export const IconContainer = styled.div<IconProps>`
   transition: 0.5s transform;

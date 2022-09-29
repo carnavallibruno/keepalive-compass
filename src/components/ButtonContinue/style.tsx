@@ -14,7 +14,7 @@ export const StyledContinueButton = styled.button`
   font-size: 1.125rem;
   font-weight: 700;
 
-  margin-top: 10.64vh;
+  /* margin-top: 10.64vh; */
   
   background: linear-gradient(90deg, #FF2D04 0%, #C13216 100%);
   box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
@@ -25,12 +25,4 @@ export const StyledContinueButton = styled.button`
     background: linear-gradient(90deg, #C13216 100%, #FF2D04 0%);
     transition: 5s;
   }
-
-  @media screen and (max-width: 1025px) {
-    width: 51vw;
-  }
-
-  @media screen and (max-width: 426px) {
-    width: 68vw;
-}
 `

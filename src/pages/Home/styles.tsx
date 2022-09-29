@@ -10,45 +10,23 @@ export const ContainerHome = styled.div`
 
   margin: 0 auto;
   box-sizing: border-box;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 `
 
 export const HomeNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
-  height: 12.95vh;
-  @media screen and (max-width: 426px) {
-    width: 100vw;
-    height: 20vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
+  height: 12.95%;
+  border: 1px solid red;
 `
 
 export const LogoImage = styled.img`
-  width: 7.8125vw;
-  height: 3.9583vh;
+  width: 7.81%;
+  height: 30.56%;
 
   margin-left: 2.08vw;
   margin-top: 2.31vh;
-  @media screen and (max-width: 1025px) {
-    width: 12.5vw;
-  }
-  @media screen and (max-width: 769px) {
-    width: 13vw;
-    margin-top: 5vh;
-  }
-  @media screen and (max-width: 426px) {
-    width: 30vw;
-    margin-top: 2.31vh;
-    margin-left: 0vw;
-    height: 5vh;
-
-  }
 `
 
 export const DateTimeContainer = styled.div`
@@ -57,25 +35,14 @@ export const DateTimeContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 2%;
-  @media screen and (max-width: 426px) {
-    margin-top: 5%;
-  }
 `
 
 export const Time = styled.h1`
   color: #222222;
   margin-bottom: -6.5%;
   font-weight: 700;
+  border: 1px solid red;
   font-size: 9rem;
-  @media screen and (max-width: 1025px) {
-    font-size: 6rem;
-  }
-  @media screen and (max-width: 769px) {
-    font-size: 9rem;
-  }
-  @media screen and (max-width: 426px) {
-    font-size: 9rem;
-  }
 `
 
 export const Date = styled.p`
@@ -83,14 +50,8 @@ export const Date = styled.p`
 
   font-size: 0.875rem;
   line-height: 18px;
-  @media screen and (max-width: 769px) {
-    font-size: 1.25rem;
-    margin-top: 1rem;
-  }
-  @media screen and (max-width: 426px) {
-    font-size: 1.85rem;
-    margin-top: 2rem;
-  }
+
+  border: 1px solid red;
 `
 
 
@@ -100,9 +61,6 @@ export const WeatherContainer = styled.div`
 
   display: flex;
   flex-direction: column;
-  @media screen and (max-width: 426px) {
-    display: none;
-  }
 `
 
 export const City = styled.p`
@@ -110,9 +68,6 @@ export const City = styled.p`
 
   font-size: 0.875rem;
   line-height: 18px;
-  @media screen and (max-width: 769px) {
-    font-size: 1.2rem;
-  }
 `
 
 export const WeatherTemperature = styled.div`
@@ -124,9 +79,6 @@ export const WeatherTemperature = styled.div`
 
 export const CloudIcon = styled.img`
 
-  @media screen and (max-width: 1025px) {
-    width: 4vw;
-  }
 `
 
 export const Temperature = styled.p`
@@ -141,13 +93,9 @@ export const Temperature = styled.p`
 export const Main = styled.main`
   display: flex;
   justify-content: space-between;
-  height: 77.8vh;
-  @media screen and (max-width: 426px) {
-    height: 67vh;
-  }
-  @media screen and (max-width: 281px) {
-    height: 13%;
-  }
+  height: 77.8%;
+  border: 1px solid red;
+
 `
 
 export const ImageContainer = styled.div`
@@ -160,9 +108,6 @@ export const UolImage = styled.img`
   bottom: -4vw;
   left: -12vw;
   z-index: 0;
-  @media screen and (max-width: 1561px) {
-    display: none;
-  }
 `
 
 export const MissionContainer = styled.div`
@@ -170,9 +115,6 @@ export const MissionContainer = styled.div`
   margin-right: 6.97vw;
   text-align: right;
   z-index: 1;
-  @media screen and (max-width: 426px) {
-    margin-top: 7.5vh;
-  }
 `
 
 export const MissionRedSmall = styled.p`
@@ -191,12 +133,6 @@ export const MissionRed = styled.p`
   
   margin-top: 1.25%;
   margin-bottom: -1%;
-  @media screen and (max-width: 426px) {
-    font-size: 3.6rem;
-  }
-  @media screen and (max-width: 376px) {
-    font-size: 3rem;
-  }
 `
 
 export const MissionNormal = styled.p`
@@ -204,9 +140,6 @@ export const MissionNormal = styled.p`
   font-size: 1.5rem;
   line-height: 30px;
   margin-bottom: -1.5%;
-  @media screen and (max-width: 769px) {
-    font-size: 1.75rem;
-  }
 `
 
 
@@ -214,21 +147,15 @@ export const MissionNormal = styled.p`
 export const FooterHome = styled.footer`
   color: #FFFFFF;
   
-  height: 9.25vh;
+  height: 9.25%;
 
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
   z-index: 1;
-  @media screen and (max-width: 426px) {
-    height: 13vh;
-  }
-  @media screen and (max-width: 281px) {
-    height: 25vh;
-    justify-content: space-around;
-    flex-direction: column;
-  }
+  border: 1px solid red;
+
 `
 
 export const FooterSentence = styled.p`

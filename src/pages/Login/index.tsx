@@ -1,6 +1,6 @@
 import Input from "./Input";
 import { useState } from 'react';
-import { Description, Titulo, Container, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, Header, Form } from './styles'
+import { Description, Title, Container, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, Header, Form } from './styles'
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { Navigate, useNavigate } from 'react-router-dom';
 import ButtonContinue from './../../components/ButtonContinue';
@@ -51,10 +51,10 @@ export default function Login() {
           (!passwordValidate(password))
             ? setVisible(true)
             : navigate('/home')
-        }}>
+          }}>
 
           <Header>
-            <Titulo>Olá,</Titulo>
+            <Title>Olá,</Title>
             <Description>Para continuar navegando de forma segura, efetue o login na rede.</Description>
           </Header>
 
