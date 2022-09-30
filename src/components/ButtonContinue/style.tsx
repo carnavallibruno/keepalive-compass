@@ -8,7 +8,7 @@ export const StyledContinueButton = styled.button`
 
   color: #FFFFFF;
 
-  width: 93.5%;
+  width: 94.5%;
   height: 4.188rem;
 
   font-size: 1.125rem;

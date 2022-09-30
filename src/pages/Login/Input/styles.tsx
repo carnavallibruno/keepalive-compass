@@ -6,16 +6,18 @@ interface IconProps {
 
 interface InputProps {
   visible: boolean;
-  isPassword: boolean;
 }
 
 export const InputAll = styled.div`
   /* margin-top: 2rem; */
+  height: 60px;
 `
 
 export const InputContainer = styled.div`
   display: flex;
   align-items: center;
+
+  height: 100%;
 `
 
 export const StyledInput = styled.input<InputProps>`
@@ -23,8 +25,8 @@ export const StyledInput = styled.input<InputProps>`
   font-weight: 400;
   background: transparent;
 
-  width: 19.73vw;
-  height: 3.75rem;
+  width: 100%;
+  height: 100%;
 
   font-size: 1rem;
 
@@ -45,10 +47,6 @@ export const StyledInput = styled.input<InputProps>`
   ${(props) => 
     props.visible ? "border: 1px solid #E9B425;" : "border: 1px solid #FFFFFF"
   }
-
-  /* ${(props) =>
-    props.isPassword === true ? "font-size: 2rem;" : "font-size: 1rem;"
-  } */
 `
 
 

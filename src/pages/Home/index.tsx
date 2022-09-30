@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useDate } from './Date/index';
 import { useTimer } from './Timer/index';
 import { useNavigate } from 'react-router-dom';
@@ -5,27 +6,34 @@ import ButtonHome from '../../components/ButtonHome';
 import Logo from '../../assets/LogoCompasso-1.svg'
 import BallLogo from '../../assets/bola-LogoCompasso.svg'
 import Cloud from '../../assets/weather-cloud.svg'
-import { LogoImage, ContainerHome, HomeNavbar, DateTimeContainer, Time, Date, City, Temperature, UolImage, Main, MissionContainer, MissionNormal, MissionRed, MissionRedSmall, FooterHome, FooterSentence, VerticalBar, RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer, HomeButtonsContainer, ImageContainer, WeatherContainer, WeatherTemperature, CloudIcon } from './styles';
-import { useState, useEffect } from 'react';
+import { LogoImage, ContainerHome, HomeNavbar, UolImage, Main, FooterHome, FooterSentence, VerticalBar, HomeButtonsContainer, ImageContainer } from './styles';
+import { DateTimeContainer, Time, Date } from './Date/styles';
+import Mission from './Mission/index';
+import { RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer } from './Timer/styles';
+import { City, Temperature, WeatherContainer, WeatherTemperature, CloudIcon } from './Weather/styles'
 import { Tempo } from './Weather';
 
 export default function Home() {
   const { date, time } = useDate()
   const { refreshTimer } = useTimer()
   const navigate = useNavigate()
-  const [ weather, setWeather] = useState({city: '', country: '', temperature: 0});
+  const [weather, setWeather] = useState({ city: '', country: '', temperature: 0 });
   useEffect(() => {
-    Tempo().then((res) => {
-      setWeather({city: res.name, country: res.sys.country, temperature: res.main.temp})
+    navigator.geolocation.getCurrentPosition(async function(position) {     
+      let latitude = -15.793889 || position.coords.latitude;
+      let longitude = -47.882778 || position.coords.longitude;
+      Tempo().then((res) => {
+        setWeather({ city: res.name, country: res.sys.country, temperature: res.main.temp })
+      })
     })
   }, [])
 
   return (
     <ContainerHome>
       <HomeNavbar>
-        <LogoImage 
+        <LogoImage
           src={Logo}
-          onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{cursor: 'pointer'}}
+          onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
         />
         <DateTimeContainer>
           <Time>
@@ -49,20 +57,11 @@ export default function Home() {
       </HomeNavbar>
 
       <Main>
-        <ImageContainer>
+        {/* <ImageContainer>
           <UolImage src={BallLogo} />
-        </ImageContainer>
+        </ImageContainer> */}
 
-        <MissionContainer>
-          <MissionRedSmall>Our mission is</MissionRedSmall>
-          <MissionNormal>Nossa missão é</MissionNormal>
-          <MissionRed>to transform the world</MissionRed>
-          <MissionNormal>transformar o mundo</MissionNormal>
-          <MissionRed>building digital experiences</MissionRed>
-          <MissionNormal>construindo experiências digitais</MissionNormal>
-          <MissionRed>that enable our client’s growth</MissionRed>
-          <MissionNormal>que permitam o crescimento dos nossos clientes</MissionNormal>
-        </MissionContainer>
+        <Mission />
       </Main>
 
       <FooterHome>

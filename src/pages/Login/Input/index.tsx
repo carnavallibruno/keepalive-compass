@@ -11,12 +11,12 @@ interface InputProps {
   password?: string;
   setPassword?: React.Dispatch<React.SetStateAction<any>>;
   visible: boolean;
-  isPassword: boolean;
+  isPassword?: boolean;
 }
 
-const Input = ({ type, placeholder, user, setUser, password, setPassword, visible }: InputProps) => {
+const Input = ({ type, placeholder, user, setUser, password, setPassword, visible, isPassword }: InputProps) => {
   const [focused, setFocused] = useState(false);
-  const [isPassword, setIsPassword] = useState(false);
+  // const [isPassword, setIsPassword] = useState(false);
 
   return (
     <InputAll>
@@ -27,7 +27,9 @@ const Input = ({ type, placeholder, user, setUser, password, setPassword, visibl
           onFocus={() => setFocused(true)}
           
           visible={visible}
-          isPassword={isPassword}
+          // isPassword={isPassword}
+
+          style={{ fontSize: isPassword && password != '' ? '2.25rem' : '1rem' }}
 
           onBlur={(event) =>
             event.target.value.length > 0 ? setFocused(true) : setFocused(false)
@@ -37,13 +39,15 @@ const Input = ({ type, placeholder, user, setUser, password, setPassword, visibl
             switch (type) {
               case "text":
                 setUser?.(data.target.value);
-                setIsPassword(false);
+                // setIsPassword(false);
 
               case "password":
                 setPassword?.(data.target.value);
-                setIsPassword(true);
+                // setIsPassword(true);
             }
           }
+
+          
           }
         />
         <IconContainer focused={focused}>

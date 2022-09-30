@@ -8,6 +8,9 @@ export const Container = styled.div`
   height: 100vh;
 
   margin: 0 auto;
+  @media screen and (max-width: 769px) {
+    background-image: url(${laptop});
+  }
 `
 
 export const FormSection = styled.section`
@@ -20,22 +23,78 @@ export const FormSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (max-width: 769px) {
+    width: 100%;
+    background: none;
+    backdrop-filter: blur(4px);
+    justify-content: flex-start;
+  }
 `
 
 export const FormContainer = styled.form`
   height: 63.61%;
+  width: 43.43%;
 
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 1441px) {
+    width: 43.43%;
+    height: 70%;
+    width: 50%;
+  }
+  @media screen and (max-width: 1369px) {
+    height: 77.5%;
+  }
+  @media screen and (max-width: 1025px) {
+    width: 65%;
+  }
+  @media screen and (max-width: 769px) {
+    height: 65%;
+  }
+  @media screen and (max-width: 426px) {
+    width: 75%;
+    height: 70%;
+  }
+`
+
+export const ImageContainer = styled.div`
+  width: 40%;
+  text-align: center;
+  display: none;
+  @media screen and (max-width: 769px) {
+    display: block;
+
+    margin-top: 5%;
+    margin-bottom: 15%;
+  }
+  @media screen and (max-width: 426px) {
+    width: 55%;
+  }
+`
+
+export const CompassImageMobile = styled.img`
+  width: 100%;
+  margin-top: 2.188rem;
 `
 
 export const Header = styled.div`
+  width: 72.18%;
   height: 21.1%;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  @media screen and (max-width: 1369px) {
+    height: 22.5%;
+  }
+  @media screen and (max-width: 769px) {
+    height: 20%;
+  }
+  @media screen and (max-width: 426px) {
+    height: 22%;
+  }
 `
 
 export const Title = styled.h1`
@@ -43,8 +102,6 @@ export const Title = styled.h1`
 
   font-size: 3.75rem;
   font-weight: 400;
-
-  /* margin-bottom: 1.063rem; */
 `
 
 export const Description = styled.p`
@@ -53,23 +110,36 @@ export const Description = styled.p`
   height: 35.86%;
 
   line-height: 20px;
-  /* margin-bottom: 12.5vh; */
 `
 
 export const Form = styled.div`
+  width: 100%;
+
   height: 58.8%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 769px) {
+    height: 65%;
+  }
+  @media screen and (max-width: 426px) {
+    height: 65%;
+  }
 `
 
 export const LoginContainer = styled.div`
-  height: 55.19%;
+  height: 60%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media screen and (max-width: 769px) {
+    height: 50%;
+  }
+  @media screen and (max-width: 426px) {
+    height: 55%;
+  }
 `
 
 export const Label = styled.label`
@@ -83,6 +153,9 @@ export const ImageSection = styled.section`
   background-image: url(${laptop});
   background-repeat: no-repeat;
   background-size: cover;
+  @media screen and (max-width: 769px) {
+    display: none;
+  }
 `
 
 export const CompassImage = styled.img`

@@ -12,4 +12,8 @@ export const ErrorMessage = styled.p`
   height: 9.87%;
   font-weight: 700;
   line-height: 20px;
+  @media screen and (max-width: 1441px) {
+    width: 80%;
+    margin-left: 6.5%;
+  }
 `

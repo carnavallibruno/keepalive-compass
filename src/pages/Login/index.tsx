@@ -1,6 +1,6 @@
 import Input from "./Input";
 import { useState } from 'react';
-import { Description, Title, Container, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, Header, Form } from './styles'
+import { Description, Title, Container, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, Header, Form, CompassImageMobile, ImageContainer } from './styles'
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { Navigate, useNavigate } from 'react-router-dom';
 import ButtonContinue from './../../components/ButtonContinue';
@@ -46,12 +46,19 @@ export default function Login() {
   return (
     <Container>
       <FormSection>
+        <ImageContainer>
+          <CompassImageMobile
+            src={compassImg}
+            onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
+          />
+        </ImageContainer>
         <FormContainer onSubmit={(event) => {
           event.preventDefault();
           (!passwordValidate(password))
             ? setVisible(true)
             : navigate('/home')
-          }}>
+        }}>
+
 
           <Header>
             <Title>Olá,</Title>
@@ -61,14 +68,14 @@ export default function Login() {
           <Form>
             <LoginContainer>
               <Label>Login</Label>
-              
+
               <Input
                 type="text"
                 placeholder="Usuário"
                 user={user}
                 setUser={setUser}
                 visible={visible}
-                isPassword={false}
+              // isPassword={false}
               />
 
               <Input
@@ -77,7 +84,7 @@ export default function Login() {
                 password={password}
                 setPassword={setPassword}
                 visible={visible}
-                isPassword={true}
+                isPassword
               />
             </LoginContainer>
 
