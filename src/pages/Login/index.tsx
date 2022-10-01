@@ -57,7 +57,7 @@ export default function Login() {
           (!passwordValidate(password))
             ? setVisible(true)
             : navigate('/home')
-        }}>
+          }}>
 
 
           <Header>

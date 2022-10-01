@@ -11,6 +11,9 @@ interface InputProps {
 export const InputAll = styled.div`
   /* margin-top: 2rem; */
   height: 60px;
+  @media screen and (max-width: 376px) {
+    height: 50px;
+  }
 `
 
 export const InputContainer = styled.div`
