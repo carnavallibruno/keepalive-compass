@@ -3,10 +3,11 @@ import { useDate } from './Date/index';
 import { useTimer } from './Timer/index';
 import { useNavigate } from 'react-router-dom';
 import ButtonHome from '../../components/ButtonHome';
-import Logo from '../../assets/LogoCompasso-1.svg'
+import DarkLogo from '../../assets/LogoCompasso-1.svg'
+import LightLogo from '../../assets/Logo-Compasso-Branco.svg'
 import BallLogo from '../../assets/bola-LogoCompasso.svg'
 import Cloud from '../../assets/weather-cloud.svg'
-import { LogoImage, ContainerHome, HomeNavbar, UolImage, Main, FooterHome, FooterSentence, VerticalBar, HomeButtonsContainer, ImageContainer } from './styles';
+import { LogoImage, ContainerHome, HomeNavbar, Main, FooterHome, FooterSentence, VerticalBar, HomeButtonsContainer, ImageContainer, NavbarContainer, LogoImageLight } from './styles';
 import { DateTimeContainer, Time, Date } from './Date/styles';
 import Mission from './Mission/index';
 import { RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer } from './Timer/styles';
@@ -30,37 +31,39 @@ export default function Home() {
 
   return (
     <ContainerHome>
-      <HomeNavbar>
-        <LogoImage
-          src={Logo}
-          onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
-        />
-        <DateTimeContainer>
-          <Time>
-            {time}
-          </Time>
+      <NavbarContainer>
+        <HomeNavbar>
+          <LogoImage
+            src={DarkLogo}
+            onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
+          />
+          <LogoImageLight
+            src={LightLogo}
+            onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
+          />
+          <DateTimeContainer>
+            <Time>
+              {time}
+            </Time>
 
-          <Date>
-            {date}
-          </Date>
-        </DateTimeContainer>
+            <Date>
+              {date}
+            </Date>
+          </DateTimeContainer>
 
-        <WeatherContainer>
-          <City>{weather.city} - {weather.country}</City>
+          <WeatherContainer>
+            <City>{weather.city} - {weather.country}</City>
 
-          <WeatherTemperature>
-            <CloudIcon src={Cloud}></CloudIcon>
-            <Temperature>{weather.temperature.toFixed(0)}º</Temperature>
-          </WeatherTemperature>
+            <WeatherTemperature>
+              <CloudIcon src={Cloud}></CloudIcon>
+              <Temperature>{weather.temperature.toFixed(0)}º</Temperature>
+            </WeatherTemperature>
 
-        </WeatherContainer>
-      </HomeNavbar>
+          </WeatherContainer>
+        </HomeNavbar>
+      </NavbarContainer>
 
       <Main>
-        {/* <ImageContainer>
-          <UolImage src={BallLogo} />
-        </ImageContainer> */}
-
         <Mission />
       </Main>
 

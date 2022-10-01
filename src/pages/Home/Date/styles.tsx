@@ -7,6 +7,9 @@ export const DateTimeContainer = styled.div`
   align-items: center;
   align-self: flex-end;
   height: 169px;
+  @media screen and (max-width: 769px), (max-height: 426px) {
+    display: none;
+  }
 `
 
 export const Time = styled.h1`
