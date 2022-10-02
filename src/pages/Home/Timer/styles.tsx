@@ -15,21 +15,29 @@ export const RefreshContainer = styled.div`
     justify-content: center;
     width: 50%;
   }
-  @media screen and (max-width: 769px), (max-height: 426px) {
-    width: 75%;
-    height: 50%;
+  @media screen and (max-width: 821px) {
+    width: 60%;
   }
-  @media screen and (max-width: 426px) { 
+  @media screen and (max-width: 769px), (max-height: 426px) {
+    width: 60%;
+  }
+  @media screen and (max-width: 541px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 426px) {
     justify-content: space-between;
   }
   @media screen and (max-width: 321px) {
     width: 85%;
   }
   @media screen and (max-width: 281px) {
-    width: 70%;
-    height: 50%;
+    width: 85%;
+    height: 30%;
   }
 
+  @media screen and (max-height: 426px) {
+    width: 60%;
+  }
   @media screen and (max-height: 321px) {
     width: 100%;
   }
@@ -45,38 +53,76 @@ export const RefreshPhrase = styled.p`
   }
   @media screen and (max-width: 769px), (max-height: 426px) {
     width: 75%;
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+  @media screen and (max-width: 721px) {
+    font-size: 1.5rem;
+  }
+  @media screen and (max-width: 541px) {
+    width: 50%;
+    font-size: 1.25rem;
   }
   @media screen and (max-width: 426px) {
+    width: 70%;
+    font-size: 1.25rem;
+    line-height: 30px;
+  }
+  @media screen and (max-width: 391px) {
+    width: 47.5%;
+  }
+  @media screen and (max-width: 376px) {
+    font-size: 1.3rem;
     width: 50%;
-    font-size: 1.6rem;
-    line-height: 35px;
   }
   @media screen and (max-width: 321px) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   @media screen and (max-width: 281px) {
-    width: 50%;
+    width: 60%;
     font-size: 1rem;
     line-height: 25px;
   }
 
+
+  @media screen and (max-height: 426px) {
+    width: 50%;
+    font-size: 1.5rem;
+  }
   @media screen and (max-height: 376px) {
-    width: 90%;
+    width: 62%;
+    font-size: 1.5rem;
   }
   @media screen and (max-height: 321px) {
-    width: 65%;
-    font-size: 1.75rem;
+    width: 55%;
   }
   @media screen and (max-height: 281px) {
-    width: 55%;
+    width: 40%;
   }
 `
 
 export const RefreshTimerContainer = styled.div`
-  width: 40.61%;
+  width: 20%;
   text-align: center;
+  @media screen and (max-width: 1025px) {
+    width: 32.5%;
+  }
+  @media screen and (max-width: 769px) {
+    width: 37.5%;
+  }
+  @media screen and (max-width: 426px) {
+    width: 45%;
+  }
+  @media screen and (max-width: 281px) {
+    width: 70%;
+  }
+
+  @media screen and (max-height: 426px) {
+    width: 30%;
+  }
   @media screen and (max-height: 321px) {
+    /* width: 25%; */
+  }
+  @media screen and (max-height: 281px) {
     width: 25%;
   }
 `
@@ -84,4 +130,10 @@ export const RefreshTimerContainer = styled.div`
 export const RefreshTimer = styled.p`
   font-weight: 700;
   font-size: 3rem;
+  @media screen and (max-width: 769px) {
+    font-size: 2.5rem;
+  }
+  @media screen and (max-width: 391px) {
+    font-size: 2.25rem;
+  }
 `

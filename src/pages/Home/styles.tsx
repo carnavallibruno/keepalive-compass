@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ballUol from '../../assets/bola-LogoCompasso.svg'
+import ballUol from '../../assets/bola-LogoCompasso.svg';
 
 export const ContainerHome = styled.div`
   display: flex;
@@ -19,8 +19,12 @@ export const ContainerHome = styled.div`
   background-repeat: no-repeat;
   background-size: 42.96%;
   background-position: -21% 93%;
+
   @media screen and (max-width: 1549px) {
     background-size: 39%;
+  }
+  @media screen and (max-width: 1441px) {
+    background-size: 35%;
   }
   @media screen and (max-width: 1432px) {
     background-size: 35%;
@@ -28,14 +32,21 @@ export const ContainerHome = styled.div`
   @media screen and (max-width: 1369px) {
     min-height: 900px;
   }
+  @media screen and (max-width: 1333px) {
+    background-size: 30%;
+  }
+  @media screen and (max-width: 1225px) {
+    background-size: 25%;
+    background-position: -5% 20%;
+  }
   @media screen and (max-width: 1025px) {
-    background-size: 32%;
+    background-image: none;
   }
   @media screen and (max-width: 769px) {
-    min-height: 1250px;
+    min-height: 900px;
   }
   @media screen and (max-width: 426px) {
-    min-height: 1400px;
+    min-height: 896px;
   }
 `
 
@@ -45,16 +56,14 @@ export const NavbarContainer = styled.div`
 
   @media screen and (max-width: 769px), (max-height: 426px) {
     width: 100%;
-    height: 15.64%;
-    background: #000000;
+    height: 5%;
+    background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);;
   }
-  @media screen and (max-width: 426px) {
-    height: 10%;
+  @media screen and  (max-width: 391px) {
+    height: 5%;
   }
-
-
-  @media screen and (max-height: 321px) {
-    height: 12%;
+  @media screen and (max-width: 321px) {
+    height: 7%;
   }
 `
 
@@ -66,22 +75,13 @@ export const HomeNavbar = styled.nav`
   height: 100%;
   
   @media screen and (max-width: 769px), (max-height: 426px) {
-    justify-content: space-around;
-    margin-top: 0%;
+    align-items: center;
+    justify-content: space-between;
   }
   @media screen and (max-width: 426px) {
     margin-top: 0%;
     display: flex;
     align-items: center;
-  }
-
-
-  
-  @media screen and (max-height: 376px) {
-    margin-top: 3%;
-  }
-  @media screen and (max-height: 281px) {
-    margin-top: 1.5%;
   }
 `
 
@@ -102,17 +102,13 @@ export const LogoImageLight = styled.img`
   margin-top: 1.45%;
 
   @media screen and (max-width: 769px), (max-height: 426px) {
-    width: 30%;
-    height: 49%;
     display: block;
-    margin-top: 2%;
-  }
-  @media screen and (max-width: 426px) {
     width: 35%;
+    height: 60%;
     margin-top: 0%;
   }
-  @media screen and (max-height: 391px) {
-    margin-top: 2.5%;
+  @media screen and (max-width: 426px) {
+    margin-left: 2%;
   }
 `
 
@@ -121,12 +117,22 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-end;
+  
   width: 100vw;
-
-  
   height: 77.8%;
-  
-  /* border: 1px solid red; */
+
+  @media screen and (max-width: 1025px) {
+    height: 55%;
+  }
+  @media screen and (max-width: 769px) {
+    height: 55%;
+  }
+
+
+
+  @media screen and (max-height: 426px) {
+    height: 75%;
+  }
 `
 
 
@@ -135,7 +141,7 @@ export const Main = styled.main`
 
 export const FooterHome = styled.footer`
   color: #FFFFFF;
-  
+
   width: 100%;
   height: 9.25%;
 
@@ -143,7 +149,7 @@ export const FooterHome = styled.footer`
   justify-content: flex-end;
   align-items: center;
 
-  background: #000000;
+  background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
 
   z-index: 1;
 
@@ -152,12 +158,22 @@ export const FooterHome = styled.footer`
   }
   @media screen and (max-width: 769px), (max-height: 426px) {
     flex-direction: column;
-    height: 50%;
+    height: 30%;
   }
+  @media screen and (max-width: 426px) {
+    height: 40%;
+  }
+
+
+  @media screen and (max-height: 426px) {
+    height: 40%;
+  }
+  @media screen and (max-height: 321px) {
+    height: 50%;
+}
 `
 
 export const FooterSentence = styled.p`
-  /* width: 28.17%; */
   width: 541px;
   font-size: 0.75rem;
   line-height: 0.951rem;
@@ -173,17 +189,33 @@ export const FooterSentence = styled.p`
     font-size: 1rem;
     line-height: 20px;
     text-align: justify;
-    /* font-size: 1rem; */
     
     margin-top: 3%;
     margin-right: 0%;
   }
+  @media screen and (max-width: 721px) {
+    font-size: 0.9rem;
+  }
+  @media screen and (max-width: 541px) {
+    font-size: 0.9rem;
+  }
   @media screen and (max-width: 426px) {
-    margin-top: 7%;
+    font-size: 0.9rem;
+    line-height: 27.5px;
+
+    margin-top: 5%;
   }
   @media screen and (max-width: 281px) {
     margin-top: 7.5%;
-    font-size: 0.9rem;
+    line-height: 17.5px;
+  }
+
+
+  @media screen and (max-height: 376px) {
+    line-height: 27.5px;
+  }
+  @media screen and (max-height: 281px) {
+    line-height: 27.5px;
   }
 `
 
@@ -204,6 +236,7 @@ export const HomeButtonsContainer = styled.div`
   justify-content: center;
   width: 12.65%;
   height: 100%;
+
   @media screen and (max-width: 1441px) {
     width: 17.5%;
   }
@@ -213,31 +246,17 @@ export const HomeButtonsContainer = styled.div`
   @media screen and (max-width: 769px), (max-height: 426px) {
     flex-direction: column;
     width: 100%;
-    height: 50%;
+    height: 40%;
+  }
+  @media screen and (max-width: 426px) {
+    height: 27.5%;
+  }
+  @media screen and (max-width: 391px) {
+    height: 30%;
+  }
+
+
+  @media screen and (max-height: 426px) {
+    height: 35%;
   }
 `
-
-
-// @media screen and (max-width: 1025px) {
-
-// }
-
-// @media screen and (max-width: 769px) {
-  
-// }
-
-// @media screen and (max-width: 426px) {
-  
-// }
-
-// @media screen and (max-width: 376px) {
-  
-// }
-
-// @media screen and (max-width: 321px) {
-  
-// }
-
-// @media screen and (max-width: 281px) {
-  
-// }

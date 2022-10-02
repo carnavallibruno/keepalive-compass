@@ -20,13 +20,20 @@ export const StyledHomeButton = styled.button<ButtonProps>`
   ${(props) => 
     props.children == 'Continuar Navegando' ? "color: #C13216; background: #FFFFFF;" : ''
   }
+  
   @media screen and (max-width: 769px), (max-height: 426px) {
     font-size: 1.5rem;
   }
-  @media screen and (max-width: 426px) {
-    font-size: 1.4rem;
+  @media screen and (max-width: 721px) {
+    font-size: 1.1rem;
   }
-  @media screen and (max-width: 321px) {
-    font-size: 1.25rem;
+  @media screen and (max-width: 281px) {
+    font-size: 1rem;
+  }
+
+
+
+  @media screen and (max-height: 426px) {
+    font-size: 1.1rem;
   }
 `

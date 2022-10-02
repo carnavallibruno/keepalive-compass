@@ -7,11 +7,11 @@ import DarkLogo from '../../assets/LogoCompasso-1.svg'
 import LightLogo from '../../assets/Logo-Compasso-Branco.svg'
 import BallLogo from '../../assets/bola-LogoCompasso.svg'
 import Cloud from '../../assets/weather-cloud.svg'
-import { LogoImage, ContainerHome, HomeNavbar, Main, FooterHome, FooterSentence, VerticalBar, HomeButtonsContainer, ImageContainer, NavbarContainer, LogoImageLight } from './styles';
+import { LogoImage, ContainerHome, HomeNavbar, Main, FooterHome, FooterSentence, VerticalBar, HomeButtonsContainer, NavbarContainer, LogoImageLight } from './styles';
 import { DateTimeContainer, Time, Date } from './Date/styles';
 import Mission from './Mission/index';
 import { RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer } from './Timer/styles';
-import { City, Temperature, WeatherContainer, WeatherTemperature, CloudIcon } from './Weather/styles'
+import { City, Temperature, WeatherContainer, WeatherAndTemperature, CloudIcon } from './Weather/styles'
 import { Tempo } from './Weather';
 
 export default function Home() {
@@ -54,10 +54,10 @@ export default function Home() {
           <WeatherContainer>
             <City>{weather.city} - {weather.country}</City>
 
-            <WeatherTemperature>
+            <WeatherAndTemperature>
               <CloudIcon src={Cloud}></CloudIcon>
               <Temperature>{weather.temperature.toFixed(0)}º</Temperature>
-            </WeatherTemperature>
+            </WeatherAndTemperature>
 
           </WeatherContainer>
         </HomeNavbar>
