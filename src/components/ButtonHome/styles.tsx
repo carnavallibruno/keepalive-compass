@@ -22,12 +22,12 @@ export const StyledHomeButton = styled.button<ButtonProps>`
   }
   
   @media screen and (max-width: 769px), (max-height: 426px) {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   @media screen and (max-width: 721px) {
     font-size: 1.1rem;
   }
-  @media screen and (max-width: 281px) {
+  @media screen and (max-width: 321px) {
     font-size: 1rem;
   }
 

@@ -40,13 +40,48 @@ export const ContainerHome = styled.div`
     background-position: -5% 20%;
   }
   @media screen and (max-width: 1025px) {
-    background-image: none;
+    background-position: -7.5% 25%;
   }
   @media screen and (max-width: 769px) {
+    background-size: 45%;
+    background-position: -35% 3%;
     min-height: 900px;
   }
   @media screen and (max-width: 426px) {
+    background-size: 50%;
+    background-position: -40% 4%;
     min-height: 896px;
+  }
+  @media screen and (max-width: 376px) {
+    background-size: 47.5%;
+    background-position: -32% 5%;
+  }
+  @media screen and (max-width: 321px) {
+    background-size: 60%;
+    background-position: -75% 7.5%;
+    min-height: 896px;
+  }
+  @media screen and (max-width: 321px) {
+    background-position: -75% 7%;
+    min-height: 896px;
+  }
+
+
+  @media screen and (max-height: 426px) {
+    background-size: 55%;
+    background-position: -50% 7%;
+  }
+  @media screen and (max-height: 391px) {
+    background-size: 40%;
+    background-position: -25% 5%;
+  }
+  @media screen and (max-height: 376px) {
+    background-size: 40%;
+    background-position: -25% 5.5%;
+  }
+  @media screen and (max-height: 321px) {
+    background-size: 60%;
+    background-position: -80% 10%;
   }
 `
 
@@ -143,7 +178,7 @@ export const FooterHome = styled.footer`
   color: #FFFFFF;
 
   width: 100%;
-  height: 9.25%;
+  height: 100px;
 
   display: flex;
   justify-content: flex-end;

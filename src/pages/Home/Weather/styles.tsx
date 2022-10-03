@@ -179,6 +179,9 @@ export const Temperature = styled.p`
   @media screen and (max-height: 391px) {
     font-size: 2rem;
   }
+  @media screen and (max-height: 321px) {
+    font-size: 1.75rem;
+  }
 
   /* @media screen and (max-width: 769px), (max-height: 426px) {
     color: white;
