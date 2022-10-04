@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { RefreshContainer, RefreshPhrase, RefreshTimerContainer, RefreshTimer } from './styles';
 
-export const useTimer = () => {
+export default function Timer() {
+  const navigate = useNavigate();
   let [refreshTimer, setRefreshTimer] = useState(600);
 
   useEffect(() => {
@@ -14,7 +17,18 @@ export const useTimer = () => {
   }, [refreshTimer])
 
   return (
-    {refreshTimer}
+    <RefreshContainer>
+      <>
+        <RefreshPhrase>Application refresh in</RefreshPhrase>
+
+        <RefreshTimerContainer>
+          <RefreshTimer>{refreshTimer < 10 ? `0${refreshTimer}` : refreshTimer}</RefreshTimer>
+          <p>seconds</p>
+        </RefreshTimerContainer>
+
+        {refreshTimer == 0 ? navigate('/') : null}
+      </>
+    </RefreshContainer>
   )
 }
 

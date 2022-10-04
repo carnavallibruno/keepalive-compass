@@ -23,7 +23,6 @@ export const ContainerHome = styled.div`
   background-position: -21% 93%;
 
   @media screen and (max-width: 1549px) {
-    /* background-image: none; */
     background-size: 39%;
   }
   @media screen and (max-width: 1441px) {
@@ -44,6 +43,7 @@ export const ContainerHome = styled.div`
     background-position: -5% 20%;
   }
   @media screen and (max-width: 1025px) {
+    background-image: none;
     background-size: 32.5%;
     background-position: -10% 22.5%;
   }
@@ -230,7 +230,7 @@ export const FooterSentence = styled.p`
     font-size: 1rem;
     line-height: 20px;
     text-align: justify;
-    
+
     margin-top: 3%;
     margin-right: 0%;
   }

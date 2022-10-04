@@ -7,27 +7,16 @@ import ButtonHome from '../Home/ButtonHome';
 import DarkLogo from '../../assets/LogoCompasso-1.svg'
 import LightLogo from '../../assets/Logo-Compasso-Branco.svg'
 import BallLogo from '../../assets/bola-LogoCompasso.svg'
-import Cloud from '../../assets/weather-cloud.svg'
 import Mission from './Mission';
-import { useTimer } from '../../components/Timer';
 import { RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer } from '../../components/Timer/styles';
-import { Tempo } from '../../components/Weather';
-import { City, Temperature, WeatherContainer, WeatherAndTemperature, CloudIcon } from '../../components/Weather/styles'
+import { Weather } from '../../components/Weather'
+import Timer from './../../components/Timer/index';
 
 export default function Home() {
   const { date, time } = useDate()
-  const { refreshTimer } = useTimer()
+  // const { refreshTimer } = useTimer()
   const navigate = useNavigate()
-  const [weather, setWeather] = useState({ city: '', country: '', temperature: 0 });
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(async function(position) {     
-      let latitude = -15.793889 || position.coords.latitude;
-      let longitude = -47.882778 || position.coords.longitude;
-      Tempo().then((res) => {
-        setWeather({ city: res.name, country: res.sys.country, temperature: res.main.temp })
-      })
-    })
-  }, [])
+
 
   return (
     <ContainerHome>
@@ -51,15 +40,8 @@ export default function Home() {
             </Date>
           </DateTimeContainer>
 
-          <WeatherContainer>
-            <City>{weather.city} - {weather.country}</City>
-
-            <WeatherAndTemperature>
-              <CloudIcon src={Cloud}></CloudIcon>
-              <Temperature>{weather.temperature.toFixed(0)}º</Temperature>
-            </WeatherAndTemperature>
-
-          </WeatherContainer>
+          <Weather />
+          
         </HomeNavbar>
       </NavbarContainer>
 
@@ -72,18 +54,7 @@ export default function Home() {
 
         <VerticalBar></VerticalBar>
 
-        <RefreshContainer>
-          <>
-            <RefreshPhrase>Application refresh in</RefreshPhrase>
-
-            <RefreshTimerContainer>
-              <RefreshTimer>{refreshTimer < 10 ? `0${refreshTimer}` : refreshTimer}</RefreshTimer>
-              <p>seconds</p>
-            </RefreshTimerContainer>
-
-            {refreshTimer == 0 ? navigate('/') : null}
-          </>
-        </RefreshContainer>
+        <Timer />
 
         <HomeButtonsContainer>
           <ButtonHome

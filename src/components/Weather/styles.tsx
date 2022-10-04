@@ -34,6 +34,8 @@ export const WeatherContainer = styled.div`
   @media screen and (max-width: 321px) {
     flex-direction: column;
     justify-content: center;
+    margin-right: 3%;
+    align-items: flex-end;
   }
   
 
