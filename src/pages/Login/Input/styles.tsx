@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS, FONTS } from "../../../components/UI/variables";
 
 interface IconProps {
   focused: boolean;
@@ -24,8 +25,8 @@ export const InputContainer = styled.div`
 `
 
 export const StyledInput = styled.input<InputProps>`
-  font-family: 'Mark Pro';
-  font-weight: 400;
+  font-family: ${FONTS.fontMarkPro};
+  font-weight: ${FONTS.fontWeightRegular};
   background: transparent;
 
   width: 100%;
@@ -36,15 +37,15 @@ export const StyledInput = styled.input<InputProps>`
   padding-left: 5.27%;
   padding-right: 11%;
   
-  color: #FFFFFF;
+  color: ${COLORS.whiteText};
 
   outline: none;
-  border: 1px solid #FFFFFF;
+  border: 1px solid ${COLORS.whiteText};
   border-radius: 50px;
 
   ::placeholder {
     font-size: 1rem;
-    color: #E0E0E0;
+    color: ${COLORS.loginTitleText};
   }
 
   ${(props) => 

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import laptop from '../../assets/laptop.png'; // ? Calls for error but for some reason the project still imports the image and uses it
 
+import {BACKGROUNDS, COLORS, FONTS} from '../../components/UI/variables'
+
 export const Container = styled.div`
   display: flex;
 
@@ -8,7 +10,7 @@ export const Container = styled.div`
   height: 100vh;
 
   margin: 0 auto;
-  @media screen and (max-width: 897px) {
+  @media screen and (max-width: 897px), (max-height: 426px) {
     min-height: 768px;
     background-image: url(${laptop});
     background-position: center;
@@ -25,8 +27,8 @@ export const Container = styled.div`
 `
 
 export const FormSection = styled.section`
-  color: #E0E0E0;
-  background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%);
+  color: ${COLORS.loginTitleText};
+  background: ${BACKGROUNDS.loginBackground};
   width: 50%;
   height: 100%;
 
@@ -83,9 +85,11 @@ export const FormContainer = styled.form`
   }
   @media screen and (max-width: 321px) {
     height: 65%;
+
   }
   @media screen and (max-width: 281px) {
     height: 70%;
+    min-height: 550px;
   }
 `
 
@@ -108,7 +112,6 @@ export const ImageContainer = styled.div`
     margin-bottom: 20%;
   }
   @media screen and (max-width: 376px) {
-    width: 55%;
     margin-bottom: 15%;
   }
   @media screen and (max-width: 321px) {
@@ -121,73 +124,7 @@ export const CompassImageMobile = styled.img`
   margin-top: 2.188rem;
 `
 
-export const Header = styled.div`
-  width: 72.18%;
-  height: 21.1%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  @media screen and (max-width: 1369px) {
-    height: 22.5%;
-  }
-  @media screen and (max-width: 897px) {
-    width: 100%;
-    height: 27%;
-  }
-  @media screen and (max-width: 769px) {
-    width: 72.18%;
-    height: 20%;
-  }
-  @media screen and (max-width: 668px) {
-    width: 100%;
-    height: 20%;
-  }
-  @media screen and (max-width: 481px) {
-    height: 20%;
-  }
-  @media screen and (max-width: 426px) {
-    height: 22%;
-  }
-  @media screen and (max-width: 426px) {
-    height: 22.5%;
-  }
-  @media screen and (max-width: 376px) {
-    height: 20%;
-  }
-  @media screen and (max-width: 321px) {
-    height: 20%;
-  }
-`
-
-export const Title = styled.h1`
-  width: 100%;
-  height: 52.41%;
-
-  font-size: 3.75rem;
-  font-weight: 400;
-
-  @media screen and (max-width: 376px) {
-    font-size: 2.75rem;
-  }
-`
-
-export const Description = styled.p`
-  font-size: 1rem;
-  
-  width: 18.813rem;
-  height: 35.86%;
-
-  line-height: 20px;
-  @media screen and (max-width: 897px) {
-    width: 100%;
-  }
-  @media screen and (max-width: 321px) {
-    font-size: 0.9rem;
-  }
-`
-
-export const Form = styled.div`
+export const LoginAndContinueButton = styled.div`
   width: 100%;
   height: 58.8%;
 
@@ -227,9 +164,7 @@ export const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* @media screen and (max-width: 897px) {
-    height: 60%;
-  } */
+  
   @media screen and (max-width: 769px) {
     height: 50%;
   }

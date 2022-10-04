@@ -1,9 +1,10 @@
 import Input from "./Input";
 import { useState } from 'react';
-import { Description, Title, Container, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, Header, Form, CompassImageMobile, ImageContainer } from './styles'
+import { Container, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, LoginAndContinueButton, CompassImageMobile, ImageContainer } from './styles'
+import { Header } from "./Header";
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { Navigate, useNavigate } from 'react-router-dom';
-import ButtonContinue from './../../components/ButtonContinue';
+import ButtonContinue from './ButtonContinue';
 import { ErrorMessage } from "./ErrorMessage";
 import OpenWeatherMap from 'openweathermap-ts';
 
@@ -59,13 +60,9 @@ export default function Login() {
             : navigate('/home')
           }}>
 
+          <Header />
 
-          <Header>
-            <Title>Olá,</Title>
-            <Description>Para continuar navegando de forma segura, efetue o login na rede.</Description>
-          </Header>
-
-          <Form>
+          <LoginAndContinueButton>
             <LoginContainer>
               <Label>Login</Label>
 
@@ -75,7 +72,6 @@ export default function Login() {
                 user={user}
                 setUser={setUser}
                 visible={visible}
-              // isPassword={false}
               />
 
               <Input
@@ -94,7 +90,7 @@ export default function Login() {
               buttonTitle='Continuar'
               visible={visible}
             />
-          </Form>
+          </LoginAndContinueButton>
 
         </FormContainer>
       </FormSection>

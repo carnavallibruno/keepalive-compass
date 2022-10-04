@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import ballUol from '../../assets/bola-LogoCompasso.svg';
 
+import { BACKGROUNDS, COLORS } from '../../components/UI/variables'
+
 export const ContainerHome = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   
-  background: linear-gradient(105.96deg, #FFFFFF 0%, #F0F0F0 97.86%);
+  background: ${BACKGROUNDS.homeBackground};
   box-shadow: 4px 4px 70px rgba(0, 0, 0, 0.25);
 
   margin: 0 auto;
@@ -21,10 +23,12 @@ export const ContainerHome = styled.div`
   background-position: -21% 93%;
 
   @media screen and (max-width: 1549px) {
+    /* background-image: none; */
     background-size: 39%;
   }
   @media screen and (max-width: 1441px) {
     background-size: 35%;
+    min-height: 850px;
   }
   @media screen and (max-width: 1432px) {
     background-size: 35%;
@@ -40,7 +44,8 @@ export const ContainerHome = styled.div`
     background-position: -5% 20%;
   }
   @media screen and (max-width: 1025px) {
-    background-position: -7.5% 25%;
+    background-size: 32.5%;
+    background-position: -10% 22.5%;
   }
   @media screen and (max-width: 769px) {
     background-size: 45%;
@@ -59,29 +64,28 @@ export const ContainerHome = styled.div`
   @media screen and (max-width: 321px) {
     background-size: 60%;
     background-position: -75% 7.5%;
-    min-height: 896px;
   }
-  @media screen and (max-width: 321px) {
-    background-position: -75% 7%;
-    min-height: 896px;
+  @media screen and (max-width: 281px) {
+    background-size: 85%;
+    background-position: -325% 8%;
   }
 
 
   @media screen and (max-height: 426px) {
-    background-size: 55%;
-    background-position: -50% 7%;
-  }
-  @media screen and (max-height: 391px) {
-    background-size: 40%;
-    background-position: -25% 5%;
+    background-size: 70%;
+    background-position: -135% 10%;
   }
   @media screen and (max-height: 376px) {
-    background-size: 40%;
-    background-position: -25% 5.5%;
+    background-size: 50%;
+    background-position: -50% 7%;
   }
   @media screen and (max-height: 321px) {
-    background-size: 60%;
-    background-position: -80% 10%;
+    background-size: 55%;
+    background-position: -70% 8%;
+  }
+  @media screen and (max-height: 281px) {
+    background-size: 80%;
+    background-position: -270% 11%;
   }
 `
 
@@ -92,7 +96,7 @@ export const NavbarContainer = styled.div`
   @media screen and (max-width: 769px), (max-height: 426px) {
     width: 100%;
     height: 5%;
-    background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);;
+    background: ${BACKGROUNDS.loginBackground};
   }
   @media screen and  (max-width: 391px) {
     height: 5%;
@@ -126,7 +130,10 @@ export const LogoImage = styled.img`
 
   margin-top: 1.45%;
 
-  @media screen and (max-width: 769px), (max-height: 426px) {
+  @media screen and (max-width: 1025px) {
+    width: 13%;
+  }
+  @media screen and (max-width: 769px),(max-height: 426px) {
     display: none;
   }
 `
@@ -172,10 +179,11 @@ export const Main = styled.main`
 
 
 
-// ? FOOTER
+
+
 
 export const FooterHome = styled.footer`
-  color: #FFFFFF;
+  color: ${COLORS.whiteText};
 
   width: 100%;
   height: 100px;
@@ -184,9 +192,7 @@ export const FooterHome = styled.footer`
   justify-content: flex-end;
   align-items: center;
 
-  background: linear-gradient(90.16deg, #33383D 0%, #1C1D20 100%);
-
-  z-index: 1;
+  background: ${BACKGROUNDS.footerBackground};
 
   @media screen and (max-width: 1441px) {
     justify-content: space-between;
@@ -255,7 +261,7 @@ export const FooterSentence = styled.p`
 `
 
 export const VerticalBar = styled.p`
-  border: 1px solid #FFFFFF;
+  border: 1px solid ${COLORS.whiteText};
   height: 61%;
   margin-right: 6.4%;
 
@@ -289,6 +295,7 @@ export const HomeButtonsContainer = styled.div`
   @media screen and (max-width: 391px) {
     height: 30%;
   }
+
 
 
   @media screen and (max-height: 426px) {

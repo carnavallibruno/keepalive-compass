@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FONTS } from "../UI/variables";
 
 export const RefreshContainer = styled.div`
   width: 12.44%;
@@ -7,6 +8,7 @@ export const RefreshContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-right: 19.21%;
+  
   @media screen and (max-width: 1441px) {
     margin-right: 0%;
     width: 15%;
@@ -44,7 +46,7 @@ export const RefreshContainer = styled.div`
 `
 
 export const RefreshPhrase = styled.p`
-  width: 45.63%;
+  width: 45.6%;
   font-size: 0.875rem;
   line-height: 18px;
   text-align: right;
@@ -63,7 +65,7 @@ export const RefreshPhrase = styled.p`
     font-size: 1.25rem;
   }
   @media screen and (max-width: 426px) {
-    width: 70%;
+    width: 90%;
     font-size: 1.25rem;
     line-height: 30px;
   }
@@ -75,7 +77,7 @@ export const RefreshPhrase = styled.p`
     width: 50%;
   }
   @media screen and (max-width: 321px) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   @media screen and (max-width: 281px) {
     width: 60%;
@@ -101,7 +103,7 @@ export const RefreshPhrase = styled.p`
 `
 
 export const RefreshTimerContainer = styled.div`
-  width: 20%;
+  width: 40.58%;
   text-align: center;
   @media screen and (max-width: 1025px) {
     width: 32.5%;
@@ -116,11 +118,9 @@ export const RefreshTimerContainer = styled.div`
     width: 70%;
   }
 
+
   @media screen and (max-height: 426px) {
     width: 30%;
-  }
-  @media screen and (max-height: 321px) {
-    /* width: 25%; */
   }
   @media screen and (max-height: 281px) {
     width: 25%;
@@ -128,7 +128,7 @@ export const RefreshTimerContainer = styled.div`
 `
 
 export const RefreshTimer = styled.p`
-  font-weight: 700;
+  font-weight: ${FONTS.fontWeightBold};
   font-size: 3rem;
   @media screen and (max-width: 769px) {
     font-size: 2.5rem;

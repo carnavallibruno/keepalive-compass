@@ -1,8 +1,7 @@
 import styled from "styled-components";
+import { COLORS, FONTS } from "../UI/variables";
 
 export const WeatherContainer = styled.div`
-  /* margin-top: 2.31vh;
-  margin-right: 2.08vw; */
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -56,25 +55,18 @@ export const WeatherContainer = styled.div`
 `
 
 export const City = styled.p`
-  color: #222222;
+  color: ${COLORS.darkText};
 
   font-size: 0.875rem;
   height: 18px;
   line-height: 18px;
 
   @media screen and (max-width: 769px), (max-height: 426px) {
-    color: #FFFFFF;
+    color: ${COLORS.whiteText};
   }
   @media screen and (max-width: 321px) {
     height: 12px;
   }
-  /* @media screen and (max-width: 769px), (max-height: 426px) {
-    color: white;
-  }
-  @media screen and (max-width: 281px) {
-    font-size: 0.75rem;
-    line-height: 0px;
-  } */
 `
 
 export const WeatherAndTemperature = styled.div`
@@ -86,10 +78,6 @@ export const WeatherAndTemperature = styled.div`
   @media screen and (max-width: 769px) {
     width: 38%;
   }
-  @media screen and (max-width: 541px) {
-    
-  }
-
   @media screen and (max-width: 391px) {
     width: 31%;
   }
@@ -102,6 +90,7 @@ export const WeatherAndTemperature = styled.div`
     width: 75%;
   }
 
+
   @media screen and (max-height: 426px) {
     justify-content: space-between;
     width: 30%;
@@ -110,6 +99,7 @@ export const WeatherAndTemperature = styled.div`
     width: 32.5%;
   }
 `
+
 
 export const CloudIcon = styled.img`
   @media screen and (max-width: 769px) {
@@ -135,27 +125,21 @@ export const CloudIcon = styled.img`
   @media screen and (max-height: 391px) {
     height: 55%;
   }
-  
-  /*
-  @media screen and (max-width: 281px) {
-    height: 50%;
-    margin-top: 0%;
-  } */
 `
 
 
 
 
 export const Temperature = styled.p`
-  color: #222222;
+  color: ${COLORS.darkText};
   height: 100%;
 
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: ${FONTS.fontWeightBold};
   line-height: 61px;
 
   @media screen and (max-width: 769px), (max-height: 426px) {
-    color: #FFFFFF;
+    color: ${COLORS.whiteText};
     font-size: 2.25rem;
     line-height: 54px;
   }
@@ -173,6 +157,8 @@ export const Temperature = styled.p`
   }
 
 
+
+
   @media screen and (max-height: 426px) {
     line-height: 55px;
   }
@@ -182,17 +168,4 @@ export const Temperature = styled.p`
   @media screen and (max-height: 321px) {
     font-size: 1.75rem;
   }
-
-  /* @media screen and (max-width: 769px), (max-height: 426px) {
-    color: white;
-  }
-  @media screen and (max-width: 426px) {
-    line-height: 40px;
-    font-size: 2rem;
-  }
-  @media screen and (max-width: 321px) {
-  }
-  @media screen and (max-width: 281px) {
-    line-height: 50px;
-  } */
 `

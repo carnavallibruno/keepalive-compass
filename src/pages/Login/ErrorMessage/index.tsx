@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { COLORS } from "../../../components/UI/variables";
 
 export const ErrorMessage = styled.p`
-  color: #E9B425;
+  color: ${COLORS.errorMessage};
   
   margin-bottom: 1.5%;
   margin-left: 14%;

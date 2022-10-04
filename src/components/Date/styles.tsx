@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { COLORS, FONTS } from '../UI/variables';
 
 export const DateTimeContainer = styled.div`
   display: flex;
@@ -13,16 +14,16 @@ export const DateTimeContainer = styled.div`
 `
 
 export const Time = styled.h1`
-  color: #222222;
+  color: ${COLORS.darkText};
   /* margin-bottom: -6.5%; */
-  font-weight: 700;
+  font-weight: ${FONTS.fontWeightBold};
   font-size: 9rem;
 
   height: 120px;
 `
 
 export const Date = styled.p`
-  color: #222222;
+  color: ${COLORS.darkText};
 
   height: 18px;
 

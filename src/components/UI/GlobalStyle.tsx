@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
+import { FONTS } from './variables'
+
 export const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -20,8 +22,8 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	font-family: 'Mark Pro';
-	font-weight: 400;
+	font-family: ${FONTS.fontMarkPro};
+	font-weight: ${FONTS.fontWeightRegular};;
 }
 
 article, aside, details, figcaption, figure, 

@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
-import { useDate } from './Date/index';
-import { useTimer } from './Timer/index';
 import { useNavigate } from 'react-router-dom';
-import ButtonHome from '../../components/ButtonHome';
+import { useDate } from '../../components/Date';
+import { DateTimeContainer, Time, Date } from '../../components/Date/styles';
+import { LogoImage, ContainerHome, HomeNavbar, Main, FooterHome, FooterSentence, VerticalBar, HomeButtonsContainer, NavbarContainer, LogoImageLight } from './styles';
+import ButtonHome from '../Home/ButtonHome';
 import DarkLogo from '../../assets/LogoCompasso-1.svg'
 import LightLogo from '../../assets/Logo-Compasso-Branco.svg'
 import BallLogo from '../../assets/bola-LogoCompasso.svg'
 import Cloud from '../../assets/weather-cloud.svg'
-import { LogoImage, ContainerHome, HomeNavbar, Main, FooterHome, FooterSentence, VerticalBar, HomeButtonsContainer, NavbarContainer, LogoImageLight } from './styles';
-import { DateTimeContainer, Time, Date } from './Date/styles';
-import Mission from './Mission/index';
-import { RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer } from './Timer/styles';
-import { City, Temperature, WeatherContainer, WeatherAndTemperature, CloudIcon } from './Weather/styles'
-import { Tempo } from './Weather';
+import Mission from './Mission';
+import { useTimer } from '../../components/Timer';
+import { RefreshPhrase, RefreshContainer, RefreshTimerContainer, RefreshTimer } from '../../components/Timer/styles';
+import { Tempo } from '../../components/Weather';
+import { City, Temperature, WeatherContainer, WeatherAndTemperature, CloudIcon } from '../../components/Weather/styles'
 
 export default function Home() {
   const { date, time } = useDate()

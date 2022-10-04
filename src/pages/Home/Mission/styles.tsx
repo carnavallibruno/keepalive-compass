@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { FONTS, COLORS } from "../../../components/UI/variables"
 
 export const MissionContainer = styled.div`
   margin-right: 6.97%;
@@ -22,6 +23,7 @@ export const MissionContainer = styled.div`
     /* text-align: center; */
   }
   @media screen and (max-width: 769px) {
+    /* text-align: center; */
     height: 85%;
   }
   @media screen and (max-width: 426px) {
@@ -38,14 +40,17 @@ export const MissionContainer = styled.div`
 `
 
 export const MissionRedSmall = styled.p`
-  color: #C12D18;
-  font-weight: 700;
+  color: ${COLORS.missionRed};
+  font-weight: ${FONTS.fontWeightBold};
   font-size: 2.25rem;
 
   height: 38px;
   line-height: 46px;
-  @media screen and (max-width: 426px) {
+
+  @media screen and (max-width: 694px) {
     font-size: 1.7rem;
+  }
+  @media screen and (max-width: 426px) {
     margin-bottom: -6%;
   }
   @media screen and (max-width: 410px) {
@@ -58,17 +63,16 @@ export const MissionRedSmall = styled.p`
     font-size: 1.5rem;
   }
 
-  @media screen and (max-height: 426px) {
-    /* height: 75%; */
-  }
+  
   @media screen and (max-height: 376px) {
     height: 7.5%;
+    margin-bottom: 2.5%;
   }
 `
 
 export const MissionRed = styled.p`
-  color: #C12D18;
-  font-weight: 700;
+  color: ${COLORS.missionRed};
+  font-weight: ${FONTS.fontWeightBold};
   font-size: 4rem;
 
   height: 67px;
@@ -76,19 +80,18 @@ export const MissionRed = styled.p`
   
   margin-top: 1%;
   margin-bottom: 3px;
-  @media screen and (max-width: 821px) {
-    font-size: 3.25rem;
-  }
-  @media screen and (max-width: 769px) {
+
+  @media screen and (max-width: 1007px) {
     font-size: 3rem;
   }
-  @media screen and (max-width: 721px) {
+  
+  @media screen and (max-width: 757px) {
     font-size: 2.75rem;
   }
-  @media screen and (max-width: 541px) {
+  @media screen and (max-width: 694px) {
     font-size: 2rem;
   }
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 506px) {
     margin-top: 0%;
     margin-bottom: -6%;
 
@@ -100,7 +103,7 @@ export const MissionRed = styled.p`
     margin-bottom: -7.5%;
     font-size: 1.5rem;
   }
-  @media screen and (max-width: 321px) {
+  @media screen and (max-width: 360px) {
     font-size: 1.2rem;
   }
   @media screen and (max-width: 281px) {
@@ -112,7 +115,7 @@ export const MissionRed = styled.p`
     font-size: 2.5rem;
   }
   @media screen and (max-height: 321px) {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
   @media screen and (max-height: 281px) {
     font-size: 2rem;
@@ -120,7 +123,7 @@ export const MissionRed = styled.p`
 `
 
 export const MissionNormal = styled.p`
-  color: #222222;
+  color: ${COLORS.darkText};
   font-size: 1.5rem;
 
   height: 30px;
@@ -131,7 +134,6 @@ export const MissionNormal = styled.p`
   }
   @media screen and (max-width: 426px) {
     font-size: 1rem;
-    line-height: 16px;
     line-height: 15px;
   }
   @media screen and (max-width: 376px) {

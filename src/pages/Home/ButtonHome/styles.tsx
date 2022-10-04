@@ -1,12 +1,13 @@
 import styled from "styled-components";
+import { COLORS, FONTS } from "../../../components/UI/variables";
 
 interface ButtonProps {
   children?: React.ReactNode;
 }
 
 export const StyledHomeButton = styled.button<ButtonProps>`
-  font-family: 'Mark Pro';
-  font-weight: 400;
+  font-family: ${FONTS.fontMarkPro};
+  font-weight: ${FONTS.fontWeightRegular};
 
   background: transparent;
 
@@ -15,7 +16,7 @@ export const StyledHomeButton = styled.button<ButtonProps>`
   border: none;
 
   cursor: pointer;
-  color: #FFFFFF;
+  color: ${COLORS.whiteText};
 
   ${(props) => 
     props.children == 'Continuar Navegando' ? "color: #C13216; background: #FFFFFF;" : ''
