@@ -4,9 +4,15 @@ import { COLORS, FONTS } from "../UI/variables";
 export const WeatherContainer = styled.div`
   display: flex;
   flex-direction: column;
+
+  width: 6.59%;
   height: 100%;
+
   margin-top: 1.45%;
   
+  @media screen and (max-width: 1025px) {
+    width: 13%;
+  }
   @media screen and (max-width: 769px), (max-height: 426px) {
     margin-top: 0%;
     align-items: center;

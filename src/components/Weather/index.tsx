@@ -5,10 +5,11 @@ import { WeatherContainer, City, WeatherAndTemperature, Temperature, CloudIcon }
 
 export function Weather() {
   const [latitude, setLatitude] = useState(-15.7801);
-  const [longitude, setLongitude] = useState( -47.9292);
+  const [longitude, setLongitude] = useState(-47.9292);
   const [temperature, setTemperature] = useState(0);
   const [local, setLocal] = useState("")
   const [province, setProvince] = useState("")
+  const [country, setCountry] = useState("")
 
   function getLocation() {
     if (navigator.geolocation) {
@@ -25,30 +26,29 @@ export function Weather() {
 
   useEffect(() => {
     getLocation();
-    async function getWeather() {
+    function getWeather() {
       try {
-        const apiCityTemperature = await fetch(`//api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=95c4c99887881db2f5237d13c18a994b&units=metric`);
-        const cityData = await apiCityTemperature.json();
-        setLocal(cityData.name);
-        setTemperature(cityData.main.temp.toFixed(0));
+        fetch(`//api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=95c4c99887881db2f5237d13c18a994b&units=metric`)
+          .then(event => event.json())
+          .then(res => { setLocal(res.name), setTemperature(res.main.temp), setCountry(res.sys.country) })
 
-        const apiState = await fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/municipios/${local}`)
-        const stateData = await apiState.json();
-        setProvince(stateData.nome);
+        // fetch(`//servicodados.ibge.gov.br/api/v1/localidades/municipios/florianopolis}`)
+        //   .then(event => event.json())
+        //   .then(res => console.log(res))
       } catch (error) {
         console.log(error)
       }
     }
     getWeather();
-  }, [latitude, longitude, province]);
+  }, [latitude, longitude, local, province]);
 
   return (
     <WeatherContainer>
-       <City>{local} - {local === 'Brasília' ? 'DF' : 'SC'}</City> {/* {province} */}
+      <City>{local} - {country}</City>
 
       <WeatherAndTemperature>
         <CloudIcon src={Cloud}></CloudIcon>
-        <Temperature>{temperature}º</Temperature>
+        <Temperature>{temperature.toFixed(0)}º</Temperature>
       </WeatherAndTemperature>
 
     </WeatherContainer>

@@ -10,6 +10,10 @@ export const MissionContainer = styled.div`
   height: 50%;
   text-align: right;
   z-index: 1;
+
+  @media screen and (max-width: 1800px) {
+    height: 383px;
+  }
   
   @media screen and (max-width: 1441px) {
     height: 60%;

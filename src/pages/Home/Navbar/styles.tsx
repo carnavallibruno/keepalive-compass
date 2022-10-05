@@ -5,6 +5,9 @@ export const NavbarContainer = styled.div`
   width: 95.78%;
   height: 15.64%;
 
+  @media screen and (max-width: 1800px) {
+    height: 169px;
+  }
   @media screen and (max-width: 769px), (max-height: 426px) {
     width: 100%;
     height: 5%;

@@ -92,7 +92,7 @@ export const VerticalBar = styled.p`
   height: 61%;
   margin-right: 6.4%;
 
-  @media screen and (max-width: 1025px) {
+  @media screen and (max-width: 1025px), (max-height: 769px) {
     display: none;
   }
 `
