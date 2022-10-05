@@ -16,7 +16,6 @@ interface InputProps {
 
 const Input = ({ type, placeholder, user, setUser, password, setPassword, visible, isPassword }: InputProps) => {
   const [focused, setFocused] = useState(false);
-  // const [isPassword, setIsPassword] = useState(false);
 
   return (
     <InputAll>
@@ -25,25 +24,17 @@ const Input = ({ type, placeholder, user, setUser, password, setPassword, visibl
           type={type}
           placeholder={placeholder}
           onFocus={() => setFocused(true)}
-          
           visible={visible}
-          // isPassword={isPassword}
-
           style={{ fontSize: isPassword && password != '' ? '2.25rem' : '1rem' }}
-
           onBlur={(event) =>
             event.target.value.length > 0 ? setFocused(true) : setFocused(false)
           }
-
           onChange={(data) => {
             switch (type) {
               case "text":
                 setUser?.(data.target.value);
-                // setIsPassword(false);
-
               case "password":
                 setPassword?.(data.target.value);
-                // setIsPassword(true);
             }
           }
 

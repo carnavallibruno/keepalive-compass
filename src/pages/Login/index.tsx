@@ -3,21 +3,11 @@ import { useState } from 'react';
 import { Container, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, LoginAndContinueButton, CompassImageMobile, ImageContainer } from './styles'
 import { Header } from "./Header";
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import ButtonContinue from './ButtonContinue';
 import { ErrorMessage } from "./ErrorMessage";
-import OpenWeatherMap from 'openweathermap-ts';
 
 export default function Login() {
-  const openWeather = new OpenWeatherMap({
-    apiKey: '95c4c99887881db2f5237d13c18a994b'
-  });
-
-  openWeather.getCurrentWeatherByCityName({
-    cityName: 'Florianopolis'
-  })
-    .then((weather) => console.log('Weather object is', weather));
-
   const navigate = useNavigate();
   const [user, setUser] = useState("");
 
@@ -104,5 +94,4 @@ export default function Login() {
 
     </Container>
   )
-
 }

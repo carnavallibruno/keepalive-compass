@@ -16,5 +16,3 @@ export default function ButtonHome({ destination, buttonTitle }: ButtonProps) {
     : navigate(`${destination}`) }>{buttonTitle}</StyledHomeButton>
   )
 }
-
-// window.open('https://compass.uol/pt/home', 'Compass', "height=1200,width=1200")
