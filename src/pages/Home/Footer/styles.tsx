@@ -24,13 +24,17 @@ export const FooterHome = styled.footer`
   @media screen and (max-width: 426px) {
     height: 40%;
   }
+  @media screen and (max-width: 321px) {
+    height: 55%;
+    margin-top: 10%;
+  }
 
 
   @media screen and (max-height: 426px) {
     height: 40%;
   }
   @media screen and (max-height: 321px) {
-    height: 50%;
+    height: 70%;
 }
 `
 
@@ -72,15 +76,18 @@ export const FooterSentence = styled.p`
   }
   @media screen and (max-width: 281px) {
     margin-top: 7.5%;
-    line-height: 17.5px;
+    line-height: 22.5px;
   }
 
 
   @media screen and (max-height: 376px) {
     line-height: 27.5px;
   }
+  @media screen and (max-height: 321px) {
+    line-height: 37.5px;
+  }
   @media screen and (max-height: 281px) {
-    line-height: 27.5px;
+    /* line-height: 27.5px; */
   }
 `
 

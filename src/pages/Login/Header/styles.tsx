@@ -35,8 +35,11 @@ export const HeaderLogin = styled.div`
   @media screen and (max-width: 376px) {
     height: 20%;
   }
-  @media screen and (max-width: 321px) {
-    height: 20%;
+  @media screen and (max-height: 321px) {
+    height: 125px;
+  }
+  @media screen and (max-height: 281px) {
+    margin-bottom: 10%;
   }
 `
 
@@ -49,6 +52,10 @@ export const Title = styled.h1`
 
   @media screen and (max-width: 376px) {
     font-size: 2.75rem;
+  }
+
+  @media screen and (max-height: 281px) {
+    height: 75px;
   }
 `
 

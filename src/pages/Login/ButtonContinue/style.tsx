@@ -23,7 +23,15 @@ export const StyledContinueButton = styled.button`
     cursor: pointer;
     background: linear-gradient(90deg, #C13216 100%, #FF2D04 0%);
   }
+  @media screen and (max-width: 426px) {
+    width: 100%;
+  }
   @media screen and (max-width: 391px) {
     height: 3.25rem;
+  }
+
+
+  @media screen and (max-height: 376px) {
+    width: 100%;
   }
 `

@@ -12,8 +12,10 @@ export const Main = styled.main`
   @media screen and (max-width: 1025px) {
     height: 55%;
   }
-  @media screen and (max-width: 769px) {
-    height: 55%;
+  @media screen and (max-width: 321px) {
+    height: 45%;
+    justify-content: space-between;
+    padding: 0;
   }
 
 

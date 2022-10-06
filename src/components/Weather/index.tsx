@@ -27,7 +27,7 @@ export function Weather() {
     getLocation();
     function getWeather() {
       try {
-        fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=${process.env.WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&user_ip=remote`)
+        fetch(`https://api.hgbrasil.com/weather?format=json-cors&key=df6bd49c&lat=${latitude}&lon=${longitude}&user_ip=remote`)
           .then(event => event.json())
           .then(res => {
             const arrayCityAndState = (res.results.city.split(', '));

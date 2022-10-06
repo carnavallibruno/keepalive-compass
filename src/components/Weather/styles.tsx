@@ -81,6 +81,7 @@ export const City = styled.p`
     color: ${COLORS.whiteText};
   }
   @media screen and (max-width: 321px) {
+    text-align: right;
     height: 12px;
   }
 `

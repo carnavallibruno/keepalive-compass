@@ -24,6 +24,23 @@ export const Container = styled.div`
   @media screen and (max-width: 376px) {
     min-height: 750px;
   }
+  @media screen and (max-width: 321px) {
+    min-height: 700px;
+  }
+  @media screen and (max-width: 281px) {
+    min-height: 650px;
+  }
+
+
+  @media screen and (max-height: 376px) {
+    min-height: 900px;
+  }
+  @media screen and (max-height: 321px) {
+    min-height: 650px;
+  }
+  @media screen and (max-height: 281px) {
+    min-height: 725px;
+  }
 `
 
 export const FormSection = styled.section`
@@ -85,11 +102,14 @@ export const FormContainer = styled.form`
   }
   @media screen and (max-width: 321px) {
     height: 65%;
-
   }
   @media screen and (max-width: 281px) {
     height: 70%;
-    min-height: 550px;
+  }
+
+  @media screen and (max-height: 281px) {
+    height: 70%;
+    min-height: 450px;
   }
 `
 
@@ -156,6 +176,10 @@ export const LoginAndContinueButton = styled.div`
   @media screen and (max-width: 321px) {
     height: 65%;
   }
+
+  @media screen and (max-height: 281px) {
+    height: 500px;
+  }
 `
 
 export const LoginContainer = styled.div`
@@ -180,8 +204,9 @@ export const LoginContainer = styled.div`
   @media screen and (max-width: 376px) {
     height: 55%;
   }
-  @media screen and (max-width: 321px) {
-    height: 55%;
+
+  @media screen and (max-height: 321px) {
+    height: 200px;
   }
 `
 

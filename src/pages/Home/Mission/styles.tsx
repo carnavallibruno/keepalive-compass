@@ -37,9 +37,12 @@ export const MissionContainer = styled.div`
     width: 100%;
     margin-right: 2%;
   }
+  @media screen and (max-width: 321px) {
+    height: 100%;
+  }
 
   @media screen and (max-height: 426px) {
-    height: 80%;
+    height: 90%;
   }
 `
 
@@ -55,22 +58,32 @@ export const MissionRedSmall = styled.p`
     font-size: 1.7rem;
   }
   @media screen and (max-width: 426px) {
-    margin-bottom: -6%;
+    margin-bottom: -7%;
   }
   @media screen and (max-width: 410px) {
-    margin-bottom: -7.5%;
+    margin-bottom: -10%;
   }
   @media screen and (max-width: 376px) {
     font-size: 1.3rem;
   }
+  @media screen and (max-width: 321px) {
+    margin-bottom: -12%;
+  }
   @media screen and (max-width: 281px) {
-    font-size: 1.5rem;
+    margin-bottom: -15%;
+    font-size: 1rem;
   }
 
   
-  @media screen and (max-height: 376px) {
+  @media screen and (max-height: 426px) {
     height: 7.5%;
-    margin-bottom: 2.5%;
+    margin-bottom: -4%;
+  }
+  @media screen and (max-height: 321px) {
+    margin-bottom: -11%;
+  }
+  @media screen and (max-height: 281px) {
+    margin-bottom: -2%;
   }
 `
 
@@ -97,31 +110,39 @@ export const MissionRed = styled.p`
   }
   @media screen and (max-width: 506px) {
     margin-top: 0%;
-    margin-bottom: -6%;
+    margin-bottom: -7%;
 
     font-size: 1.7rem;
     height: 30px;
     line-height: 30px;
   }
   @media screen and (max-width: 410px) {
-    margin-bottom: -7.5%;
+    margin-bottom: -10%;
     font-size: 1.5rem;
   }
   @media screen and (max-width: 360px) {
     font-size: 1.2rem;
   }
+  @media screen and (max-width: 321px) {
+    margin-top: -5%;
+    margin-bottom: -12%;
+  }
   @media screen and (max-width: 281px) {
+    margin-bottom: -15%;
     font-size: 1rem;
   }
 
 
   @media screen and (max-height: 426px) {
     font-size: 2.5rem;
+    margin-bottom: -5%;
   }
   @media screen and (max-height: 321px) {
+    margin-bottom: -13%;
     font-size: 1.8rem;
   }
   @media screen and (max-height: 281px) {
+    margin-bottom: -4.5%;
     font-size: 2rem;
   }
 `
@@ -143,11 +164,17 @@ export const MissionNormal = styled.p`
   @media screen and (max-width: 376px) {
     font-size: 0.9rem;
   }
+  @media screen and (max-width: 321px) {
+    margin-bottom: -2.5%;
+  }
   @media screen and (max-width: 281px) {
     width: 99%;
   }
 
 
+  @media screen and (max-height: 426px) {
+    margin-bottom: 1%;
+  }
   @media screen and (max-height: 321px) {
     font-size: 1.2rem;
   }

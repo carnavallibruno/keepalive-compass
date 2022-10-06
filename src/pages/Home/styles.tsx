@@ -55,7 +55,7 @@ export const ContainerHome = styled.div`
   @media screen and (max-width: 426px) {
     background-size: 50%;
     background-position: -40% 4%;
-    min-height: 896px;
+    min-height: 800px;
   }
   @media screen and (max-width: 376px) {
     background-size: 47.5%;
