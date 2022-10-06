@@ -5,11 +5,15 @@ export const WeatherContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 6.59%;
+  width: 6.79%;
   height: 100%;
 
   margin-top: 1.45%;
   
+  @media screen and (max-width: 1441px) {
+    width: 8.75%;
+  }
+
   @media screen and (max-width: 1025px) {
     width: 13%;
   }
@@ -43,7 +47,7 @@ export const WeatherContainer = styled.div`
     margin-right: 3%;
     align-items: flex-end;
   }
-  
+
 
   @media screen and (max-height: 426px) {
     width: 30%;
@@ -65,9 +69,13 @@ export const WeatherContainer = styled.div`
 export const City = styled.p`
   color: ${COLORS.darkText};
 
+  width: 100%;
+
   font-size: 0.875rem;
   height: 18px;
   line-height: 18px;
+
+  text-align: center;
 
   @media screen and (max-width: 769px), (max-height: 426px) {
     color: ${COLORS.whiteText};
