@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { FONTS } from "../../../components/UI/variables";
 
-export const HeaderLogin = styled.div`
+export const HeaderLoginStyle = styled.div`
   width: 72.18%;
-  height: 21.1%;
+  height: 18%;
 
   display: flex;
   flex-direction: column;

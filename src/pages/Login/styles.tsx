@@ -3,7 +3,7 @@ import laptop from '../../assets/laptop.png'; // ? Calls for error but for some 
 
 import {BACKGROUNDS, COLORS, FONTS} from '../../components/UI/variables'
 
-export const Container = styled.div`
+export const ContainerLogin = styled.div`
   display: flex;
 
   width: 100vw;
@@ -62,7 +62,7 @@ export const FormSection = styled.section`
 `
 
 export const FormContainer = styled.form`
-  height: 63.61%;
+  height: 70%;
   width: 43.43%;
   
   display: flex;
@@ -146,7 +146,7 @@ export const CompassImageMobile = styled.img`
 
 export const LoginAndContinueButton = styled.div`
   width: 100%;
-  height: 58.8%;
+  height: 57.5%;
 
   display: flex;
   flex-direction: column;
@@ -183,7 +183,7 @@ export const LoginAndContinueButton = styled.div`
 `
 
 export const LoginContainer = styled.div`
-  height: 55.19%;
+  height: 50%;
 
   display: flex;
   flex-direction: column;

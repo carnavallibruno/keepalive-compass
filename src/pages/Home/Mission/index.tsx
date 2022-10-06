@@ -13,5 +13,4 @@ export default function Mission() {
       <MissionNormal>que permitam o crescimento dos nossos clientes</MissionNormal>
     </MissionContainer>
   )
-
 }

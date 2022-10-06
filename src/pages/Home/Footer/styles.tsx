@@ -59,7 +59,7 @@ export const FooterSentence = styled.p`
     line-height: 20px;
     text-align: justify;
 
-    margin-top: 3%;
+    margin-top: 1%;
     margin-right: 0%;
   }
   @media screen and (max-width: 721px) {
@@ -72,14 +72,16 @@ export const FooterSentence = styled.p`
     font-size: 0.9rem;
     line-height: 27.5px;
 
-    margin-top: 5%;
+    margin-top: 0%;
   }
   @media screen and (max-width: 281px) {
-    margin-top: 7.5%;
+    margin-top: 2%;
     line-height: 22.5px;
   }
 
-
+  @media screen and (max-height: 426px) {
+    margin-top: 0%;
+  }
   @media screen and (max-height: 376px) {
     line-height: 27.5px;
   }

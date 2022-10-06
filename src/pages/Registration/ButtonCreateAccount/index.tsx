@@ -1,4 +1,4 @@
-import { StyledContinueButton } from './styles';
+import { StyledCreateAccountButton } from './styles';
 
 interface ButtonProps {
   buttonTitle: string;
@@ -7,8 +7,8 @@ interface ButtonProps {
 
 export default function ButtonContinue({ buttonTitle }: ButtonProps) {
   return (
-    <StyledContinueButton>
+    <StyledCreateAccountButton>
       {buttonTitle}
-    </StyledContinueButton>
+    </StyledCreateAccountButton>
   )
 }

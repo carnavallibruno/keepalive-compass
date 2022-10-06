@@ -1,11 +1,12 @@
 import Input from "./Input";
 import { useState } from 'react';
-import { Container, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, LoginAndContinueButton, CompassImageMobile, ImageContainer } from './styles'
-import { Header } from "./Header";
+import { ContainerLogin, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, LoginAndContinueButton, CompassImageMobile, ImageContainer } from './styles'
+import { HeaderLogin } from "./HeaderLogin";
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { useNavigate } from 'react-router-dom';
 import ButtonContinue from './ButtonContinue';
 import { ErrorMessage } from "./ErrorMessage";
+import GoToRegistrationPhrase from "./GoToRegistrationPhrase";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export default function Login() {
   }
 
   return (
-    <Container>
+    <ContainerLogin>
       <FormSection>
         <ImageContainer>
           <CompassImageMobile
@@ -50,7 +51,7 @@ export default function Login() {
             : navigate('/home')
           }}>
 
-          <Header />
+          <HeaderLogin />
 
           <LoginAndContinueButton>
             <LoginContainer>
@@ -81,7 +82,7 @@ export default function Login() {
               visible={visible}
             />
           </LoginAndContinueButton>
-
+          <GoToRegistrationPhrase />
         </FormContainer>
       </FormSection>
 
@@ -92,6 +93,6 @@ export default function Login() {
         />
       </ImageSection>
 
-    </Container>
+    </ContainerLogin>
   )
 }
