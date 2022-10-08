@@ -1,39 +1,21 @@
-import Input from "./Input";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { ContainerLogin, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, LoginAndContinueButton, CompassImageMobile, ImageContainer } from './styles'
 import { HeaderLogin } from "./HeaderLogin";
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { useNavigate } from 'react-router-dom';
-import ButtonContinue from './ButtonContinue';
 import { ErrorMessage } from "./ErrorMessage";
 import GoToRegistrationPhrase from "./GoToRegistrationPhrase";
+import InputLogin from './InputLogin/index';
+import { ButtonContinue } from './ButtonContinue/index';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth, database } from './../../services/firebaseConfig';
+import { update, ref } from 'firebase/database';
 
 export default function Login() {
   const navigate = useNavigate();
-  const [user, setUser] = useState("");
-
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const [visible, setVisible] = useState(false);
-
-  function userValidate(user: string) {
-    const userRegex = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
-    const userRegexCheck = userRegex.test(user);
-
-    if (userRegexCheck) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  function passwordValidate(password: string) {
-    if (password.length < 3) {
-      return false;
-    } else {
-      return true;
-    }
-  }
 
   return (
     <ContainerLogin>
@@ -44,12 +26,27 @@ export default function Login() {
             onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
           />
         </ImageContainer>
+
         <FormContainer onSubmit={(event) => {
           event.preventDefault();
-          (!passwordValidate(password))
-            ? setVisible(true)
-            : navigate('/home')
-          }}>
+          signInWithEmailAndPassword(auth, username, password)
+            .then((userCredential) => {
+              // Signed in
+              const user = userCredential.user;
+              update(ref(database, 'users/' + user.uid), {
+                lastLogin: new Date(),
+              })
+              alert('sign in successful!')
+              navigate('/home')
+              // ...
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              setVisible(true)
+            });
+        }}
+        >
 
           <HeaderLogin />
 
@@ -57,15 +54,15 @@ export default function Login() {
             <LoginContainer>
               <Label>Login</Label>
 
-              <Input
+              <InputLogin
                 type="text"
                 placeholder="Usuário"
-                user={user}
-                setUser={setUser}
+                username={username}
+                setUsername={setUsername}
                 visible={visible}
               />
 
-              <Input
+              <InputLogin
                 type="password"
                 placeholder="Senha"
                 password={password}
@@ -77,10 +74,8 @@ export default function Login() {
 
             {visible && <ErrorMessage>Ops, usuário ou senha inválidos. Tente novamente!</ErrorMessage>}
 
-            <ButtonContinue
-              buttonTitle='Continuar'
-              visible={visible}
-            />
+            <ButtonContinue>Continuar</ButtonContinue>
+
           </LoginAndContinueButton>
           <GoToRegistrationPhrase />
         </FormContainer>

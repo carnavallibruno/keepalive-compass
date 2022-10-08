@@ -6,15 +6,15 @@ import { useState } from 'react';
 interface InputProps {
   type: string;
   placeholder: string;
-  user?: string;
-  setUser?: React.Dispatch<React.SetStateAction<any>>;
+  username?: string;
+  setUsername?: React.Dispatch<React.SetStateAction<any>>;
   password?: string;
   setPassword?: React.Dispatch<React.SetStateAction<any>>;
   visible: boolean;
   isPassword?: boolean;
 }
 
-const Input = ({ type, placeholder, user, setUser, password, setPassword, visible, isPassword }: InputProps) => {
+const Input = ({ type, placeholder, username, setUsername, password, setPassword, visible, isPassword }: InputProps) => {
   const [focused, setFocused] = useState(false);
 
   return (
@@ -32,7 +32,7 @@ const Input = ({ type, placeholder, user, setUser, password, setPassword, visibl
           onChange={(data) => {
             switch (type) {
               case "text":
-                setUser?.(data.target.value);
+                setUsername?.(data.target.value);
               case "password":
                 setPassword?.(data.target.value);
             }
