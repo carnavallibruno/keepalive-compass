@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS } from "../../../components/UI/variables";
+import { COLORS } from "../UI/variables";
 
 export const ErrorMessage = styled.p`
   color: ${COLORS.errorMessage};

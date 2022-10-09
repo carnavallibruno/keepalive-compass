@@ -11,14 +11,60 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { database } from '../../services/firebaseConfig';
 import { ref, set } from 'firebase/database';
 import { auth } from './../../services/firebaseConfig';
+import { BsCheck } from 'react-icons/bs'
+import { ErrorMessage } from '../../components/ErrorMessage';
 
 
 export default function Registration() {
 
-  const [visible, setVisible] = useState(false);
   const { name, setName, surname, setSurname, email, setEmail, password, setPassword, repeatPassword, setRepeatPassword } = useContext(UserRegisterContext)
 
-  
+  const [errorName, setErrorName] = useState(false);
+  const [errorSurname, setErrorSurname] = useState(false);
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [errorPassword, setErrorPassword] = useState(false);
+
+  function checkName(name: string) {
+    const regExName = /^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/;
+    const matchName = regExName.test(name)
+    if (matchName) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function checkEmail(email: string) {
+    const regExEmail = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
+    const matchEmail = regExEmail.test(email);
+
+    if (matchEmail) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  function checkPassword(password: string) {
+    const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z~`!@#$%^&*()-_+={}[]|\/:;"'<>,.?]{6,}$/
+    const matchPassword = regExPassword.test(password)
+    
+    if (matchPassword) {
+      return true;
+    } else {
+      return false
+    }
+  }
+
+  function comparePasswords(password: string, repeatPassword: string) {
+    if (password === repeatPassword && (password && repeatPassword != '')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   return (
     <ContainerRegistration>
       <RegisterSection>
@@ -34,7 +80,7 @@ export default function Registration() {
             e.preventDefault();
             createUserWithEmailAndPassword(auth, email, password)
               .then((userCredential) => {
-                // Signed in 
+                // Signed in
                 const user = userCredential.user;
                 set(ref(database, 'users/' + user.uid), {
                   name: name,
@@ -62,60 +108,67 @@ export default function Registration() {
               <InputAll>
                 <InputContainer>
                   <StyledInput
-                    visible={visible}
+                    errorName={errorName}
                     value={name}
                     type='text'
                     onChange={(event: any) => setName(event.target.value)}
+                    onBlur={() => { checkName(name) ? setErrorName(false) : setErrorName(true) }}
                     placeholder="Nome"
                   />
+                  {checkName(name) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
+                {errorName && <ErrorMessage>Nome inválido</ErrorMessage>}
               </InputAll>
 
               <InputAll>
                 <InputContainer>
                   <StyledInput
-                    visible={visible}
+                    errorSurname={errorSurname}
                     value={surname}
                     type='text'
                     onChange={(event: any) => setSurname(event.target.value)}
+                    onBlur={() => { checkName(surname) ? setErrorSurname(false) : setErrorSurname(true) }}
                     placeholder="Sobrenome"
                   />
+                  {checkName(surname) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
+                {errorSurname && <ErrorMessage>Sobrenome inválido</ErrorMessage>}
               </InputAll>
 
               <InputAll>
                 <InputContainer>
                   <StyledInput
-                    visible={visible}
+                    errorEmail={errorEmail}
                     value={email}
                     type='email'
                     onChange={(event: any) => setEmail(event.target.value)}
                     placeholder="Email"
                   />
+                  {checkEmail(email) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
               </InputAll>
 
               <InputAll>
                 <InputContainer>
                   <StyledInput
-                    visible={visible}
                     value={password}
                     type='password'
                     onChange={(event: any) => setPassword(event.target.value)}
                     placeholder="Senha"
                   />
+                  {comparePasswords(password, repeatPassword) && checkPassword(password) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
               </InputAll>
 
               <InputAll>
                 <InputContainer>
                   <StyledInput
-                    visible={visible}
                     value={repeatPassword}
                     type='password'
                     onChange={(event: any) => setRepeatPassword(event.target.value)}
                     placeholder="Repetir Senha"
                   />
+                  {comparePasswords(password, repeatPassword) && checkPassword(password) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
               </InputAll>
 
@@ -140,3 +193,5 @@ export default function Registration() {
     </ContainerRegistration>
   )
 }
+
+// regex for password (only missing the special type of letters) /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z&@._-&\:]{6,}$/

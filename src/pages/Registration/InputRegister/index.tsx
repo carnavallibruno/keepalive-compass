@@ -6,7 +6,10 @@ interface IconProps {
 }
 
 interface InputProps {
-  visible: boolean;
+  errorName?: boolean;
+  errorSurname?: boolean;
+  errorEmail?: boolean;
+  errorPassword?: boolean;
 }
 
 export const InputAll = styled.div`
@@ -48,7 +51,15 @@ export const StyledInput = styled.input<InputProps>`
   }
 
   ${(props) => 
-    props.visible ? "border: 1px solid #E9B425;" : "border: 1px solid #FFFFFF"
+    props.errorName ? "border: 1px solid #E9B425;" : "border: 1px solid #FFFFFF"
+  }
+
+  ${(props) => 
+    props.errorSurname ? "border: 1px solid #E9B425;" : "border: 1px solid #FFFFFF"
+  }
+
+  ${(props) => 
+    props.errorEmail ? "border: 1px solid #E9B425;" : "border: 1px solid #FFFFFF"
   }
 `
 
