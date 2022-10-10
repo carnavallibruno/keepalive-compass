@@ -4,7 +4,7 @@ import { FONTS } from './../../../components/UI/variables';
 export const GoToLoginPhraseStyle = styled.p`
 width: 90%;
   text-align: center;
-  margin-top: -4%;
+  margin-top: 10%;
 `
 
 export const GoToLoginLink = styled.button`

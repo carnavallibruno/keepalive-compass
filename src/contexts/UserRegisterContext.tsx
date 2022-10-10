@@ -8,9 +8,6 @@ interface UserRegisterContextType {
   name: string;
   setName: (newState: string) => void;
 
-  surname: string;
-  setSurname: (newState: string) => void;
-
   email: string;
   setEmail: (newState: string) => void;
 
@@ -24,9 +21,6 @@ interface UserRegisterContextType {
 const initialValue = {
   name: '',
   setName: () => {},
-
-  surname: '',
-  setSurname: () => {},
 
   email: '',
   setEmail: () => {},
@@ -43,13 +37,12 @@ UserRegisterContext.displayName = 'User Login Context'
 
 export const UserRegisterProvider = ({ children }: UserRegisterContextProps) => {
   const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
 
   return (
-    <UserRegisterContext.Provider value={{ name, setName, surname, setSurname, email, setEmail, password, setPassword, repeatPassword, setRepeatPassword }}>
+    <UserRegisterContext.Provider value={{ name, setName, email, setEmail, password, setPassword, repeatPassword, setRepeatPassword }}>
       {children}
     </UserRegisterContext.Provider>
   )

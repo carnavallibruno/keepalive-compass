@@ -3,7 +3,7 @@ import { ContainerLogin, FormSection, FormContainer, ImageSection, Label, Compas
 import { HeaderLogin } from "./HeaderLogin";
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { useNavigate } from 'react-router-dom';
-import { ErrorMessage } from "../../components/ErrorMessage";
+import { ErrorMessageLogin } from "./ErrorMessageLogin";
 import GoToRegistrationPhrase from "./GoToRegistrationPhrase";
 import { InputAll, InputContainer, StyledInput, UserIconContainer, PasswordIconContainer } from './InputLogin/index';
 import { ButtonContinue } from './ButtonContinue/index';
@@ -100,7 +100,7 @@ export default function Login() {
                 </InputContainer>
               </InputAll>
             </LoginContainer>
-            {visible && <ErrorMessage>Ops, usuário ou senha inválidos. Tente novamente!</ErrorMessage>}
+            {visible && <ErrorMessageLogin>Ops, usuário ou senha inválidos. Tente novamente!</ErrorMessageLogin>}
 
             <ButtonContinue>Continuar</ButtonContinue>
 

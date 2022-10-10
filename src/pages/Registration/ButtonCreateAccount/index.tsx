@@ -23,6 +23,9 @@ export const ButtonCreateAccount = styled.button`
     cursor: pointer;
     background: linear-gradient(90deg, #C13216 100%, #FF2D04 0%);
   }
+  @media screen and (max-width: 1369px) {
+    margin-top: 5%;
+  }
   @media screen and (max-width: 426px) {
     width: 100%;
   }

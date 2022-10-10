@@ -1,5 +1,5 @@
 import { CompassImage, ImageSection } from '../Login/styles';
-import { ContainerRegistration, ImageContainer, FormRegisterContainer, RegisterSection, CompassImageMobile, RegisterFields, LabelRegister, RegisterAndCreateAccountButton } from './styles';
+import { ContainerRegistration, ImageContainer, FormRegisterContainer, RegisterSection, CompassImageMobile, RegisterFields, LabelRegister, RegisterAndCreateAccountButton, ImageSectionRegister } from './styles';
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { HeaderRegistration } from './HeaderRegistration/index';
 import { useState, useContext } from 'react';
@@ -12,15 +12,17 @@ import { database } from '../../services/firebaseConfig';
 import { ref, set } from 'firebase/database';
 import { auth } from './../../services/firebaseConfig';
 import { BsCheck } from 'react-icons/bs'
-import { ErrorMessage } from '../../components/ErrorMessage';
+import { ErrorMessageLogin } from '../Login/ErrorMessageLogin';
 import { useNavigate } from 'react-router-dom';
 import { COLORS } from '../../components/UI/variables';
 import { PasswordRequirements, PasswordRequirementsContainer, PasswordRequirementsSubcontainer } from './PasswordMessages/index';
+import { ErrorMessageRegisterButton, ButtonAndErrorMessage } from './ErrorMessageRegisterButton/index';
+import { ErrorMessageRegisterInput } from './ErrorMessageRegisterInputs/index';
 
 
 export default function Registration() {
 
-  const { name, setName, surname, setSurname, email, setEmail, password, setPassword, repeatPassword, setRepeatPassword } = useContext(UserRegisterContext)
+  const { name, setName, email, setEmail, password, setPassword, repeatPassword, setRepeatPassword } = useContext(UserRegisterContext)
 
   const [errorName, setErrorName] = useState(false);
   const [errorSurname, setErrorSurname] = useState(false);
@@ -57,7 +59,7 @@ export default function Registration() {
     const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z~`!@#$%^&*()-_+={}[]|\/:;"'<>,.?]{6,}$/
     const matchPassword = regExPassword.test(password)
 
-    if (matchPassword) {
+    if (matchPassword && password.length >= 6) {
       return true;
     } else {
       return false
@@ -117,7 +119,7 @@ export default function Registration() {
   }
 
   function validateAll() {
-    if (checkName(name) && checkName(surname) && checkEmail(email) && checkPassword(password) && comparePasswords(password, repeatPassword)) {
+    if (checkName(name) && checkEmail(email) && checkPassword(password) && comparePasswords(password, repeatPassword)) {
       return true;
     } else {
       setErrorCreateAccount(true);
@@ -143,9 +145,13 @@ export default function Registration() {
                 .then((userCredential) => {
                   // Signed in
                   const user = userCredential.user;
+                  const nameSurname = name.split(' ')
+                  const firstName = nameSurname[0]
+                  const lastName = nameSurname[1]
+                  console.log(nameSurname)
                   set(ref(database, 'users/' + user.uid), {
-                    name: name,
-                    surname: surname,
+                    name: firstName,
+                    surname: lastName,
                     email: email,
                   })
                   alert('user created')
@@ -177,26 +183,11 @@ export default function Registration() {
                     onChange={(event: any) => setName(event.target.value)}
                     onBlur={() => { (name === '') || checkName(name) ? setErrorName(false) : setErrorName(true) }}
                     style={{ borderColor: `${errorName ? '#E9B425' : 'white'}` }}
-                    placeholder="Nome"
+                    placeholder="Nome completo"
                   />
                   {checkName(name) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.2} />}
                 </InputContainer>
-                {errorName && <ErrorMessage>Nome inválido.</ErrorMessage>}
-              </InputAll>
-
-              <InputAll>
-                <InputContainer>
-                  <StyledInput
-                    value={surname}
-                    type='text'
-                    onChange={(event: any) => setSurname(event.target.value)}
-                    onBlur={() => { (surname === '') || checkName(surname) ? setErrorSurname(false) : setErrorSurname(true) }}
-                    style={{ borderColor: `${errorSurname ? '#E9B425' : 'white'}` }}
-                    placeholder="Sobrenome"
-                  />
-                  {checkName(surname) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.2} />}
-                </InputContainer>
-                {errorSurname && <ErrorMessage>Sobrenome inválido.</ErrorMessage>}
+                {errorName && <ErrorMessageRegisterInput>Nome inválido.</ErrorMessageRegisterInput>}
               </InputAll>
 
               <InputAll>
@@ -211,7 +202,7 @@ export default function Registration() {
                   />
                   {checkEmail(email) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.2} />}
                 </InputContainer>
-                {errorEmail && <ErrorMessage>Email inválido.</ErrorMessage>}
+                {errorEmail && <ErrorMessageRegisterInput>Email inválido.</ErrorMessageRegisterInput>}
               </InputAll>
 
               <InputAll>
@@ -221,12 +212,12 @@ export default function Registration() {
                     type='password'
                     onChange={(event: any) => setPassword(event.target.value)}
                     onBlur={() => { (password === '') || checkPassword(password) ? setErrorPassword(false) : setErrorPassword(true) }}
-                    style={{ borderColor: `${errorPassword ? '#E9B425' : 'white'}`, fontSize: `${password !== ''? '2rem' : '1rem'}` }}
+                    style={{ borderColor: `${errorPassword || errorRepeatPassword ? '#E9B425' : 'white'}`, fontSize: `${password !== '' ? '2rem' : '1rem'}` }}
                     placeholder="Senha"
                   />
                   {checkPassword(password) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.2} />}
                 </InputContainer>
-                {errorPassword && <ErrorMessage>Senha inválido.</ErrorMessage>}
+                {errorPassword && <ErrorMessageRegisterInput>Senha inválida.</ErrorMessageRegisterInput>}
               </InputAll>
 
               <InputAll>
@@ -236,61 +227,62 @@ export default function Registration() {
                     type='password'
                     onChange={(event: any) => setRepeatPassword(event.target.value)}
                     onBlur={() => { comparePasswords(password, repeatPassword) || repeatPassword === '' ? setErrorRepeatPassword(false) : setErrorRepeatPassword(true) }}
-                    style={{ borderColor: `${errorRepeatPassword ? '#E9B425' : 'white'}`, fontSize: `${repeatPassword !== ''? '2rem' : '1rem'}` }}
+                    style={{ borderColor: `${errorRepeatPassword ? '#E9B425' : 'white'}`, fontSize: `${repeatPassword !== '' ? '2rem' : '1rem'}` }}
                     placeholder="Repetir Senha"
                   />
                   {comparePasswords(password, repeatPassword) && checkPassword(password) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.2} />}
                 </InputContainer>
-                {(errorRepeatPassword) && <ErrorMessage>Senhas não coincidem.</ErrorMessage>}
+                {(errorRepeatPassword) && <ErrorMessageRegisterInput>Senhas não coincidem.</ErrorMessageRegisterInput>}
               </InputAll>
             </RegisterFields>
 
             <PasswordRequirementsContainer>
               <PasswordRequirementsSubcontainer>
-              <PasswordRequirements>
-                {password.length > 6 ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
-                <p>6 caracteres</p>
-              </PasswordRequirements>
+                <PasswordRequirements>
+                  {password.length >= 6 ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
+                  <p>6 caracteres</p>
+                </PasswordRequirements>
 
-              <PasswordRequirements>
-                {checkSpecialCharacter(password) ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
-                <p>1 caractere especial</p>
-              </PasswordRequirements>
+                <PasswordRequirements>
+                  {checkSpecialCharacter(password) ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
+                  <p>1 caractere especial</p>
+                </PasswordRequirements>
 
-              <PasswordRequirements>
-                {checkUpperCase(password) ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
-                <p>1 letra maiúscula</p>
-              </PasswordRequirements>
+                <PasswordRequirements>
+                  {checkUpperCase(password) ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
+                  <p>1 letra maiúscula</p>
+                </PasswordRequirements>
 
-              <PasswordRequirements>
-                {checkLowerCase(password) ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
-                <p>1 letra minúscula</p>
-              </PasswordRequirements>
+                <PasswordRequirements>
+                  {checkLowerCase(password) ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
+                  <p>1 letra minúscula</p>
+                </PasswordRequirements>
 
-              <PasswordRequirements>
-                {checkForNumber(password) ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
-                <p>1 número</p>
-              </PasswordRequirements>
+                <PasswordRequirements>
+                  {checkForNumber(password) ? <BsCheck size={30} color="#7CFC00" /> : <BsCheck size={30} opacity={0.2} />}
+                  <p>1 número</p>
+                </PasswordRequirements>
               </PasswordRequirementsSubcontainer>
             </PasswordRequirementsContainer>
 
-            <ButtonCreateAccount>
-              Criar conta
-            </ButtonCreateAccount>
-            {errorCreateAccount && <ErrorMessage>Um ou mais campos não foram preenchidos corretamente</ErrorMessage>}
-
+            <ButtonAndErrorMessage>
+              <ButtonCreateAccount>
+                Criar conta
+              </ButtonCreateAccount>
+              {errorCreateAccount && <ErrorMessageRegisterButton>Um ou mais campos não foram preenchidos corretamente</ErrorMessageRegisterButton>}
+            </ButtonAndErrorMessage>
           </RegisterAndCreateAccountButton>
 
           <GoToLoginPhrase />
         </FormRegisterContainer>
       </RegisterSection>
 
-      <ImageSection>
+      <ImageSectionRegister>
         <CompassImage
           src={compassImg}
           onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
         />
-      </ImageSection>
+      </ImageSectionRegister>
     </ContainerRegistration>
   )
 }
