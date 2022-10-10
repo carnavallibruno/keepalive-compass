@@ -221,7 +221,7 @@ export default function Registration() {
                     type='password'
                     onChange={(event: any) => setPassword(event.target.value)}
                     onBlur={() => { (password === '') || checkPassword(password) ? setErrorPassword(false) : setErrorPassword(true) }}
-                    style={{ borderColor: `${errorPassword ? '#E9B425' : 'white'}` }}
+                    style={{ borderColor: `${errorPassword ? '#E9B425' : 'white'}`, fontSize: `${password !== ''? '2rem' : '1rem'}` }}
                     placeholder="Senha"
                   />
                   {checkPassword(password) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.2} />}
@@ -236,7 +236,7 @@ export default function Registration() {
                     type='password'
                     onChange={(event: any) => setRepeatPassword(event.target.value)}
                     onBlur={() => { comparePasswords(password, repeatPassword) || repeatPassword === '' ? setErrorRepeatPassword(false) : setErrorRepeatPassword(true) }}
-                    style={{ borderColor: `${errorRepeatPassword ? '#E9B425' : 'white'}` }}
+                    style={{ borderColor: `${errorRepeatPassword ? '#E9B425' : 'white'}`, fontSize: `${repeatPassword !== ''? '2rem' : '1rem'}` }}
                     placeholder="Repetir Senha"
                   />
                   {comparePasswords(password, repeatPassword) && checkPassword(password) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.2} />}

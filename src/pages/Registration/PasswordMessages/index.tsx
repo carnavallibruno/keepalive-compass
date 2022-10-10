@@ -7,13 +7,15 @@ export const PasswordRequirementsContainer = styled.div`
   /* border: 1px solid red; */
   align-items: center;
   justify-content: center;
-  height: 20%;
+  height: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 `
 
 export const PasswordRequirementsSubcontainer = styled.div`
 /* border: 1px solid red; */
 width: 100%;
-height: 60%;
+height: 70%;
 display: flex;
 flex-wrap: wrap;
 `

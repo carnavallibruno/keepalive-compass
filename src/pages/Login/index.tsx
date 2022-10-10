@@ -88,6 +88,7 @@ export default function Login() {
                     onChange={(event: any) => setPassword(event.target.value)}
                     visible={visible}
                     onFocus={() => setPasswordInputFocused(true)}
+                    style= {{fontSize: `${password !== ''? '2rem' : '1rem'}`}}
                     onBlur={(event) =>
                       event.target.value.length > 0 ? setPasswordInputFocused(true) : setPasswordInputFocused(false)
                     }

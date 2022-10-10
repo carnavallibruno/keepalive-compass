@@ -13,7 +13,7 @@ export const ButtonCreateAccount = styled.button`
   width: 90%;
   height: 4.188rem;  
 
-  margin-top: 5%;
+  /* margin-top: 5%; */
   
   background: ${BACKGROUNDS.continueButtonBackground};
   box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.15);
