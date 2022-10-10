@@ -41,10 +41,9 @@ export default function Login() {
                 lastLogin: new Date(),
               })
               const userToken = (user.getIdToken().then((idToken) => {
-                idToken
+                console.log(idToken)
               }))
               navigate('/home')
-              // ...
             })
             .catch((error) => {
               const errorCode = error.code;

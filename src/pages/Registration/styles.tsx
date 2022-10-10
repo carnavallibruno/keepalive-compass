@@ -25,7 +25,7 @@ export const RegisterSection = styled.section`
 export const FormRegisterContainer = styled.form`
   /* border: 1px solid red; */
   width: 50%;
-  height: 864px;
+  height: 972px;
   display: flex;
   flex-direction: column;
 `
@@ -40,11 +40,10 @@ export const RegisterAndCreateAccountButton = styled.div`
 
 export const RegisterFields = styled.div`
   /* border: 1px solid red; */
-  height: 415px;
+  height: 475px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 17.5%;
 `
 
 export const ImageContainer = styled.div`

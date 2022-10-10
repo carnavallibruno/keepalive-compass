@@ -5,13 +5,6 @@ interface IconProps {
   focused: boolean;
 }
 
-interface InputProps {
-  errorName?: boolean,
-  errorSurname?: boolean,
-  errorEmail?: boolean,
-  errorPassword?: boolean,
-}
-
 export const InputAll = styled.div`
   height: 60px;
   @media screen and (max-width: 376px) {
@@ -26,7 +19,7 @@ export const InputContainer = styled.div`
   height: 100%;
 `
 
-export const StyledInput = styled.input<InputProps>`
+export const StyledInput = styled.input`
   font-family: ${FONTS.fontMarkPro};
   font-weight: ${FONTS.fontWeightRegular};
   background: transparent;
@@ -48,18 +41,6 @@ export const StyledInput = styled.input<InputProps>`
   ::placeholder {
     font-size: 1rem;
     color: ${COLORS.loginTitleText};
-  }
-
-  ${(props) => 
-    props.errorName ? "border: 1px solid #E9B425;" : "border: 1px solid #FFFFFF"
-  }
-
-  ${(props) => 
-    props.errorSurname ? "border: 1px solid #E9B425;" : "border: 1px solid #FFFFFF"
-  }
-
-  ${(props) => 
-    props.errorEmail ? "border: 1px solid #E9B425;" : "border: 1px solid #FFFFFF"
   }
 `
 

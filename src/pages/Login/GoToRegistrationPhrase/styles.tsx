@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FONTS } from "../../../components/UI/variables";
 
 export const GoToRegistrationPhraseStyle = styled.p`
   text-align: center;
@@ -6,7 +7,16 @@ export const GoToRegistrationPhraseStyle = styled.p`
   width: 94.5%;
 `
 
-export const GoToRegistrationLink = styled.a`
-  text-decoration: none;
+export const GoToRegistrationLink = styled.button`
   color: #C13216;
+  text-decoration: none;
+  background: none;
+  border: none;
+
+  font-family: ${FONTS.fontMarkPro};
+  font-size: 1rem;
+
+  padding: 0;
+  
+  cursor: pointer;
 `
