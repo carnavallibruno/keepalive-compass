@@ -23,6 +23,8 @@ export default function Registration() {
   const [errorSurname, setErrorSurname] = useState(false);
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
+  const [errorRepeatPassword, setErrorRepeatPassword] = useState(false);
+  const [errorCreateAccount, setErrorCreateAccount] = useState(false);
 
   function checkName(name: string) {
     const regExName = /^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/;
@@ -49,7 +51,7 @@ export default function Registration() {
   function checkPassword(password: string) {
     const regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z~`!@#$%^&*()-_+={}[]|\/:;"'<>,.?]{6,}$/
     const matchPassword = regExPassword.test(password)
-    
+
     if (matchPassword) {
       return true;
     } else {
@@ -65,6 +67,15 @@ export default function Registration() {
     }
   }
 
+  function validateAll() {
+    if (checkName(name) && checkName(surname) && checkEmail(email) && checkPassword(password) && comparePasswords(password, repeatPassword)) {
+      return true;
+    } else {
+      setErrorCreateAccount(true);
+      return false;
+    }
+  }
+
   return (
     <ContainerRegistration>
       <RegisterSection>
@@ -76,26 +87,30 @@ export default function Registration() {
         </ImageContainer>
 
         <FormRegisterContainer onSubmit={
-          (e) => {
-            e.preventDefault();
-            createUserWithEmailAndPassword(auth, email, password)
-              .then((userCredential) => {
-                // Signed in
-                const user = userCredential.user;
-                set(ref(database, 'users/' + user.uid), {
-                  name: name,
-                  surname: surname,
-                  email: email,
+          (event) => {
+            if (validateAll()) {
+              event.preventDefault();
+              createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                  // Signed in
+                  const user = userCredential.user;
+                  set(ref(database, 'users/' + user.uid), {
+                    name: name,
+                    surname: surname,
+                    email: email,
+                  })
+                  alert('user created')
                 })
-                alert('user created')
-                // ...
-              })
-              .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                alert(errorMessage)
-                // ..
-              });
+                .catch((error) => {
+                  const errorCode = error.code;
+                  const errorMessage = error.message;
+                  alert(errorMessage)
+                });
+            } else {
+              event.preventDefault()
+
+              return (alert('Deu errado'))
+            }
           }
         }>
           <HeaderRegistration />
@@ -112,12 +127,12 @@ export default function Registration() {
                     value={name}
                     type='text'
                     onChange={(event: any) => setName(event.target.value)}
-                    onBlur={() => { checkName(name) ? setErrorName(false) : setErrorName(true) }}
+                    onBlur={() => { (name === '') || checkName(name) ? setErrorName(false) : setErrorName(true) }}
                     placeholder="Nome"
                   />
                   {checkName(name) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
-                {errorName && <ErrorMessage>Nome inválido</ErrorMessage>}
+                {errorName && <ErrorMessage>Nome inválido.</ErrorMessage>}
               </InputAll>
 
               <InputAll>
@@ -127,12 +142,12 @@ export default function Registration() {
                     value={surname}
                     type='text'
                     onChange={(event: any) => setSurname(event.target.value)}
-                    onBlur={() => { checkName(surname) ? setErrorSurname(false) : setErrorSurname(true) }}
+                    onBlur={() => { (surname === '') || checkName(surname) ? setErrorSurname(false) : setErrorSurname(true) }}
                     placeholder="Sobrenome"
                   />
                   {checkName(surname) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
-                {errorSurname && <ErrorMessage>Sobrenome inválido</ErrorMessage>}
+                {errorSurname && <ErrorMessage>Sobrenome inválido.</ErrorMessage>}
               </InputAll>
 
               <InputAll>
@@ -142,10 +157,12 @@ export default function Registration() {
                     value={email}
                     type='email'
                     onChange={(event: any) => setEmail(event.target.value)}
+                    onBlur={() => { (email === '') || checkEmail(email) ? setErrorEmail(false) : setErrorEmail(true) }}
                     placeholder="Email"
                   />
                   {checkEmail(email) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
+                {errorEmail && <ErrorMessage>Email inválido.</ErrorMessage>}
               </InputAll>
 
               <InputAll>
@@ -154,10 +171,12 @@ export default function Registration() {
                     value={password}
                     type='password'
                     onChange={(event: any) => setPassword(event.target.value)}
+                    onBlur={() => { (password === '') || checkPassword(password) ? setErrorPassword(false) : setErrorPassword(true) }}
                     placeholder="Senha"
                   />
                   {comparePasswords(password, repeatPassword) && checkPassword(password) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
+                {errorPassword && <ErrorMessage>Senha inválida.</ErrorMessage>}
               </InputAll>
 
               <InputAll>
@@ -166,10 +185,12 @@ export default function Registration() {
                     value={repeatPassword}
                     type='password'
                     onChange={(event: any) => setRepeatPassword(event.target.value)}
+                    onBlur={() => { comparePasswords(password, repeatPassword) ? setErrorRepeatPassword(false) : setErrorRepeatPassword(true) }}
                     placeholder="Repetir Senha"
                   />
                   {comparePasswords(password, repeatPassword) && checkPassword(password) ? <BsCheck size={60} color="#7CFC00" /> : <BsCheck size={60} opacity={0.3} />}
                 </InputContainer>
+                {(errorRepeatPassword) && <ErrorMessage>Senhas não coincidem.</ErrorMessage>}
               </InputAll>
 
             </RegisterFields>
@@ -177,6 +198,7 @@ export default function Registration() {
             <ButtonCreateAccount>
               Criar conta
             </ButtonCreateAccount>
+            {errorCreateAccount && <ErrorMessage>Um ou mais campos não foram preenchidos corretamente</ErrorMessage>}
 
           </RegisterAndCreateAccountButton>
 

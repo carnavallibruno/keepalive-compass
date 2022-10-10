@@ -6,10 +6,10 @@ interface IconProps {
 }
 
 interface InputProps {
-  errorName?: boolean;
-  errorSurname?: boolean;
-  errorEmail?: boolean;
-  errorPassword?: boolean;
+  errorName?: boolean,
+  errorSurname?: boolean,
+  errorEmail?: boolean,
+  errorPassword?: boolean,
 }
 
 export const InputAll = styled.div`
