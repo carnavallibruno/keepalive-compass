@@ -7,7 +7,7 @@ import GoToLoginPhrase from './GoToLoginPhrase/index';
 import { InputAll, InputContainer, StyledInput } from './InputRegister';
 import { UserRegisterContext } from './../../contexts/UserRegisterContext';
 import { ButtonCreateAccount } from './ButtonCreateAccount/index';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { database } from '../../services/firebaseConfig';
 import { ref, set } from 'firebase/database';
 import { auth } from './../../services/firebaseConfig';
@@ -150,13 +150,14 @@ export default function Registration() {
                   const nameSurname = name.split(' ')
                   const firstName = nameSurname[0]
                   const lastName = nameSurname[1]
+                  
+                  updateProfile(userCredential.user, { displayName: name})
+
                   set(ref(database, 'users/' + user.uid), {
                     name: firstName,
                     surname: lastName,
                     email: email,
                   })
-                  sessionStorage.setItem("Name", firstName)
-                  // alert('user created')
                   navigate('/')
                 })
                 .catch((error) => {

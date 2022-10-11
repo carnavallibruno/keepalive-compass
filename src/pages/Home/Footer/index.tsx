@@ -15,9 +15,7 @@ export default function Footer() {
   const logOut = () => {
     signOut(auth)
     navigate('/')
-    sessionStorage.clear();
   }
-  console.log(auth.currentUser)
   
   return (
     <FooterHome>

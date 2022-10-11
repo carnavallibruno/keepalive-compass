@@ -1,10 +1,10 @@
 import { FooterGreetingStyle } from './styles';
+import { auth } from './../../../services/firebaseConfig';
 
 
 export default function FooterGreeting() {
-  const name = sessionStorage.getItem("Name")
 
   return(
-    <FooterGreetingStyle>Bem-vindo, {name === null ? "convidado" : name}</FooterGreetingStyle>
+    <FooterGreetingStyle>Bem-vindo, {auth.currentUser?.displayName?.split(' ')[0]}</FooterGreetingStyle>
   )
 }

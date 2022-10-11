@@ -8,9 +8,19 @@ import { Weather } from './../../../components/Weather/index';
 
 import DarkLogo from '../../../assets/LogoCompasso-1.svg'
 import LightLogo from '../../../assets/Logo-Compasso-Branco.svg'
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { auth } from './../../../services/firebaseConfig';
 
 export default function Navbar() {
+  
   const { date, time } = useDate()
+  
+  const navigate = useNavigate()
+  
+  useEffect(() => {
+    !auth.currentUser && navigate('/')
+  }, [])
 
   return (
     <NavbarContainer>

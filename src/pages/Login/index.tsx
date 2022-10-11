@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { ContainerLogin, FormSection, FormContainer, ImageSection, Label, CompassImage, LoginContainer, LoginAndContinueButton, CompassImageMobile, ImageContainer } from './styles'
 import { HeaderLogin } from "./HeaderLogin";
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
@@ -24,6 +24,8 @@ export default function Login() {
   const [userInputFocused, setUserInputFocused] = useState(false)
   const [passwordInputFocused, setPasswordInputFocused] = useState(false)
 
+  
+
   return (
     <ContainerLogin>
       <FormSection>
@@ -43,6 +45,7 @@ export default function Login() {
               update(ref(database, 'users/' + user.uid), {
                 lastLogin: new Date(),
               })
+              
               navigate('/home')
             })
             .catch((error) => {
