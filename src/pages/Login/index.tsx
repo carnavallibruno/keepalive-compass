@@ -36,7 +36,6 @@ export default function Login() {
 
         <FormContainer onSubmit={(event) => {
           event.preventDefault();
-          // signIn();
           signInWithEmailAndPassword(auth, username, password)
             .then((userCredential) => {
               // ? Signed in
@@ -72,7 +71,6 @@ export default function Login() {
                     onBlur={(event) =>
                       event.target.value.length > 0 ? setUserInputFocused(true) : setUserInputFocused(false)
                     }
-                  // isPassword={false}
                   />
                   <UserIconContainer userInputFocused={userInputFocused}>
                     <AiOutlineUser size={24} />
@@ -93,7 +91,6 @@ export default function Login() {
                     onBlur={(event) =>
                       event.target.value.length > 0 ? setPasswordInputFocused(true) : setPasswordInputFocused(false)
                     }
-                  // isPassword={true}
                   />
                   <PasswordIconContainer passwordInputFocused={passwordInputFocused}>
                     <HiOutlineLockClosed size={24} />

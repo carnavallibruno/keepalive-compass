@@ -156,17 +156,17 @@ export default function Registration() {
                     email: email,
                   })
                   sessionStorage.setItem("Name", firstName)
-                  alert('user created')
+                  // alert('user created')
                   navigate('/')
                 })
                 .catch((error) => {
                   const errorCode = error.code;
                   const errorMessage = error.message;
-                  alert(errorMessage)
+                  // alert(errorMessage)
                 });
             } else {
               event.preventDefault()
-              return (alert('Deu errado'))
+              return
             }
           }
         }>
@@ -288,5 +288,3 @@ export default function Registration() {
     </ContainerRegistration>
   )
 }
-
-// regex for password (only missing the special type of letters) /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z&@._-&\:]{6,}$/
