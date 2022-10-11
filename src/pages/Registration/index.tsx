@@ -1,5 +1,5 @@
 import { CompassImage, ImageSection } from '../Login/styles';
-import { ContainerRegistration, ImageContainer, FormRegisterContainer, RegisterSection, CompassImageMobile, RegisterFields, LabelRegister, RegisterAndCreateAccountButton, ImageSectionRegister } from './styles';
+import { ContainerRegistration, ImageContainerRegister, FormRegisterContainer, RegisterSection, CompassImageMobile, RegisterFields, LabelRegister, RegisterAndCreateAccountButton, ImageSectionRegister } from './styles';
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { HeaderRegistration } from './HeaderRegistration/index';
 import { useState, useContext } from 'react';
@@ -130,12 +130,12 @@ export default function Registration() {
   return (
     <ContainerRegistration>
       <RegisterSection>
-        <ImageContainer>
+        <ImageContainerRegister>
           <CompassImageMobile
             src={compassImg}
             onClick={() => window.open('https://compass.uol/pt/home', '_blank')} style={{ cursor: 'pointer' }}
           />
-        </ImageContainer>
+        </ImageContainerRegister>
 
         <FormRegisterContainer onSubmit={
           (event) => {

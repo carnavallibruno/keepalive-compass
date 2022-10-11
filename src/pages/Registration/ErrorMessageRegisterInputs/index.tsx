@@ -18,6 +18,9 @@ export const ErrorMessageRegisterInput = styled.p`
     width: 80%;
     margin-left: 6.5%;
   }
+  @media screen and (max-width: 426px) {
+    margin-left: 3.5%;
+  }
   @media screen and (max-width: 391px) {
     margin-bottom: 0%;
   }
@@ -25,6 +28,5 @@ export const ErrorMessageRegisterInput = styled.p`
     font-size: 0.9rem;
   }
   @media screen and (max-width: 281px) {
-    width: 85%;
   }
 `

@@ -2,9 +2,16 @@ import styled from "styled-components";
 import { FONTS } from './../../../components/UI/variables';
 
 export const GoToLoginPhraseStyle = styled.p`
-width: 90%;
+  width: 90%;
   text-align: center;
   margin-top: 10%;
+  @media screen and (max-width: 1025px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 281px) {
+    width: 98%;
+    line-height: 25px;
+  }
 `
 
 export const GoToLoginLink = styled.button`

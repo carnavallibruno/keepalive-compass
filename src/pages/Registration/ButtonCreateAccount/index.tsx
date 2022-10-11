@@ -26,7 +26,7 @@ export const ButtonCreateAccount = styled.button`
   @media screen and (max-width: 1369px) {
     margin-top: 5%;
   }
-  @media screen and (max-width: 426px) {
+  @media screen and (max-width: 1025px) {
     width: 100%;
   }
   @media screen and (max-width: 391px) {

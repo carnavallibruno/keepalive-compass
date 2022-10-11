@@ -32,14 +32,14 @@ export const ContainerLogin = styled.div`
   }
 
 
+  @media screen and (max-height: 426px) {
+    min-height: 900px;
+  }
   @media screen and (max-height: 376px) {
     min-height: 900px;
   }
-  @media screen and (max-height: 321px) {
-    min-height: 650px;
-  }
   @media screen and (max-height: 281px) {
-    min-height: 725px;
+    min-height: 800px;
   }
 `
 

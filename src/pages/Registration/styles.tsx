@@ -10,7 +10,10 @@ export const ContainerRegistration = styled.div`
 
   margin: 0 auto;
   @media screen and (max-width: 1025px) {
-    min-height: 950px;
+    min-height: 1200px;
+  }
+  @media screen and (max-width: 769px) {
+    min-height: 1000px;
   }
 `
 
@@ -35,6 +38,9 @@ export const FormRegisterContainer = styled.form`
   height: 90%;
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 426px) {
+    width: 85%;
+  }
 `
 
 export const RegisterAndCreateAccountButton = styled.div`
@@ -65,10 +71,29 @@ export const ImageSectionRegister = styled.section`
   }
 `
 
-export const ImageContainer = styled.div`
+export const ImageContainerRegister = styled.div`
   width: 40%;
   text-align: center;
   display: none;
+  @media screen and (max-width: 1025px) {
+    display: block;
+    width: 20%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+  @media screen and (max-width: 769px) {
+    margin-top: 0%;
+  }
+  @media screen and (max-width: 426px) {
+    width: 55%;
+    margin-bottom: 20%;
+  }
+  @media screen and (max-width: 376px) {
+    margin-bottom: 15%;
+  }
+  @media screen and (max-width: 321px) {
+    margin-top: 0%;
+  }
 `
 
 export const CompassImageMobile = styled.img`
