@@ -13,10 +13,13 @@ import { update, ref } from 'firebase/database';
 import { UserLoginContext } from './../../contexts/UserLoginContext';
 import { AiOutlineUser } from 'react-icons/ai';
 import { HiOutlineLockClosed } from 'react-icons/hi';
+import { UserRegisterContext } from './../../contexts/UserRegisterContext';
 
 export default function Login() {
   const navigate = useNavigate();
   const { username, setUsername, password, setPassword } = useContext(UserLoginContext)
+  const { name, setName } = useContext(UserRegisterContext);
+
   const [visible, setVisible] = useState(false)
   const [userInputFocused, setUserInputFocused] = useState(false)
   const [passwordInputFocused, setPasswordInputFocused] = useState(false)
@@ -33,16 +36,14 @@ export default function Login() {
 
         <FormContainer onSubmit={(event) => {
           event.preventDefault();
+          // signIn();
           signInWithEmailAndPassword(auth, username, password)
             .then((userCredential) => {
-              // Signed in
+              // ? Signed in
               const user = userCredential.user;
               update(ref(database, 'users/' + user.uid), {
                 lastLogin: new Date(),
               })
-              const userToken = (user.getIdToken().then((idToken) => {
-                console.log(idToken)
-              }))
               navigate('/home')
             })
             .catch((error) => {
@@ -88,7 +89,7 @@ export default function Login() {
                     onChange={(event: any) => setPassword(event.target.value)}
                     visible={visible}
                     onFocus={() => setPasswordInputFocused(true)}
-                    style= {{fontSize: `${password !== ''? '2rem' : '1rem'}`}}
+                    style={{ fontSize: `${password !== '' ? '2rem' : '1rem'}` }}
                     onBlur={(event) =>
                       event.target.value.length > 0 ? setPasswordInputFocused(true) : setPasswordInputFocused(false)
                     }

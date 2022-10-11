@@ -1,7 +1,10 @@
 import { FooterGreetingStyle } from './styles';
 
+
 export default function FooterGreeting() {
+  const name = sessionStorage.getItem("Name")
+
   return(
-    <FooterGreetingStyle>Bem-vindo, Bruno</FooterGreetingStyle>
+    <FooterGreetingStyle>Bem-vindo, {name}</FooterGreetingStyle>
   )
 }

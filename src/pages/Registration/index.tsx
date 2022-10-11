@@ -144,16 +144,18 @@ export default function Registration() {
               createUserWithEmailAndPassword(auth, email, password)
                 .then((userCredential) => {
                   // Signed in
+                  
                   const user = userCredential.user;
+                  
                   const nameSurname = name.split(' ')
                   const firstName = nameSurname[0]
                   const lastName = nameSurname[1]
-                  console.log(nameSurname)
                   set(ref(database, 'users/' + user.uid), {
                     name: firstName,
                     surname: lastName,
                     email: email,
                   })
+                  sessionStorage.setItem("Name", firstName)
                   alert('user created')
                   navigate('/')
                 })
