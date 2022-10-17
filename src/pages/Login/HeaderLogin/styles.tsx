@@ -21,13 +21,6 @@ export const HeaderLoginStyle = styled.div`
   }
   @media screen and (max-width: 668px) {
     width: 100%;
-    height: 20%;
-  }
-  @media screen and (max-width: 481px) {
-    height: 20%;
-  }
-  @media screen and (max-width: 426px) {
-    height: 22%;
   }
   @media screen and (max-width: 426px) {
     height: 22.5%;
@@ -35,6 +28,8 @@ export const HeaderLoginStyle = styled.div`
   @media screen and (max-width: 376px) {
     height: 20%;
   }
+
+  
   @media screen and (max-height: 321px) {
     height: 125px;
   }

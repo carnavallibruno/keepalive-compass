@@ -9,7 +9,6 @@ export const FooterGreetingStyle = styled.p`
   @media screen and (max-width: 1025px) {
     font-size: 1rem;
     width: 27%;
-    margin-left: 1%;
   }
   @media screen and (max-width: 769px) {
     margin-left: 0%;
@@ -26,16 +25,14 @@ export const FooterGreetingStyle = styled.p`
   }
   @media screen and (max-width: 391px) {
     font-size: 1.25rem;
-    line-height: 40px;
     margin-top: 1%;
   }
   @media screen and (max-width: 376px) {
     margin-top: 2%;
-    font-size: 1.25rem;
   }
 
 
-  
+
   @media screen and (max-height: 426px) {
     line-height: 40px;
     font-size: 1.75rem;

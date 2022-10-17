@@ -1,4 +1,4 @@
-import styled  from 'styled-components';
+import styled from 'styled-components';
 import { BACKGROUNDS } from "../../../components/UI/variables"
 import { COLORS } from '../../../components/UI/variables';
 
@@ -65,19 +65,15 @@ export const FooterSentence = styled.p`
   @media screen and (max-width: 721px) {
     font-size: 0.9rem;
   }
-  @media screen and (max-width: 541px) {
-    font-size: 0.9rem;
-  }
   @media screen and (max-width: 426px) {
-    font-size: 0.9rem;
-    line-height: 27.5px;
-
     margin-top: 0%;
+    line-height: 27.5px;
   }
   @media screen and (max-width: 281px) {
     margin-top: 2%;
     line-height: 22.5px;
   }
+
 
   @media screen and (max-height: 426px) {
     margin-top: 0%;
@@ -87,9 +83,6 @@ export const FooterSentence = styled.p`
   }
   @media screen and (max-height: 321px) {
     line-height: 37.5px;
-  }
-  @media screen and (max-height: 281px) {
-    /* line-height: 27.5px; */
   }
 `
 

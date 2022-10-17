@@ -24,10 +24,8 @@ export const MissionContainer = styled.div`
   @media screen and (max-width: 1025px) {
     width: 95%;
     height: 100%;
-    /* text-align: center; */
   }
   @media screen and (max-width: 769px) {
-    /* text-align: center; */
     height: 85%;
   }
   @media screen and (max-width: 426px) {
@@ -74,7 +72,8 @@ export const MissionRedSmall = styled.p`
     font-size: 1rem;
   }
 
-  
+
+
   @media screen and (max-height: 426px) {
     height: 7.5%;
     margin-bottom: -4%;

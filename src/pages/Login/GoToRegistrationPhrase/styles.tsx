@@ -7,7 +7,6 @@ export const GoToRegistrationPhraseStyle = styled.p`
   width: 94.5%;
   @media screen and (max-width: 1025px) {
     width: 87.5%;
-    /* border: 1px solid red; */
     line-height: 20px;
     margin-left: 4%
   }
@@ -19,6 +18,7 @@ export const GoToRegistrationPhraseStyle = styled.p`
     margin-left: 8%;
   }
 
+  
   @media screen and (max-height: 426px) {
     margin-top: 5%;
   }

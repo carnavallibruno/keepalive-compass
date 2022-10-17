@@ -13,9 +13,6 @@ export const NavbarContainer = styled.div`
     height: 5%;
     background: ${BACKGROUNDS.loginBackground};
   }
-  @media screen and  (max-width: 391px) {
-    height: 5%;
-  }
   @media screen and (max-width: 321px) {
     height: 7%;
   }
@@ -34,8 +31,6 @@ export const HomeNavbar = styled.nav`
   }
   @media screen and (max-width: 426px) {
     margin-top: 0%;
-    display: flex;
-    align-items: center;
   }
 `
 
