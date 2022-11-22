@@ -1,31 +1,29 @@
-import { CompassImage, ImageSection } from '../Login/styles';
+import { CompassImage } from '../Login/styles';
 import { ContainerRegistration, ImageContainerRegister, FormRegisterContainer, RegisterSection, CompassImageMobile, RegisterFields, LabelRegister, RegisterAndCreateAccountButton, ImageSectionRegister } from './styles';
 import compassImg from '../../assets/Logo-Compasso-Branco.svg';
 import { HeaderRegistration } from './HeaderRegistration/index';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import GoToLoginPhrase from './GoToLoginPhrase/index';
 import { InputAll, InputContainer, StyledInput } from './InputRegister';
-import { UserRegisterContext } from './../../contexts/UserRegisterContext';
 import { ButtonCreateAccount } from './ButtonCreateAccount/index';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { database } from '../../services/firebaseConfig';
 import { ref, set } from 'firebase/database';
 import { auth } from './../../services/firebaseConfig';
 import { BsCheck } from 'react-icons/bs'
-import { ErrorMessageLogin } from '../Login/ErrorMessageLogin';
 import { useNavigate } from 'react-router-dom';
-import { COLORS } from '../../components/UI/variables';
 import { PasswordRequirements, PasswordRequirementsContainer, PasswordRequirementsSubcontainer } from './PasswordMessages/index';
 import { ErrorMessageRegisterButton, ButtonAndErrorMessage } from './ErrorMessageRegisterButton/index';
 import { ErrorMessageRegisterInput } from './ErrorMessageRegisterInputs/index';
 
 
 export default function Registration() {
-
-  const { name, setName, email, setEmail, password, setPassword, repeatPassword, setRepeatPassword } = useContext(UserRegisterContext)
+  const [ name, setName ] = useState('')
+  const [ email, setEmail ] = useState('')
+  const [ password, setPassword ] = useState('')
+  const [ repeatPassword, setRepeatPassword ] = useState('')
 
   const [errorName, setErrorName] = useState(false);
-  const [errorSurname, setErrorSurname] = useState(false);
   const [errorEmail, setErrorEmail] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
   const [errorRepeatPassword, setErrorRepeatPassword] = useState(false);

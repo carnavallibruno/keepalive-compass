@@ -10,15 +10,13 @@ import { ButtonContinue } from './ButtonContinue/index';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth, database } from './../../services/firebaseConfig';
 import { update, ref } from 'firebase/database';
-import { UserLoginContext } from './../../contexts/UserLoginContext';
 import { AiOutlineUser } from 'react-icons/ai';
 import { HiOutlineLockClosed } from 'react-icons/hi';
-import { UserRegisterContext } from './../../contexts/UserRegisterContext';
 
 export default function Login() {
   const navigate = useNavigate();
-  const { username, setUsername, password, setPassword } = useContext(UserLoginContext)
-  const { name, setName } = useContext(UserRegisterContext);
+  const [ username, setUsername ] = useState('')
+  const [ password, setPassword ] = useState('')
 
   const [visible, setVisible] = useState(false)
   const [userInputFocused, setUserInputFocused] = useState(false)
