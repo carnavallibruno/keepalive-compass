@@ -28,5 +28,4 @@ export const PasswordRequirements = styled.div`
   align-items: center;
   width: 49%;
   height: 50%;
-  /* border: 1px solid red; */
 `

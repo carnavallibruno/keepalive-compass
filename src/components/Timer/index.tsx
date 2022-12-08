@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { signOut } from 'firebase/auth';
+import { auth } from './../../services/firebaseConfig';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { RefreshContainer, RefreshPhrase, RefreshTimerContainer, RefreshTimer } from './styles';
@@ -37,22 +39,3 @@ export default function Timer() {
     </RefreshContainer>
   )
 }
-
-// import React, { useEffect } from 'react';
-// import { useState } from 'react'
-import { signOut } from 'firebase/auth';
-import { auth } from './../../services/firebaseConfig';
-
-// export const useTimer = () => {
-//   let [refreshTimer, setRefreshTimer] = useState(60);
-
-//   useEffect(() => {
-//     const timer = setTimeout(() => setRefreshTimer(refreshTimer -= 1), 1000);
-//   }, [refreshTimer])
-
-//   return (
-//     <span>
-//       {refreshTimer}
-//     </span>
-//   )
-// }

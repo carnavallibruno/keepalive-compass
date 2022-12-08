@@ -11,8 +11,6 @@ export const ButtonAndErrorMessage = styled.div`
 export const ErrorMessageRegisterButton = styled.p`
   color: ${COLORS.errorMessage};
   
-  /* margin-left: 14%; */
-
   text-align: center;
 
   width: 90%;
